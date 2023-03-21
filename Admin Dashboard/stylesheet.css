@@ -1,10 +1,10 @@
 body {
     display: grid;
-    grid-template: 4fr / 1fr;
     background-color: rgb(196, 193, 190);
 }
 
 .sidebar {
+    display: grid;
     background-color: rgb(109, 175, 230);
 }
 
