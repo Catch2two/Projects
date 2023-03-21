@@ -1,34 +1,17 @@
-.container {
+body {
     display: grid;
+    grid-template: 4fr / 1fr;
     background-color: rgb(196, 193, 190);
 }
 
 .sidebar {
-    display: grid;
-    background-color: rgb(138, 138, 216);
-}
-.spacer {
-    height: 50px;
+    background-color: rgb(109, 175, 230);
 }
 
 .header {
     display: grid;
 }
-.cards {
-    display: flex;
-}
 
-.projects {
-    display: flex;
-
-}
-
-.announcements {
+.content {
     display: grid;
-}
-
-.trending {
-    display: grid;
-    grid-template-rows: repeat(4, 1fr);
-
 }
