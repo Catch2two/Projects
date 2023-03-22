@@ -3,6 +3,7 @@ body {
     display: grid;
     grid-template: auto 4fr/ 1fr 4fr;
     background-color: rgb(196, 193, 190);
+    font-family: 'Ubuntu', sans-serif;
 }
 
 /* HEADER */
@@ -12,10 +13,11 @@ body {
     grid-area: 1 / 2 / 2 / -1; /* Row Start / Row End / Column Start / Column End */
     grid-template: auto 1fr / 2fr 1fr;
     padding: 0.5rem 2rem;
-    background-color: aliceblue;
+    background-color: rgb(255, 255, 255);
 
     box-shadow: 2px 2px 2px blue;
     border: 1px solid transparent;
+    font-weight: 800;
 }
 
 .searchbar {
@@ -26,6 +28,8 @@ body {
 }
 .search-input {
     flex: 1;
+    height: 5vh;
+    font-size: larger;
 }
 .profile {
     grid-area: 1/2/2/3;
@@ -47,10 +51,21 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     gap: 1rem;
 }
 
+.head-button {
+    border-radius: 10px;
+    border: 1px solid transparent;
+    box-shadow: 0 0 5px 1px rgb(1, 141, 255);
+    height: 4vh;
+    width: 5vw;
+    cursor: pointer;
+}
+.head-button:active {
+    border-radius: 40px;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
 /* SIDEBAR */
 
 .sidebar {
@@ -58,7 +73,6 @@ body {
     grid-area: 1 / 1 / -1 / 2;
     grid-template-rows: auto auto 1fr;
     color: white;
-    padding: 1rem;
     min-height: 100vh;
 
     padding: 1rem;
@@ -69,6 +83,7 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
+    font-size: larger;
 }
 li {
     list-style: none;
@@ -79,7 +94,9 @@ li {
 
 .links p,
 .links2 p {
+    font-size: 1rem;
     font-weight: bold;
+    text-shadow: 0 2px 2px rgb(0, 99, 156);
     cursor: pointer;
     border: 2px solid transparent;
 }
@@ -92,7 +109,7 @@ li {
 /* CONTENT */
 
 .content {
-    background-color: orange;
+    background-color: rgb(73, 73, 73);
     display: grid;
     grid-template-columns: 3fr 1fr;
     padding: 2rem 2rem;
@@ -115,9 +132,9 @@ li {
     border-radius: 10px;
     border: 2px solid transparent;
     border-left: 3px solid white;
-    background-color: rgb(185, 208, 211);
+    background-color: rgb(192, 192, 192);
     padding: 1rem;
-    box-shadow: 0px 4px 8px rgb(99, 99, 99);
+    box-shadow: 0px 4px 8px rgb(0, 0, 0);
     display: grid;
     grid-template: 1fr auto / 1rem 1fr;
 }
@@ -125,13 +142,13 @@ li {
     grid-row: 1/-1;
     width: 75%;
     border-radius: 20px 0 0 20px;
-    background: linear-gradient(rgb(130, 130, 255), orange);
+    background: linear-gradient(rgb(144, 144, 163), rgb(0, 132, 255));
 }
 
 .projectCard:hover {
     border-radius: 10px;
     border: 2px solid transparent;
-    border-left: 3px solid rgb(71, 29, 255);
+    border-left: 3px solid rgb(29, 202, 255);
     padding: 1rem;
     box-shadow: 0px 4px 8px rgb(65, 195, 255);
 }
@@ -140,12 +157,14 @@ li {
     justify-content: flex-end;
     padding: 1rem;
     gap: 1rem;
+    cursor: pointer;
 }
 h4 {
-    height: 10vh;
+    flex: 1;
     text-align: center;
     margin: 0;
-    font-size: 32px;
+    font-size: 24px;
+    text-shadow: 0 0 2px rgb(49, 45, 36);
 }
 .announcements-trending {
     display: grid;
@@ -177,7 +196,7 @@ h4 {
 .announcement-spacer {
     width: 100%;
     height: 1px;
-    background-color: rgb(255, 231, 20);
+    background: linear-gradient(rgba(144, 144, 163, 0.432), rgb(0, 132, 255));
 
 }
 .trending {
