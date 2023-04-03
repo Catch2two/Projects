@@ -1,0 +1,56 @@
+html {
+    margin: 0;
+    display: grid;
+    background-color: rgb(196, 193, 190);
+    font-family: 'Ubuntu', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+}
+header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    color:aliceblue;
+    border: 1px solid white;
+    background-color: rgb(113, 113, 113);
+    padding: 2rem;
+    text-align: center;
+}
+#subtext {
+    font-size: smaller;
+    margin-top: -15px;
+    margin-bottom: 15px;
+}
+
+.table {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 1rem;
+    text-align: center;
+}
+.bookCard {
+    display: grid;
+    border: 2px solid transparent;
+    background-color: rgb(65, 65, 65);
+    padding: 1rem;
+    grid-template: 1fr 1fr 1fr / 1rem 1fr;
+    color: aliceblue;
+
+    max-width: 75%;
+    min-width: fit-content;
+
+}
+
+.buttons {
+    display: flex;
+    margin: auto;
+    color:aliceblue;
+    border: 1px solid white;
+    background-color: rgb(113, 113, 113);
+    padding: 2rem;
+    text-align: center;
+    max-width: fit-content;
+}
+

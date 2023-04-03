@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Library</title>
+    <link rel="stylesheet" href="library.css">
+</head>
+<body>
+    <header>
+
+            <div>Title</div>
+            <div class="addBook">
+                <h2>Amazing Library</h2>
+                    <p id="subtext">A beautifully built library by Josh</p>
+                <input id="addBookInput" class="submit" type="text">
+                <button class="newBook">Add New Book!</button>
+            </div>
+            <div>Login</div>
+    </header>
+    <div class="table">
+        <table>
+            <thread>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>Pages</th>
+                    <th>Read</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thread>
+            <tbody>
+                <td>The Book of Hyde</td>
+                <td>by Dink Dorklin jr.</td>
+                <td>666 pgs</td>
+                <td>Have you Read?</td>
+                <td><button>Read Status</button></td>
+                <td><button>Edit</button></td>
+                <td><button>Delete</button></td>
+            </tbody>
+        </table>
+    </div>
+    <div class="form hidden">
+        <h2>Adding/Editing a Book</h2>
+        <input type="text" id="title" placeholder="Title">
+        <input type="text" id="author" placeholder="Author">
+        <input type="text" id="pages" placeholder="Pages">
+        <fieldset role="readRadio">
+            <legend>Read</legend>
+            <label for="Read">
+                <input type="radio" id="true" name="read" value="Yes" checked>
+                <span>Yes</span>
+            </label>
+            <label for="Not Read">
+                <input type="radio" id="false" name="read" value="No">
+                <span>Not Read</span>
+            </label>
+        </fieldset>
+        <div class="buttons">
+            <button id="submit">Submit</button>
+            <button id="cancel">Cancel</button>
+        </div>
+    </div>
+    <script src="library.js"></script>
+</body>
+</html>
