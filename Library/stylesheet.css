@@ -3,10 +3,10 @@ body {
     display: grid;
     grid-template: auto 4fr/ 1fr 4fr;
     background-color: rgb(196, 193, 190);
-    font-family: 'Ubuntu', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+    font-weight: bold;
 }
 
 /* HEADER */
