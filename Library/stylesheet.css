@@ -60,10 +60,10 @@ body {
 }
 
 .head-button {
-    background-color: rgb(43, 43, 43);
-    color: rgb(255, 168, 55);
-    border-radius: 10px;
-    border: 1px solid orange;
+    background-color: rgb(140, 140, 140);
+    color: rgb(5, 5, 5);
+    border-radius: 50px;
+    border: 1px solid rgba(29, 27, 24, 0);
     height: 4vh;
     width: 5vw;
     cursor: pointer;
@@ -90,6 +90,12 @@ body {
     align-items: center;
     gap: 1rem;
     font-size: larger;
+}
+a:visited {
+    color: rgb(199, 199, 199);
+}
+a:active {
+    color: aquamarine;
 }
 li {
     list-style: none;

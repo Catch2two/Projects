@@ -4,10 +4,102 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <link rel="icon" type="image/x-icon" href="../img/home.png">
+    <link rel="stylesheet" href="../stylesheet.css">
+    <link rel="stylesheet" href="library-styles.css">
+    
+    <title>Admin Dashboard</title>
 </head>
 <body>
-    <div>Library</div>
-    
+  <header class="header">
+    <div class="searchbar">
+        <img class="icon1" src="../img/search.png" alt="notification image">
+        <input id="search" class="search-input" type="text">
+    </div>
+    <div class="profile">
+        <img class="icon1" src="../img/bell.png" alt="notification image">
+        <h3>Jane Doe</h3>
+        <img class="icon1" src="../img/trend.png" alt="user">
+    </div>
+    <div class="welcome">
+        <label>
+            <img class="icon1" src="../img/user.svg" alt="user">
+        </label>
+        <h2>Welcome Jane!</h2>
+    </div>
+    <div class="button-box">
+        <button class="head-button"><img class="icon1" src="../img/add.svg"></button>
+        <button class="head-button"><img class="icon1" src="../img/upload.svg"></button>
+        <button class="head-button"><img class="icon1" src="../img/share.svg"></button>
+    </div>
+  </header>
+  <nav class="sidebar">
+    <div class="logo">
+        <img class="icon1" src="../img/dash.svg" alt="user">
+        <h2>Dashboard</h2>
+    </div>
+      <div class="links">
+        <ul>
+            <li>
+                <img class="icon1" src="../img/home1.svg" alt="user">
+                <a class="sideLink" href="/">
+                <p>Home</p>
+                </a>
+            </li>
+            <li>
+                <img class="icon1" src="../img/library.svg" alt="user">
+                <a class="sideLink" href="/library/library.html">
+                <p>Library</p>
+                </a>
+            </li>
+            <li>
+                <img class="icon1" src="../img/message.svg" alt="user">
+                <p>Messages</p>
+            </li>
+            <li>
+                <img class="icon1" src="../img/history.svg" alt="user">
+                <p>History</p>
+            </li>
+            <li>
+                <img class="icon1" src="../img/task.svg" alt="user">
+                <p>Tasks</p>
+            </li>
+            <li>
+                <img class="icon1" src="../img/community.svg" alt="user">
+                <p>Communities</p>
+            </li>
+        </ul>
+      </div> 
+    </div>
+    <div class="links2">
+        <ul>
+            <li>
+                <img class="icon1" src="../img/settings.svg" alt="user">
+                <p>Settings</p>
+            </li>
+            <li>
+                <img class="icon1" src="../img/support.svg" alt="user">
+                <p>Support</p>
+            </li>
+            <li>
+                <img class="icon1" src="../img/privacy.svg" alt="user">
+                <p>Privacy</p>
+            </li>
+        </ul>
+    </div>
+  </nav>
+  <main class="content">
+    <div class="books">
+    <h2>My Books</h2>
+        <div class="books cards">   
+        </div>
+    </div>
+  </main>    
 </body>
+<script src="main.js"></script>
 </html>
