@@ -18,6 +18,9 @@ const closeModal = function () {
 openModalBtn.addEventListener("click", addBook);
 closeModalBtn.addEventListener("click", closeModal)
 
+// Animations
+
+
 // Add to Library Structure
 
 class Book {
@@ -66,3 +69,24 @@ the array, it finds an element for which the provided function returns true;
     ((book.title === newBook.title))
   }
 }
+
+const library = new Library
+
+// Add Book
+
+const addBookCard = (book) => {
+  const bookCard = document.createElement('div');
+  const bookAuthor = document.createElement('p');
+
+}
+// Add Example:
+//1. Create a New DIV Element
+let bookCard = document.createElement('div');
+bookCard.classList.add('cards');
+//2. add text content to the DIV ELement
+let titleSubmit = document.createTextNode('This is a Book Card');
+//3. add content to the DIV Element
+bookCard.appendChild(titleSubmit);
+//4. Add the Element to Webpage
+let containerDiv = document.querySelector('.container');
+containerDiv.appendChild(bookCard);
