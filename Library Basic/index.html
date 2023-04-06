@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Library</title>
+
+    <link href="styles.css" rel="stylesheet" type="text/CSS">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@500&family=Ubuntu&display=swap" rel="stylesheet">
+    
+
+</head>
+<body>
+    <header class="header">
+        <h1>Library</h1>
+    </header>
+    <div class ="modal-container">
+    <section class="modal hidden">
+        <div class="flex"> 
+            <h3>Add Book!</h3>
+            <div class="newBookPopup">
+                <button class="btn-close">⨉</button>
+            </div>
+        </div>
+            <input
+                class="input"
+                type="text"
+                id="title"
+                placeholder="Title"
+                required
+                maxlength="100"
+            />
+            <input
+                class="input"
+                type="text"
+                id="author"
+                placeholder="Author"
+                required
+                maxlength="100"
+            />
+            <input
+                class="input"
+                type="number"
+                id="pages"
+                placeholder="Pages"
+                required
+                max="10000"
+            />
+            <div class="is-read">
+                <label for="is-read">Read</label>
+                <input 
+                class="checkbox" 
+                type="checkbox" 
+                id="isRead" 
+                />
+                <span></span>
+            </div>
+            <button class="btn submit">Submit</button>
+        </div>  
+    </section>
+
+    <div class="overlay hidden"></div>
+    <button class="btn btn-open">+ Book</button>
+    </div>
+    <footer class="footer">
+        <p>
+            Copyright ©
+            <script>
+            document.write(new Date().getFullYear())
+            </script>
+            Catch2two
+        </p>
+        <a href="https://github.com/Catch2two" target="_blank">
+            <i class="fab fa-github"></i
+        ></a>
+    </footer>    
+    
+</body>
+<script src="main.js"></script>
+</html>
