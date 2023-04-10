@@ -19,12 +19,12 @@ body {
 }
 
 .modal-container {
-    position: absolute;
+    margin-bottom: 25%;
     background-color: rgba(255, 0, 0, 0.488);
-    padding: 2rem;
+    padding: 5rem;
     border: 5px solid black;
     animation-name: spin;
-    animation-duration: 2s;
+    animation-duration: .8s;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
     z-index: 2;
@@ -36,7 +36,6 @@ body {
 .modal {
     display: grid;
     background-color: transparent;
-
     gap: 5px;
     margin: 0;
 }
@@ -45,6 +44,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
 }
 .modal input {
     padding: 0.7rem 1rem;
@@ -72,6 +72,7 @@ button {
     border: none;
     font-weight: 600;
     border-radius: 40%;
+    
 }
 .btn .submit {
     background-color: antiquewhite;
@@ -83,7 +84,6 @@ button {
     background-color: black;
     color: aliceblue;
     border-radius: 5px;
-    text-align: center;
     font-size: 1em;
 }
 
@@ -93,7 +93,6 @@ button {
 }
 
 .btn-close {
-    transform: translate(10px, -20px);
     padding: 0.5rem 0.7rem;
     background-color: black;
     color: white;
@@ -121,10 +120,7 @@ button {
 
 }
 /* the Book Cards (Library) */
-.container {
-    display: flex;
-}
-.cards {
+.books-grid {
     display: grid;
     border: 2px solid transparent;
     margin: 30px;
