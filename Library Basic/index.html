@@ -23,14 +23,14 @@
             <h3>Add Book!</h3>
             <button class="btn-close">⨉</button>
         </div>    
-        <form>
+        <form id="bookInput">
             <input
                 class="input"
                 type="text"
                 id="title"
                 placeholder="Title"
                 required
-                maxlength="100"
+                maxlength="75"
             />
             <input
                 class="input"
@@ -38,7 +38,7 @@
                 id="author"
                 placeholder="Author"
                 required
-                maxlength="100"
+                maxlength="75"
             />
             <input
                 class="input"
@@ -46,7 +46,7 @@
                 id="pages"
                 placeholder="Pages"
                 required
-                max="10000"
+                max="9999"
             />
             <div class="is-read">
                 <label for="is-read">Read?</label>
