@@ -21,9 +21,7 @@
     <section class="modal hidden">
         <div class="flex"> 
             <h3>Add Book!</h3>
-            <div class="newBookPopup">
-                <button class="btn-close">⨉</button>
-            </div>
+            <button class="btn-close">⨉</button>
         </div>
             <input
                 class="input"
@@ -58,35 +56,32 @@
                 />
                 <span></span>
             </div>
-            <button class="btn submit">Submit</button>
+            <button class="btn submit" id="addBookBtn">Submit</button>
         </div>  
     </section>
 
 <!-- Hidden Overlay-->
     <div class="overlay hidden"></div>
-    <button class="btn btn-open">+ Book</button>
+        <button class="btn btn-open">+ Book</button>
     </div>
-<!-- The Added Book Cards (the Library) -->    
+<!-- The Added Book Cards (the Library) -->   
+
     <div class = "container">
-        <div class="cards">
-            <h2>Title</h2>
-            <p>Author</p>
-            <p>Pages</p>
-            <p>Read</p>
-        </div>
+        <div class="books-grid" id="booksGrid"></div>
     </div>
-    <footer class="footer">
-        <p>
-            Copyright ©
-            <script>
-            document.write(new Date().getFullYear())
-            </script>
-            Catch2two
-        </p>
-        <a href="https://github.com/Catch2two" target="_blank">
-            <i class="fab fa-github"></i
-        ></a>
-    </footer>    
+
+<footer class="footer">
+    <p>
+        Copyright ©
+        <script>
+        document.write(new Date().getFullYear())
+        </script>
+        Catch2two
+    </p>
+    <a href="https://github.com/Catch2two" target="_blank">
+        <i class="fab fa-github"></i
+    ></a>
+</footer>    
     
 </body>
 <script src="main.js"></script>

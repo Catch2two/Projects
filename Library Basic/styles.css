@@ -19,19 +19,19 @@ body {
 }
 
 .modal-container {
+    position: absolute;
     background-color: rgba(255, 0, 0, 0.488);
     padding: 2rem;
     border: 5px solid black;
-    border-radius: 45px;
     animation-name: spin;
     animation-duration: 2s;
     animation-iteration-count: 1;
-    animation-timing-function: ease-in;
+    animation-timing-function: ease-out;
     z-index: 2;
 }
 @keyframes spin {
     from {transform: rotate(0deg);}
-    to {transform: rotate(380deg);}
+    to {transform: rotate(360deg);}
 }
 .modal {
     display: grid;
@@ -121,3 +121,16 @@ button {
 
 }
 /* the Book Cards (Library) */
+.container {
+    display: flex;
+}
+.cards {
+    display: grid;
+    border: 2px solid transparent;
+    margin: 30px;
+    padding: 40px;
+    background-color: rgba(160, 147, 236, 0.774);
+    border-radius: 25px;
+    font-weight: 900;
+    font-size: 1.5rem;
+}
