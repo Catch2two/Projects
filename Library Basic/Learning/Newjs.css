@@ -15,9 +15,8 @@ body {
 }
 
 .modal-container {
-    margin-bottom: 25%;
     background-color: rgba(255, 0, 0, 0.488);
-    padding: 5rem;
+    padding: 1rem;
     border: 5px solid black;
     animation-name: spin;
     animation-duration: .8s;
@@ -35,49 +34,53 @@ body {
     gap: 5px;
     margin: 0;
 }
+h3 {
+    font-size: 2rem;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
 
 .modal .flex {
     display: flex;
-    align-items: center;
+    flex-direction: column-reverse;
     justify-content: space-between;
     
 }
 .modal input {
-    padding: 0.7rem 1rem;
+    display: grid;
+    padding: 0.7rem 1.5rem;
     border: 1px solid black;
     border-radius: 10px;
     font-size: 1em;
 }
-.modal .is-read {
+.modal .read {
     font-size: 2rem;
-    text-align: center;
+    font-weight: bolder;
+    color: white;
 }
 input[type=checkbox] {
-    padding: 10px;
-    transform: scale(2.5);
-    margin-left: 20px;
+    transform: scale(2.8);
+    background-color: aqua;
 }
 
-#isRead {
-    width: 10px;
-    height: 20px;
+form {
+    display: grid;
+    gap: 10px;
+    text-align: center;
 }
 
 button {
     cursor: pointer;
     border: none;
     font-weight: 600;
-    border-radius: 40%;
+    border-radius: 10%;
     
 }
-.btn .submit {
-    background-color: antiquewhite;
-}
-
-.btn {
+.submitBtn {
     padding: 0.8rem 1.4rem;
     font-weight: 700;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.807);
     color: aliceblue;
     border-radius: 5px;
     font-size: 1em;
@@ -89,9 +92,14 @@ button {
 }
 
 .btn-close {
+    width: 20%;
     padding: 0.5rem 0.7rem;
-    background-color: black;
+    background-color: rgba(0, 0, 0, 0.358);
     color: white;
+    font-size: larger;
+    border-radius: 0%;
+    margin-left: 88%;
+    margin-top: -7%;
 }
 
 .overlay {
