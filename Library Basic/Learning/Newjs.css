@@ -11,11 +11,11 @@ body {
     color: rgb(0, 0, 0);
     position: relative;
     min-height: 100vh;
-    background-color: rgba(30, 196, 252, 0.325);
+    background-color: rgba(61, 91, 101, 0.845);
 }
 
 .modal-container {
-    background-color: rgba(255, 0, 0, 0.488);
+    background-color: rgba(81, 114, 184, 0.149);
     padding: 1rem;
     border: 5px solid black;
     animation-name: spin;
@@ -59,9 +59,17 @@ h3 {
     font-weight: bolder;
     color: white;
 }
+
+.read {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
 input[type=checkbox] {
     transform: scale(2.8);
-    background-color: aqua;
+}
+input[type=checkbox]:checked {
+    transform: scale(3);
 }
 
 form {
@@ -89,6 +97,12 @@ button {
 .btn-open {
     position: absolute;
     bottom: 150px;
+    padding: 0.8rem 1.4rem;
+    font-weight: 700;
+    background-color: rgba(0, 0, 0, 0.807);
+    color: aliceblue;
+    border-radius: 5px;
+    font-size: 1em;
 }
 
 .btn-close {
@@ -131,7 +145,7 @@ button {
     border: 2px solid transparent;
     margin: 30px;
     padding: 40px;
-    background-color: rgba(160, 147, 236, 0.774);
+    background-color: rgba(255, 255, 255, 0.774);
     border-radius: 25px;
     font-weight: 900;
     font-size: 1.5rem;
