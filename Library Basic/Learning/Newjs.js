@@ -7,6 +7,25 @@ function Book (title, author, pages, read) {
   this.pages = pages
   this.read = read
 }
+function render () {
+  const libraryCard = document.querySelector('#library')
+  libraryCard.innerHTML = ''
+  for (let i = 0; i < myLibrary.length; i++) {
+    const book = myLibrary[i]
+    const bookCard = document.createElement('div')
+    bookCard.innerHTML = `
+    <div class="card-title">
+      <h3 classs="title">${book.title}</h3>
+      <h5 class="author">by ${book.author}</h5>
+    </div>
+    <div class="card-body">
+      <p>${book.pages} pages</p>
+      <p class="read-status">${book.read ? 'Read' : 'Not Read yet'}</p>
+    </div>
+    `
+    libraryCard.appendChild(bookCard)
+  }
+}
 
 function addBookToLibrary () {
   const title = document.querySelector('#title').value
@@ -17,9 +36,12 @@ function addBookToLibrary () {
   myLibrary.push(newBook)
   console.log(newBook)
 }
+
+// Button to add to the DOM. Calls Render() and AddBooktoLibrary
 document.querySelector('#bookInput').addEventListener('submit', function (event) {
   event.preventDefault()
   addBookToLibrary()
+  render()
 })
 
 // --------------------------------------------------------------------------------------------------------
