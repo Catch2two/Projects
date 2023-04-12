@@ -14,6 +14,7 @@ function render () {
     const book = myLibrary[i]
     const bookCard = document.createElement('div')
     bookCard.innerHTML = `
+    <div class="card">
     <div class="card-title">
       <h3 classs="title">${book.title}</h3>
       <h5 class="author">by ${book.author}</h5>
@@ -22,6 +23,7 @@ function render () {
       <p>${book.pages} pages</p>
       <p class="read-status">${book.read ? 'Read' : 'Not Read yet'}</p>
     </div>
+    </div
     `
     libraryCard.appendChild(bookCard)
   }

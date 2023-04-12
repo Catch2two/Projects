@@ -13,50 +13,49 @@
     <header class="header">
         <h1>Library</h1>
     </header>
-    <section class="modal hidden">
-    <div class ="modal-container">
-        <div class="flex"> 
-            <h3>Add Book!</h3>
-            <button class="btn-close">⨉</button>
-        </div>    
-        <form id="bookInput">
-            <input
-                class="input"
-                type="text"
-                id="title"
-                placeholder="Title"
-                required
-                maxlength="75"
-            />
-            <input
-                class="input"
-                type="text"
-                id="author"
-                placeholder="Author"
-                required
-                maxlength="75"
-            />
-            <input
-                class="input"
-                type="number"
-                id="pages"
-                placeholder="Pages"
-                required
-                max="9999"
-            />
-            <div class="read">
-                <label for="read">Read?</label>
-                <input 
-                class="checkbox" 
-                type="checkbox" 
-                id="read" 
-                />
-            </div>
-            <input class="submitBtn" type="submit" value="Add Book">
-        </form>
-        </div>  
-    </section>
-
+        <section class="modal hidden">
+            <div class ="modal-container">
+                <div class="flex"> 
+                    <h3>Add Book!</h3>
+                    <button class="btn-close">⨉</button>
+                </div>    
+                <form id="bookInput">
+                    <input
+                        class="input"
+                        type="text"
+                        id="title"
+                        placeholder="Title"
+                        required
+                        maxlength="75"
+                    />
+                    <input
+                        class="input"
+                        type="text"
+                        id="author"
+                        placeholder="Author"
+                        required
+                        maxlength="75"
+                    />
+                    <input
+                        class="input"
+                        type="number"
+                        id="pages"
+                        placeholder="Pages"
+                        required
+                        max="9999"
+                    />
+                    <div class="read">
+                        <label for="read">Read?</label>
+                        <input 
+                        class="checkbox" 
+                        type="checkbox" 
+                        id="read" 
+                        />
+                    </div>
+                <input class="submitBtn" type="submit" value="Add Book">
+            </form>
+            </div>  
+        </section>
 <!-- Hidden Overlay-->
     <div class="overlay hidden"></div>
         <button class="btn btn-open">+ Book</button>

@@ -1,20 +1,16 @@
 * {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    text-align: center;
 }
-
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     color: rgb(0, 0, 0);
     position: relative;
     min-height: 100vh;
     background-color: rgba(61, 91, 101, 0.845);
 }
+header {
 
+}
 .modal-container {
     background-color: rgba(81, 114, 184, 0.149);
     padding: 1rem;
@@ -38,7 +34,7 @@ body {
 }
 h3 {
     font-size: 2rem;
-    color: white;
+    color: rgb(0, 0, 0);
     text-align: center;
     padding: 10px;
 }
@@ -143,25 +139,27 @@ button {
 /* the Book Cards (Library) */
 
 #library {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-
+    display: flex;
+    width: fit-content;
+    max-width: 90%;
+    flex-wrap: wrap;
     color: black;
     font-size: 2rem;
     text-align: center;
-    border: 3px solid black;
-    border-radius: 10px;
-    background-color: aliceblue;
+    gap: 5%;
+    padding: 5%;
 }
+
 
 
 .card-title {
     color: black;
-    border: 2px solid black;
+    background-color: beige;
+    padding: 5%;
 }
 
 .card-body {
     color: black;
     background: white;
+    padding: 5%
 }
