@@ -18,7 +18,7 @@
         <h1>Library</h1>
         <div class="banner">Test Text</div>
     </header>
-        <section class="modal hidden">
+        <div class="modal hidden">
             <div class ="modal-container">
                 <button class="btn-close">⨉</button>
                 <div class="flex"> 
@@ -50,7 +50,7 @@
                         max="9999"
                     />
                     <div class="read">
-                        <label for="read">Read?</label>
+                        <label for="read">Read </label>
                         <input 
                         class="checkbox" 
                         type="checkbox" 
@@ -60,7 +60,7 @@
                 <input class="submitBtn" type="submit" value="Add Book">
             </form>
             </div>  
-        </section>
+        </div>
 <!-- Hidden Overlay-->
     <div class="overlay hidden"></div>
         <button class="btn btn-open">+ Book</button>
@@ -68,18 +68,15 @@
 <!-- The Added Book Cards (the Library) -->   
     <div id="library">
     </div> 
-    <footer class="footer">
-        <p>
-            Copyright ©
-            <script>
-            document.write(new Date().getFullYear())
-            </script>
-            Catch2two
-        </p>
-        <a href="https://github.com/Catch2two" target="_blank">
-            <i class="fab fa-github"></i
-        ></a>
-    </footer> 
 </body>
+<div class="footer">
+    <p>
+        Copyright ©
+        <script>
+        document.write(new Date().getFullYear())
+        </script>
+        Catch2two
+    </p>
+</div> 
 <script src="Newjs.js"></script>
 </html>

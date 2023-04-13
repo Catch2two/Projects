@@ -1,14 +1,12 @@
 * {
-    margin-left: 50px;
-    margin-right: 50px;
+    margin: 0;
     text-align: center;
     font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: bold;
 }
 body {
-    display: grid;
     color: rgb(134, 49, 238);
-    min-height: 100vh;
+    height: 100%;
     background-color: rgb(17, 20, 21);
 }
 header {
@@ -19,25 +17,33 @@ header {
     font-size: 32px;
     align-items: center;
     justify-content: space-between;
+    max-height: 200px;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
 
 }
+
+/*************** Modal ****************/
+
 .modal-container {
-    max-width: fit-content;
-    background-color: rgba(81, 114, 184, 0.149);
+    position: absolute;
+    width: fit-content;
+    background-color: rgba(247, 100, 255, 0.149);
     padding: 1rem;
     border: 5px solid black;
+    
     animation-name: spin;
     animation-duration: .8s;
     animation-iteration-count: 1;
     animation-timing-function: ease-out;
     z-index: 2;
 }
+/*************** Modal Animation ****************/
 @keyframes spin {
     from {transform: rotate(0deg);}
     to {transform: rotate(360deg);}
 }
 .modal {
-    display: grid;
     background-color: transparent;
     gap: 5px;
     
@@ -47,13 +53,6 @@ h3 {
     color: rgb(255, 255, 255);
 }
 
-.modal .flex {
-    display: flex;
-    align-items: center;
-    flex-direction: column-reverse;
-    justify-content: space-between;
-    
-}
 .modal input {
     display: grid;
     padding: 0.7rem 1.5rem;
@@ -61,23 +60,31 @@ h3 {
     border-radius: 10px;
     font-size: 1em;
 }
-.modal .read {
-    font-size: 2em;
-    font-weight: bolder;
-    color: white;
-}
+
+/*************** Modal Checkbox****************/
 
 .read {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    font-weight: bolder;
+    color: white;
+    gap: 20px;
+    margin: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 input[type=checkbox] {
+    cursor: pointer;
+    height: fit-content;
     transform: scale(2.8);
 }
 input[type=checkbox]:checked {
     transform: scale(3);
 }
 input.input {
-    font-size: 24px;
+    font-size: 45px;
 }
 form {
     display: grid;
@@ -97,7 +104,8 @@ button:active {
     border: none;
     font-weight: 600;
     border-radius: 10%;
-    background-color: rgba(97, 255, 255, 0.807);
+    background-color: rgba(140, 0, 255, 0.807);
+    color: black;
     
 }
 .submitBtn {
@@ -113,23 +121,24 @@ button:active {
 }
 
 .btn-open {
-    position: absolute;
+    border: 1px solid rgb(149, 103, 206);
+    box-shadow: 0px 0px 12px rgb(134, 49, 238);
     padding: 0.8rem 1.4rem;
     font-weight: 700;
-    background-color: rgba(0, 0, 0, 0.807);
+    background-color: rgba(30, 9, 50, 0.701);
     color: aliceblue;
     border-radius: 5px;
-    font-size: 1em;
+    font-size: 1.5em;
 }
 
 .btn-close {
-    width: 50px;
-    height: 50px;
+    width: 32px;
+    height: 32px;
     background-color: rgba(0, 0, 0, 0.358);
     color: white;
     font-size: larger;
     border-radius: 10px;
-    margin-left: 90%;
+    margin-left: 85%;
 }
 
 .overlay {
@@ -159,7 +168,9 @@ button:active {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 2.9rem;
-    border: 1px solid rgb(55, 0, 128);
+    border-left: 1px solid rgb(55, 0, 128);
+    border-right: 1px solid rgb(55, 0, 128);
+    gap: 30px;
 }
 
 .card {
@@ -169,12 +180,20 @@ button:active {
 
 .card-title {
     color: black;
-    background-color: rgb(4, 4, 4);
+    background-color: transparent;
     padding: 0px;
 }
 
 .card-body {
     color: black;
-    background: rgba(134, 49, 238, 0.333);
+    background: transparent;
     padding: 0%
+}
+
+.footer {
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    max-height: 100px;
 }
