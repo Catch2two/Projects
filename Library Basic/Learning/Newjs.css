@@ -172,22 +172,31 @@ button:active {
     border-right: 1px solid rgb(55, 0, 128);
     gap: 30px;
 }
-
+h3 {
+    font-size: 5rem;
+}
 .card {
     border: 2px solid rgb(134, 49, 238);
     border-radius: 10px;
+    padding: 45px;
 }
 
 .card-title {
-    color: black;
+    color: rgb(255, 255, 255);
     background-color: transparent;
     padding: 0px;
+    font-size: 2.8rem;
 }
 
 .card-body {
-    color: black;
+    color: rgb(255, 253, 253);
     background: transparent;
-    padding: 0%
+    padding: 0%;
+    font-size: 1.7rem;
+}
+.remove-btn, 
+.toggle-read-btn {
+    font-size: 1.5rem;
 }
 
 .footer {

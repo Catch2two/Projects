@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
 const myLibrary = []
-
+// Book Prototype
 function Book (title, author, pages, read) {
   this.title = title
   this.author = author
   this.pages = pages
   this.read = read
 }
+/* i = index (array[Library]) */
 function render () {
   const libraryCard = document.querySelector('#library')
+  // Start a Fresh input to the Index, instead of carrying over previous book aswell.
   libraryCard.innerHTML = ''
   for (let i = 0; i < myLibrary.length; i++) {
     const book = myLibrary[i]
@@ -17,11 +19,13 @@ function render () {
     <div class="card">
     <div class="card-title">
       <h3 classs="title">${book.title}</h3>
-      <h5 class="author">by ${book.author}</h5>
+      <h5 class="author"><i>by ${book.author}</i></h5>
     </div>
     <div class="card-body">
       <p>${book.pages} pages</p>
-      <p class="read-status">${book.read ? 'Read' : 'Not Read yet'}</p>
+      <p class="checkbox">${book.read ? 'Read' : 'Not Read yet'}</p>
+      <button class="remove-btn" onclick="removeBook(${i})">Remove</button>
+      <button class="toggle-read-btn" onclick="toggleRead(${i})">Toggle</button>
     </div>
     </div
     `
@@ -33,10 +37,24 @@ function addBookToLibrary () {
   const title = document.querySelector('#title').value
   const author = document.querySelector('#author').value
   const pages = document.querySelector('#pages').value
-  const read = document.querySelector('#read').value
+  const read = document.querySelector('#read').checked
   const newBook = new Book(title, author, pages, read)
   myLibrary.push(newBook)
   console.log(newBook)
+}
+/* Remove from Array and ReRender to Update HTML */
+function removeBook (index) {
+  myLibrary.splice(index, 1)
+  render()
+}
+
+Book.prototype.toggleRead = function () {
+  this.read = !this.read
+}
+
+function toggleRead (index) {
+  myLibrary[index].toggleRead()
+  render()
 }
 
 // Button to add to the DOM. Calls Render() and AddBooktoLibrary
