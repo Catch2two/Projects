@@ -4,20 +4,20 @@ const GameFlow = (() => {
 
 })();
 
-// Score Board
-const GameBoard = (() => {
-  const score = [];
+// Game Board Object
+const gameModule = (() => {
+  const gameBoard = ['X', 'X', 'O', 'X', 'O', 'X', 'O', 'O', 'O'];
+
+  return { gameBoard };
 })();
 
 // Players
 const Controller = (() => {
-  const player1 = {
+  const player = {
     name: 'Player One',
     marker: 'X',
   };
-
-  const player2 = {
-    name: 'Player Two',
-    marker: 'O',
-  };
+  const getName = () => player.name;
+  const getMarker = () => player.marker;
+  const sayName = () => console.log(`${getName()} is team ${getMarker()}!`);
 })();
