@@ -4,10 +4,12 @@ const GameFlow = (() => {
 
 })();
 
+// Score Board
 const GameBoard = (() => {
   const score = [];
 })();
 
+// Players
 const Controller = (() => {
   const player1 = {
     name: 'Player One',
