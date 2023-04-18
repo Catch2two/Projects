@@ -13,11 +13,24 @@ const gameModule = (() => {
 
 // Players
 const Controller = (() => {
-  const player = {
+  const player1 = {
     name: 'Player One',
     marker: 'X',
   };
-  const getName = () => player.name;
-  const getMarker = () => player.marker;
-  const sayName = () => console.log(`${getName()} is team ${getMarker()}!`);
+  const player2 = {
+    name: 'Player Two',
+    marker: 'O',
+  };
 })();
+
+function render() {
+  const ticTac = document.querySelector('gameGrid');
+  ticTac.innerHTML = '';
+  for (let i = 0; i < gameBoard.length; i += 1) {
+    const mark = gameBoard[i];
+    const markerBox = document.createElement('div');
+    markerBox.innerHTML = `
+    <p>${mark}</p>
+    `;
+  }
+}
