@@ -111,7 +111,7 @@ body {
     height: var(--mark-size);
     background-color: rgb(255, 255, 255);
 }
-/* Making My Own Symbol for X */
+/* Makes an X with Shape */
 .cell.x::before,
 .gameBoard.x .cell:hover::before {
     transform: rotate(45deg);

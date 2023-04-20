@@ -12,6 +12,8 @@ const WINNING_COMBINATIONS = [
 ]
 const cellElements = document.querySelectorAll('[data-cell]')
 const gameBoard = document.getElementById('gameBoard')
+const results = document.querySelector('.results')
+const winner = document.querySelector('[data-results]')
 let circleTurn
 
 // Start Game
@@ -37,10 +39,12 @@ function handleClick(e) {
   const cell = e.target
   const currentClass = circleTurn ? CIRCLE_CLASS : X_CLASS
   placeMark(cell, currentClass)
-  // Check if Win
-  // Check if Draw
-  // switch turns
-  swapTurns()
+  if (checkWin(currentClass)) {
+    gameOver(false)// Check if Win
+  } else if (checkDraw()) {
+    gameOver(true)
+  } else {  // Check if Draw
+  swapTurns()  // switch turns
   setBoardHoverClass()
 }
 
@@ -58,6 +62,30 @@ function setBoardHoverClass() {     // Hover Marker before Placing
   } else {
     gameBoard.classList.add(X_CLASS)
   }
+}
+
+function checkDraw() {
+  return [...cellElements].every(cell => {
+    return cell.classList.contains(X_CLASS) || cell.classList.contains(CIRCLE_CLASS)
+  })
+}
+
+function gameOver(draw) {
+  if (draw) {
+    winner.innerText = 'We have a Draw'
+  } else {
+    winner.innerText = `${circleTurn ? "O's" : "X's"} Wins`
+  }
+    results.classList.add('show')
+}
+
+function checkWin(currentClass) {
+  return WINNING_COMBINATIONS.some(combination => {
+    return combination.every(index => {
+      return cellElements[index].classList.contains(currentClass)
+    })
+  })
+}
 }
 
 
