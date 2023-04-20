@@ -12,8 +12,9 @@ const WINNING_COMBINATIONS = [
 ]
 const cellElements = document.querySelectorAll('[data-cell]')
 const gameBoard = document.getElementById('gameBoard')
-const results = document.querySelector('.results')
+const results = document.getElementById('resultsPage')
 const winner = document.querySelector('[data-results]')
+const restartButton = document.querySelector('.restartButton')
 let circleTurn
 
 // Start Game
@@ -24,11 +25,16 @@ restartButton.addEventListener('click', initializeGame)
 function initializeGame() {
   circleTurn = false
   cellElements.forEach(cell => {
+    cell.classList.remove(X_CLASS)
+    cell.classList.remove(CIRCLE_CLASS)
+    cell.removeEventListener('click', handleClick)
     cell.addEventListener('click', handleClick, { once: true })
   })
   setBoardHoverClass()
+  results.classList.remove('show')
 }
-
+setBoardHoverClass()
+results.classList.remove('show')
 cellElements.forEach(cell => {
   cell.addEventListener('click', handleClick, { once: true }) // Records click ONCE
 })
@@ -76,7 +82,7 @@ function gameOver(draw) {
   } else {
     winner.innerText = `${circleTurn ? "O's" : "X's"} Wins`
   }
-    results.classList.add('show')
+    results.classList.add('show') // Enables display for Match .Results in HTML
 }
 
 function checkWin(currentClass) {

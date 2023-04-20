@@ -24,8 +24,6 @@ body {
     color: white;
 }
 
-
-
 .menu {
     display: flex;
     flex-direction: column;
@@ -89,12 +87,6 @@ body {
     cursor: pointer;
 }
 
-
-
-
-
-
-
 /* Makes Cursor show You Cant Put a Marker There */
 .cell.x,
 .cell.circle {
@@ -150,33 +142,35 @@ body {
   background-color: rgb(129, 129, 129);
 }
 
-
-
-
-
-
-
 /* Results Overlay */
-.winning-results {
+#resultsPage {
     display: none;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.582);
+    top: 0;         /* Applies Dark Overlay */
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
     justify-content: center;
     align-items: center;
     color: white;
     flex-direction: column;
+    font-size: 5rem;
 }
-button.restartButton {
-    background-color: green;
-    color: white;
+#restartButton {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border: 1px solid transparent;
-    width: 100px;
-    height: 40px;
-    font-size: larger;
+    width: fit-content;
+    font-size: 3rem;
+    padding: .2em 1em;
+    border-radius: 5%;
+    cursor: pointer;
 }
-button.restartButton:active {
-    background-color: aliceblue;
+#resultsPage button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
-.winning-results.show {
+#resultsPage.show {
     display: flex;
 }
