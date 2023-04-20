@@ -88,7 +88,19 @@ body {
     align-items: center;
     cursor: pointer;
 }
-/* Adding an X to the Board */
+
+
+
+
+
+
+
+/* Makes Cursor show You Cant Put a Marker There */
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+/* X Marker*/
 .cell.x::before,
 .cell.x::after,
 .gameBoard.x .cell:not(.x):not(.circle):hover::before,
@@ -98,9 +110,6 @@ body {
     width: calc(var(--mark-size) * .04);
     height: var(--mark-size);
     background-color: rgb(255, 255, 255);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 /* Making My Own Symbol for X */
 .cell.x::before,
@@ -113,30 +122,40 @@ body {
 }
 /* Adding an O to the Board */
 .cell.circle::before,
-.cell.circle::after {
+.cell.circle::after,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::before,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::after {
     content: '';
     position: absolute;
     border-radius: 50%;
 }
-.cell.circle::before {
+/* Outside Circle Marker */
+.cell.circle::before,
+.gameBoard.circle .cell:not(.x):not(.circle):hover:before {
     width: var(--mark-size);
     height: var(--mark-size);
     background-color: rgb(255, 255, 255);
 }
-.cell.circle::after {
+/* Inside Circle Marker */
+.cell.circle::after,
+.gameBoard.circle .cell:not(.x):not(.circle):hover:after {
     width: calc(var(--mark-size) * .8);
     height: calc(var(--mark-size) * .8);
     background-color: rgb(32, 32, 32);
 }
-
-.cell.x,
-.cell.circle {
-    cursor: not-allowed;
+/* Hover Color */
+.gameBoard.x .cell:not(.x):not(.circle):hover::before,
+.gameBoard.x .cell:not(.x):not(.circle):hover::after,
+.gameBoard.circle .cell:not(.x):not(.circle):hover::before {
+  background-color: rgb(129, 129, 129);
 }
 
-.gameBoard.x .cell:hover {
 
-}
+
+
+
+
+
 /* Results Overlay */
 .winning-results {
     display: none;
