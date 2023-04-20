@@ -1,36 +1,51 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
-const GameFlow = (() => {
+// Tic Tac Toe Gameboard Module
+const Gameboard = (() => {
+  const gameBoard = ['', '', '', '', '', '', '', '', '']; // Board Array
+  const turnCount = 0;
 
-})();
-
-// Game Board Object
-const gameModule = (() => {
-  const gameBoard = ['X', 'X', 'O', 'X', 'O', 'X', 'O', 'O', 'O'];
-
-  return { gameBoard };
-})();
-
-// Players
-const Controller = (() => {
-  const player1 = {
-    name: 'Player One',
-    marker: 'X',
-  };
-  const player2 = {
-    name: 'Player Two',
-    marker: 'O',
-  };
-})();
-
-function render() {
-  const ticTac = document.querySelector('gameGrid');
-  ticTac.innerHTML = '';
-  for (let i = 0; i < gameBoard.length; i += 1) {
-    const mark = gameBoard[i];
-    const markerBox = document.createElement('div');
-    markerBox.innerHTML = `
-    <p>${mark}</p>
-    `;
-  }
+  const reset = () => {
+    gameBoard.board = ['', '', '', '', '', '', '', '', '']; // Reset Board Array
 }
+})(); // IIFE - Immediately Invoked Function Expression
+
+// Game Display and Logic Module
+const newGame = (() => {
+  const startGameButton = document.querySelector('.startGame')
+        gameContainer = document.querySelector('.gameContainer')
+        resetGameButton = document.querySelector('.restartButton')
+        gameBoardElements = document.querySelector('.gameBoard')
+        scoreBoard = document.querySelector('.scoreBoard')
+        newRound = document.querySelector('.roundInfo')
+        winConditions = [
+          [0, 1, 2],
+
+          [3, 4, 5],
+      
+          [6, 7, 8],
+      
+          [0, 3, 6],
+      
+          [1, 4, 7],
+      
+          [2, 5, 8],
+      
+          [0, 4, 8],
+      
+          [2, 4, 6]
+      
+        ];
+
+})();
+
+// Player Factory
+const Player = (player, marker) => { 
+  const welcome = () => console.log('Welcome', player + '!', 'You are', marker);
+  return { player, marker, welcome }
+  };
+
+const playerOne = Player('Josh', 'X');  // Create Player
+const playerTwo = Player('Meaghan', 'O');
+
+playerOne.welcome();
+playerTwo.welcome();
+

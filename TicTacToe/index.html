@@ -13,13 +13,13 @@
         <div class="banner">Banner</div>
     </div>    
     <div class="gameContainer">
-
             <div class="menu">
                 <h2>Gametype</h2>
                 <div class="selectType">
                     <button class="select-solo">Player vs Ai</button>
                     <button class="select-vs">Player vs Player</button>
                 </div>
+                <div class="roundInfo"></div>
             </div>
 
         <div class="scoreBoard">
@@ -28,16 +28,20 @@
         </div>
         <div class='gameBoardWrapper'>
             <div class='gameBoard'>
-                <div class='gameCard'id='0'></div>
-                <div class='gameCard'id='1'></div>
-                <div class='gameCard'id='2'></div>
-                <div class='gameCard'id='3'></div>
-                <div class='gameCard'id='4'></div>
-                <div class='gameCard'id='5'></div>
-                <div class='gameCard'id='6'></div>
-                <div class='gameCard'id='7'></div>
-                <div class='gameCard'id='8'></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
+                <div class='gameCard'data-gameCard></div>
             </div>
+    </div>
+    <div class="game-results" id="results">
+        <div id="winningPlayer"></div>
+        <button class="restartButton">Restart</button>
     </div>
 </body>
 <footer></footer>
