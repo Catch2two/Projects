@@ -1,6 +1,7 @@
 const X_CLASS = 'x'
 const CIRCLE_CLASS = 'circle'
 const cellElements = document.querySelectorAll('[data-cell]')
+const gameBoard = document.getElementById('gameBoard')
 let circleTurn
 
 cellElements.forEach(cell => {
@@ -15,47 +16,24 @@ function handleClick(e) {
   // Check if Win
   // Check if Draw
   // switch turns
+  swapTurns()
+  setBoardHoverClass()
 }
 
 function placeMark(cell, currentClass) {
   cell.classList.add(currentClass)
 }
+function swapTurns() {    // Rotates X to O
+  circleTurn = !circleTurn
+}
+function setBoardHoverClass() {
 
-
-
-const startGameButton = document.querySelector('.startGame')
-const gameContainer = document.querySelector('.gameContainer')
-const resetGameButton = document.querySelector('.restartButton')
-const scoreBoard = document.querySelector('.scoreBoard')
-const roundNumber = document.querySelector('.roundInfo')
-const winConditions = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],      
-  [0, 3, 6],      
-  [1, 4, 7],      
-  [2, 5, 8],      
-  [0, 4, 8],
-  [2, 4, 6]
-];
-
-
-
-// Tic Tac Toe Gameboard Module
-const Gameboard = (() => {
-  const gameboardArray = ['', '', '', '', '', '', '', '', '']; // Board Array
-  const getGameboard = () => {
-    console.log(gameboardArray);
-    return gameboardArray;
-
-  }
-
-  const reset = () => {
-    gameBoard.board = ['', '', '', '', '', '', '', '', '']; // Reset Board Array
 }
 
-  return { getGameboard, reset }
-})(); // IIFE - Immediately Invoked Function Expression
+
+
+
+// IIFE - Immediately Invoked Function Expression
 
 // Game Display and Logic Module
 
