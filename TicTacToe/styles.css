@@ -1,4 +1,13 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+/* Creating Variable to use for Markers and Cells */
+:root {
+    --cell-size: 250px;
+    --mark-size: calc(var(--cell-size) * 0.7); /*Use 90% of Cell*/
+}
 body {
+    margin: 0;
     background-color: rgb(76, 76, 85);
 }
 
@@ -54,23 +63,8 @@ body {
     font-size: 64px;
     color: white;
 }
-button.restartButton {
-    background-color: green;
-    color: white;
-    border: 1px solid transparent;
-    width: 100px;
-    height: 40px;
-    font-size: larger;
-}
-button.restartButton:active {
-    background-color: aliceblue;
-}
 
-#results {
-    text-align: center;
-    margin-top: 5%;
-}
-
+/* Tic Tac Toe Gameboard */
 .gameBoard {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -82,14 +76,88 @@ button.restartButton:active {
     height: 800px;
     margin: auto;
 }
-
-.gameCard {
+/* Align, Position, Edit the Contents within the Cells */
+.cell {
+    position: relative;
     border: 1px solid white;
     width: 200px;
     height: 200px;
     margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
-.gameCard:active {
-    box-shadow: 0px 0px 15px rgb(255, 255, 255);
-    background-color: rgba(218, 218, 218, 0.473);
+/* Adding an X to the Board */
+.cell.x::before,
+.cell.x::after,
+.gameBoard.x .cell:not(.x):not(.circle):hover::before,
+.gameBoard.x .cell:not(.x):not(.circle):hover::after {
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size) * .04);
+    height: var(--mark-size);
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Making My Own Symbol for X */
+.cell.x::before,
+.gameBoard.x .cell:hover::before {
+    transform: rotate(45deg);
+}
+.cell.x::after,
+.gameBoard.x .cell:hover::after  {
+    transform: rotate(-45deg);
+}
+/* Adding an O to the Board */
+.cell.circle::before,
+.cell.circle::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+}
+.cell.circle::before {
+    width: var(--mark-size);
+    height: var(--mark-size);
+    background-color: rgb(255, 255, 255);
+}
+.cell.circle::after {
+    width: calc(var(--mark-size) * .8);
+    height: calc(var(--mark-size) * .8);
+    background-color: rgb(32, 32, 32);
+}
+
+.cell.x,
+.cell.circle {
+    cursor: not-allowed;
+}
+
+.gameBoard.x .cell:hover {
+
+}
+/* Results Overlay */
+.winning-results {
+    display: none;
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.582);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    flex-direction: column;
+}
+button.restartButton {
+    background-color: green;
+    color: white;
+    border: 1px solid transparent;
+    width: 100px;
+    height: 40px;
+    font-size: larger;
+}
+button.restartButton:active {
+    background-color: aliceblue;
+}
+.winning-results.show {
+    display: flex;
 }
