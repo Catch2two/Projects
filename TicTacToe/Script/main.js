@@ -14,7 +14,7 @@ const cellElements = document.querySelectorAll('[data-cell]')
 const gameBoard = document.getElementById('gameBoard')
 const results = document.getElementById('resultsPage')
 const winner = document.querySelector('[data-results]')
-const restartButton = document.querySelector('.restartButton')
+const restartButton = document.getElementById('restartButton')
 let circleTurn
 
 // Start Game
@@ -30,11 +30,9 @@ function initializeGame() {
     cell.removeEventListener('click', handleClick)
     cell.addEventListener('click', handleClick, { once: true })
   })
-  setBoardHoverClass()
-  results.classList.remove('show')
+  results.classList.remove('show') //Removes Overlay
 }
-setBoardHoverClass()
-results.classList.remove('show')
+
 cellElements.forEach(cell => {
   cell.addEventListener('click', handleClick, { once: true }) // Records click ONCE
 })
