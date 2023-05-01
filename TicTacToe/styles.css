@@ -16,40 +16,17 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: rgb(123, 123, 129);
-    height: 150px;
+    height: 50px;
     font-size: 2rem;
+}
+.title,
+.banner {
+    margin: 10%;
 }
 
 .gameContainer {
     color: white;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: auto;
-    width: 500px;
-    background-color: rgb(76, 76, 85);
-    color: white;
-}
-.selectType button {
-    color: white;
-    height: 100px;
-    width: 200px;
-    border: 1px solid black;
-}
-
-.select-solo {
-    background-color: red;
-}
-
-.select-vs {
-    background-color: blue;
-}
-.select-solo:active,
-.select-vs:active {
-    background-color: rgb(255, 255, 255);
+    position: absolute;
 }
 
 .scoreBoard {

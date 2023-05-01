@@ -46,6 +46,8 @@ header {
 .modal {
     background-color: transparent;
     gap: 5px;
+    display: flex;
+    justify-content: center;
     
 }
 h3 {
