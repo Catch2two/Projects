@@ -6,12 +6,12 @@
     background-color: bisque;
     font-size: 88px;
 }
-#about {
+.about {
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-size: 24px;
 }
-#about img{
+.about img{
     display: flex;
 }
 .menu {
