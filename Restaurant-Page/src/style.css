@@ -7,13 +7,19 @@
     font-size: 88px;
 }
 #about {
-    display: flex;
-    margin-left: 15%;
-    margin-right: 15%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     font-size: 24px;
+}
+#about img{
+    display: flex;
 }
 .menu {
     text-align: center;
+    padding: 50px;
+}
+h1 {
+    padding: 40px;
 }
 
 .columns {
