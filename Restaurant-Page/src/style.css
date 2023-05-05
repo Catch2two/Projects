@@ -1,10 +1,10 @@
 * {
-    
+   background-color: antiquewhite; 
 }
 .header {
     text-align: center;
     background-color: bisque;
-    font-size: 88px;
+    font-size: 58px;
 }
 .about {
     display: grid;
@@ -30,4 +30,13 @@ h1 {
     display: flex;
     height: 100px;
     justify-content: center;
+}
+menu.li {
+    font-size: 24px;
+}
+.rightMenu {
+    background-color: rgba(0, 255, 255, 0.164);
+}
+.leftMenu {
+    background-color: rgba(255, 0, 0, 0.199);
 }

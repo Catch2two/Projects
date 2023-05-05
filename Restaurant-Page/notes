@@ -1,0 +1,27 @@
+/*function createMenu() {
+    const menu = document.createElement("div");
+    menu.classList.add("menu");
+    menu.innerHTML = "<h1>Menu</h1>";
+    content.appendChild(menu);
+// Menu Lists
+    const columns = document.createElement("div")
+    columns.classList.add("columns");
+    menu.appendChild(columns)
+// Left Menu
+    const columnLeft = document.createElement("div");
+    columnLeft.classList.add("columnLeft");
+    columns.appendChild(columnLeft);
+// Left List
+    const leftList = document.createElement('li');
+    leftList.classList.add("leftList")
+    columnLeft.appendChild(leftList)
+// Right Menu
+    const columnRight = document.createElement("div");
+    columnRight.classList.add("columnRight");
+    columns.appendChild(columnRight);
+// Right List
+    const rightList = document.createElement('li');
+    rightList.classList.add("rightList")
+    columnRight.appendChild(rightList)   
+  };
+}*/
