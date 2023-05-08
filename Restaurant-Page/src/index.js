@@ -10,6 +10,8 @@ import about from "./pages/about";
 // functions
 import render from "/functions/render";
 
+const menuBtn = document.createElement("button")
+
 menuBtn.addEventListener('click', function(){
     render()
     home()
