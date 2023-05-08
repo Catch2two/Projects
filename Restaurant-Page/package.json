@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "csv-loader": "^3.0.5",
     "webpack": "^5.82.0",
-    "webpack-cli": "^5.0.2"
+    "webpack-cli": "^5.0.2",
+    "xml-loader": "^1.2.1"
   }
 }
