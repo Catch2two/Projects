@@ -3,8 +3,9 @@
 }
 html,
 body {
+    border: 2px solid black;
     margin: auto;
-    width: 75%;
+    width: 80%;
     height: 100%;
     text-align: left;
     justify-content: center;
@@ -29,11 +30,23 @@ body {
 
 /*About*/
 .about {
-    display: flex;
+    border-bottom: 3px solid white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.about img{
+    grid-column: 1;
+}
+.title {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(250, 228, 215);
+    grid-column: 2;
 }
 .aboutInfo {
     margin: 0;
-    background-color: rgba(239, 103, 103, 0.164);
+    background-color: rgba(239, 103, 103, 0.477);
     padding: 5%;
 
 }
