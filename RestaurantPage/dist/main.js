@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("About"),console.log("Menu"),console.log("Banner"),console.log("Home"),console.log("Hi"),console.log("josh")})();
+(()=>{"use strict";(function(){const o=document.querySelector("#content"),e=document.createElement("div");e.id="about-background",o.appendChild(e),console.log("abs")})(),console.log("Menu"),console.log("Banner"),console.log("Home"),console.log("Hi"),console.log("josh")})();
