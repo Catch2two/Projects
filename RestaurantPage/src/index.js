@@ -5,9 +5,9 @@ import menu from "./pages/menu";
 import about from "./pages/about";
 
 // Test
+banner()
 about()
 menu()
-banner()
 home()
 console.log("Hi")
 console.log("josh")

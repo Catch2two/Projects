@@ -6,10 +6,10 @@ const banner = function(){
     content.appendChild(banner)
     console.log("Banner")
 
-    const bannerInfo = document.createElement("p");
-    bannerInfo.classList.add("bannerInfo");
-    bannerInfo.innerHTML = "<h1>About Us</h1>"
-    banner.appendChild(bannerInfo);
+    const bannerTitle = document.createElement("p");
+    bannerTitle.classList.add("bannerTitle");
+    bannerTitle.innerHTML = "<h1>Marv McRubaton Nightly Meat Market</h1>"
+    banner.appendChild(bannerTitle);
 }
 
 export default banner;

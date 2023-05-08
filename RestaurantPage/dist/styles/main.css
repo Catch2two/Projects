@@ -1,15 +1,29 @@
 @font-face {
-    font-family: sw;
-    src: url(../fonts/sw.ttf);
+
 }
-* {
-    margin: 0;
+html,
+body {
+    margin: auto;
+    width: 75%;
+    height: 100%;
+    text-align: left;
+    justify-content: center;
     background-color: antiquewhite;
 }
 
 /*Banner*/
 
 .banner {
+    color: white;
+    text-shadow: 2px 1px 1px black;
+    width: auto;
+    padding: 2%;
+    border-bottom: 2px solid black;
+    background-image: url(https://as2.ftcdn.net/v2/jpg/03/59/86/55/1000_F_359865519_H5OPBm9bqpu8UWvr2OGf6afr1O8TB0nJ.jpg);
+    background-repeat: no-repeat;
+    background-size: initial;
+    background-position: right;
+    opacity: 0.99;;
 
 }
 
@@ -18,7 +32,8 @@
     display: flex;
 }
 .aboutInfo {
-    background-color: rgba(239, 103, 103, 0.386);
+    margin: 0;
+    background-color: rgba(239, 103, 103, 0.164);
     padding: 5%;
 
 }
