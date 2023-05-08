@@ -20,7 +20,7 @@ window.onload = () => {
     about.appendChild(aboutInfo);
 
 // Menu
-
+//
     const menu = document.createElement("div");
     menu.classList.add("menu");
     menu.innerHTML = "<h1>Menu</h1>";
@@ -39,16 +39,37 @@ window.onload = () => {
     columns.appendChild(columnRight);
 
 
-// Adding to Menu (Left)
+// Adding to Menu List (Left)
+function addMenuList() {}
+for (let i = 0; i < 6; i++) {
     const leftMenu = document.createElement('li');
     leftMenu.classList.add('leftMenu')
-    leftMenu.textContent = "This is a new list item";
+    leftMenu.textContent = `Menu Entry ${i + 1}`;
     columnLeft.appendChild(leftMenu);
-// Adding to Menu (right)
+  }
+// Adding to Menu List (right)
+for (let j = 0; j < 6; j++) {
     const rightMenu = document.createElement('li');
-    rightMenu.classList.add("rightMenu");
-    rightMenu.textContent = "This is a new list item";
+    rightMenu.classList.add('rightMenu')
+    rightMenu.textContent = `Menu Entry ${j + 1}`;
     columnRight.appendChild(rightMenu);
+  }
+const listItemsL = columnLeft.querySelectorAll('li');
+const listItemsR = columnRight.querySelectorAll('li');
+// Left
+listItemsL[0].textContent = "Fish";
+listItemsL[1].textContent = "Taco";
+listItemsL[2].textContent = "Pizza";
+listItemsL[3].textContent = "Soup";
+listItemsL[4].textContent = "Burrito";
+listItemsL[5].textContent = "Salad";
+// Right
+listItemsR[0].textContent = "Chicken";
+listItemsR[1].textContent = "Potato";
+listItemsR[2].textContent = "Bread";
+listItemsR[3].textContent = "Chili";
+listItemsR[4].textContent = "Burger";
+listItemsR[5].textContent = "Turkey Burger";
 }
 // Footer
 
