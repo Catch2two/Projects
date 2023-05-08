@@ -2,6 +2,7 @@ const path = require('path');
 
 module.exports = {
     entry: "./src/index.js",
+    mode: 'development',
     module: {
       rules: [
         {
@@ -18,6 +19,10 @@ module.exports = {
               outputPath: "imgs"
             }
           }
+        },
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
         },
         {
           test: /\.(woff|woff2|eot|ttf|otf)$/,

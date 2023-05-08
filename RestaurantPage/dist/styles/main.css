@@ -1,0 +1,24 @@
+@font-face {
+    font-family: sw;
+    src: url(../fonts/sw.ttf);
+}
+* {
+    margin: 0;
+    background-color: antiquewhite;
+}
+
+/*Banner*/
+
+.banner {
+
+}
+
+/*About*/
+.about {
+    display: flex;
+}
+.aboutInfo {
+    background-color: rgba(239, 103, 103, 0.386);
+    padding: 5%;
+
+}
