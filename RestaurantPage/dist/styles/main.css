@@ -12,6 +12,7 @@ body {
 }
 #content {
     background-color: rgb(255, 232, 232);
+    border: 2px solid black;
 }
 /*Banner*/
 
@@ -28,7 +29,17 @@ body {
     opacity: 0.99;;
 
 }
+/* Buttons */
+.buttonContainer {
+    display: grid;
+    border-bottom: 2px solid black;
+    height: 6%;
+    background-color: rgba(255, 147, 147, 0.471);
+}
+button {
+    grid-row: 1;
 
+}
 /*About*/
 .about {
     border-bottom: 3px solid white;
