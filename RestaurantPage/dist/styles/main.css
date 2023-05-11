@@ -3,7 +3,6 @@ body {
     display: flex;
     border: 2px solid black;
     margin: auto;
-    width: 900px;
     height: 100%;
     text-align: left;
     justify-content: center;
@@ -11,8 +10,9 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 #content {
+    width: 900px;
     background-color: rgb(255, 232, 232);
-    border: 2px solid;
+    border: 2px;
 }
 /*Banner*/
 
@@ -38,6 +38,7 @@ body {
 }
 button {
     grid-row: 1;
+    cursor: pointer;
 
 }
 /*About*/

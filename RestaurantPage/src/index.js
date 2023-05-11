@@ -4,20 +4,19 @@ import menu from "./pages/menu";
 import about from "./pages/about";
 
 // Banner Buttons
-const banner = function(){
+function banner() {
     const content = document.querySelector("#content");
 
     const banner = document.createElement("div")
     banner.classList.add("banner")
     content.appendChild(banner)
-    console.log("Banner")
 
     const bannerTitle = document.createElement("p");
     bannerTitle.classList.add("bannerTitle");
     bannerTitle.innerHTML = "<h1>Marv McRubaton Nightly Meat Market</h1>"
     banner.appendChild(bannerTitle);
 }
-// Buttons
+// Buttons Added
 function buttons() {
     const buttonContainer = document.createElement("div");
     buttonContainer.classList.add("buttonContainer");
@@ -39,23 +38,30 @@ function buttons() {
     menuButton.classList.add("menuButton");
     menuButton.innerText = "Menu";
     buttonContainer.appendChild(menuButton);
+
+// Button Actions
+    homeButton.addEventListener("click", () => {
+        content.innerHTML = "";
+        init();
+        home();
+    })
+
+    aboutButton.addEventListener("click", () => {
+      content.innerHTML = "";
+      init();
+      about();
+    });
+
+    menuButton.addEventListener("click", () => {
+        content.innerHTML = "";
+        init();
+        menu();
+    })
 }
 
+// Always load Banner on every page
 function init() {
     banner()
     buttons()
 }
-
-// Always load Banner on every page
 document.addEventListener("DOMContentLoaded", init);
-
-
-// Test
-/*
-about()
-menu()
-home()
-console.log("Hi")
-console.log("josh")
-
-*/

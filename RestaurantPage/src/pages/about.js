@@ -24,7 +24,6 @@ const about = function(){
     about.appendChild(aboutInfo);
 
     // 
-        console.log("About")
 }
 
 export default about;
