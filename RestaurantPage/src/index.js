@@ -44,12 +44,12 @@ function buttons() {
         content.innerHTML = "";
         init();
         home();
-    })
+    });
 
     aboutButton.addEventListener("click", () => {
-      content.innerHTML = "";
-      init();
-      about();
+        content.innerHTML = "";
+        init();
+        about();
     });
 
     menuButton.addEventListener("click", () => {

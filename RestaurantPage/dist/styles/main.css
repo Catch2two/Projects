@@ -41,6 +41,15 @@ button {
     cursor: pointer;
 
 }
+/*Home*/
+.home {
+    
+}
+
+ul {
+    background-color: rgba(255, 183, 176, 0.486);
+    font-size: large;
+}
 /*About*/
 .about {
     border-bottom: 3px solid white;
