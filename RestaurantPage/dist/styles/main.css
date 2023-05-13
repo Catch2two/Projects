@@ -1,7 +1,6 @@
 html,
 body {
     display: flex;
-    border: 2px solid black;
     margin: auto;
     height: 100%;
     text-align: left;
@@ -10,9 +9,9 @@ body {
     font-family: 'Josefin Sans', sans-serif;
 }
 #content {
+    border: 2px solid black;
     width: 900px;
     background-color: rgb(255, 232, 232);
-    border: 2px;
 }
 /*Banner*/
 
@@ -47,12 +46,19 @@ button {
 }
 
 ul {
-    background-color: rgba(255, 183, 176, 0.486);
+    height: 100%;
     font-size: large;
+    padding: 5%;
+    list-style-type: none;
+}
+ul li img{
+    width: 25px;
+}
+h5 {
+    margin-left: 50px;
 }
 /*About*/
 .about {
-    border-bottom: 3px solid white;
     display: grid;
     grid-template-columns: 1fr 1fr;
     font-weight: 300;

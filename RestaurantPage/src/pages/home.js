@@ -9,20 +9,44 @@ const home = function() {
     const title = document.createElement('h1');
     title.classList.add("title");
     title.textContent = 'Welcome, here are our Hours!';
-    content.appendChild(title);
+    home.appendChild(title);
+
+    const openTimeContainer = document.createElement('div');
+    openTimeContainer.classList.add('openTimeCont');
 
     const openTime = document.createElement('ul');
 
     openTime.innerHTML = `
-    <li>Monday</li>
-    <li>Tuesday</li>
-    <li>Wednesday</li>
-    <li>Thursday</li>
-    <li>Friday</li>
-    <li>Saturday</li>
-    <li>Sunday</li>
+    <li><img src="/src/assets/monday.png">Monday 
+    <h5>3am - 9pm</h5>
+    </li>
+
+    <li><img src="/src/assets/tuesday.png">Tuesday 
+    <h5>3am - 9pm</h5>
+    </li>
+
+    <li><img src="/src/assets/wednesday.png">Wednesday 
+    <h5>3am - 9pm</h5>
+    </li>
+
+    <li><img src="/src/assets/thursday.png">Thursday 
+    <h5>3am - 9pm</h5>
+    </li>
+
+    <li><img src="/src/assets/friday.png">Friday 
+    <h5>3am - 9pm</h5>
+    </li>
+
+    <li><img src="/src/assets/saturday.png">Saturday 
+    <h5>3am - 9pm</h5>
+    </li>
+
+    <li><img src="/src/assets/sunday.png">Sunday 
+    <h5>3am - 9pm</h5>
+    </li>
+
     `;
-    content.appendChild(openTime);
+    home.appendChild(openTime);
 }
 
 export default home;
