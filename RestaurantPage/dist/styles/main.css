@@ -5,11 +5,11 @@ body {
     height: 100%;
     text-align: left;
     justify-content: center;
-    background-color: antiquewhite;
+    background-color: rgb(193, 181, 181);
     font-family: 'Josefin Sans', sans-serif;
 }
 #content {
-    border: 2px solid black;
+    border: 1px solid black;
     width: 900px;
     height: 100%;
     background-color: rgb(255, 232, 232);
@@ -17,11 +17,11 @@ body {
 /*Banner*/
 
 .banner {
-    color: white;
+    color: rgb(246, 246, 98);
     text-shadow: 2px 1px 1px black;
     width: auto;
     padding: 2%;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     background-image: url(https://as2.ftcdn.net/v2/jpg/03/59/86/55/1000_F_359865519_H5OPBm9bqpu8UWvr2OGf6afr1O8TB0nJ.jpg);
     background-repeat: no-repeat;
     background-size: initial;
@@ -32,7 +32,7 @@ body {
 /* Buttons */
 .buttonContainer {
     display: grid;
-    border-bottom: 2px solid black;
+    border-bottom: 1px solid black;
     height: 6%;
     background-color: rgba(255, 147, 147, 0.471);
 }
@@ -43,7 +43,8 @@ button {
 }
 /*Home*/
 .home {
-    
+    background-image: url(/src/assets/welcome.jpg);
+    background-size: 100%;
 }
 
 ul {
@@ -67,6 +68,7 @@ h5 {
     font-weight: 300;
 }
 .about img{
+    width: 500px;
     grid-column: 1;
 }
 .title {
@@ -99,17 +101,21 @@ h5 {
 .menuList div {
     font-weight: 900;
     color: antiquewhite;
+    cursor: pointer;
     background-color: rgba(255, 206, 194, 0.74);
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.673);
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid rgba(0, 0, 0, 0.673);
-  }
-.grid-item {
-    padding: 20%;
+    border: 1px solid black;
+    -webkit-text-filter: blur(0);
+    overflow: hidden;
+      /* This will prevent the text from blurring */
+    -webkit-text-filter: blur(0);
+    user-select: none;
 }
+
 .pork {
     background-image: url(/src/assets/pork.jpg);
     background-size: cover;
@@ -150,4 +156,15 @@ h5 {
     background-image: url(/src/assets/specials.jpg);
     background-size: cover;
     background-position: center;
+}
+.menuList div:hover {
+    filter: none;
+    opacity: 0.8;
+    transition: opacity 0.5s;
+    transition-delay: 0s;
+  }
+.menuList div:active {
+    filter: blur(5px);
+    border-color: white;
+    transition: 0.2s;
 }

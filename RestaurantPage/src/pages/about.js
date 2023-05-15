@@ -1,19 +1,19 @@
 const about = function(){
     const content = document.querySelector("#content");
 
+    const title = document.createElement('h1');
+    title.classList.add("title");
+    title.textContent = 'About Us'
+    content.appendChild(title)
+
     // About Div
     const about = document.createElement("div");
     about.classList.add("about");
     content.appendChild(about);
 
-    const title = document.createElement('h1');
-    title.classList.add("title");
-    title.textContent = 'About Us'
-
-    about.appendChild(title)
     // About Img
     const img = document.createElement("img");
-    img.src = "/src/assets/food.png";
+    img.src = "/src/assets/about.jpg";
     about.appendChild(img);
 
     // About Info

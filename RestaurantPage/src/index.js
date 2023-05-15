@@ -14,7 +14,7 @@ function banner() {
 
     const bannerTitle = document.createElement("p");
     bannerTitle.classList.add("bannerTitle");
-    bannerTitle.innerHTML = "<h1>Marv McRubaton Nightly Meat Market</h1>"
+    bannerTitle.innerHTML = "<h1>Marvelous Mr. Food's Kitchen</h1>"
     banner.appendChild(bannerTitle);
 }
 // Buttons Added
@@ -66,3 +66,4 @@ function init() {
     buttons();
 }
 
+// Footer
