@@ -4,7 +4,6 @@ import menu from "./pages/menu";
 import about from "./pages/about";
 // Initial Load to Home Page.
 init()
-home()
 // Banner Buttons
 function banner() {
     const content = document.querySelector("#content");
@@ -66,3 +65,4 @@ function init() {
     banner();
     buttons();
 }
+

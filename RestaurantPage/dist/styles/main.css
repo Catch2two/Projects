@@ -11,6 +11,7 @@ body {
 #content {
     border: 2px solid black;
     width: 900px;
+    height: 100%;
     background-color: rgb(255, 232, 232);
 }
 /*Banner*/
@@ -46,6 +47,8 @@ button {
 }
 
 ul {
+    align-content: end;
+    text-align: center;
     height: 100%;
     font-size: large;
     padding: 5%;
@@ -78,4 +81,25 @@ h5 {
     background-color: rgba(239, 103, 103, 0.477);
     padding: 10%;
 
+}
+
+/* Menu */
+.menu {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(250, 228, 215);
+}
+.menuList {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 48px;
+    height: 700px;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: aliceblue;
+}
+
+.grid-item:nth-of-type(1) {
+    background-color: red;
 }
