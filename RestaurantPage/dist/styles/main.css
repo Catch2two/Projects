@@ -91,15 +91,63 @@ h5 {
 }
 .menuList {
     display: grid;
-    justify-content: center;
-    align-items: center;
     text-align: center;
     font-size: 48px;
     height: 700px;
     grid-template-columns: 1fr 1fr 1fr;
-    background-color: aliceblue;
 }
-
-.grid-item:nth-of-type(1) {
-    background-color: red;
+.menuList div {
+    font-weight: 900;
+    color: antiquewhite;
+    background-color: rgba(255, 206, 194, 0.74);
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.673);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.673);
+  }
+.grid-item {
+    padding: 20%;
+}
+.pork {
+    background-image: url(/src/assets/pork.jpg);
+    background-size: cover;
+}
+.chicken {
+    background-image: url(/src/assets/chickenburger.png);
+}
+.fish {
+    background-image: url(/src/assets/salmon.png);
+    background-size: 150%;
+    background-position: center;
+}
+.steaks {
+    background-image: url(/src/assets/steaks.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+.drinks {
+    background-image: url(/src/assets/drinks.jpg);
+    background-position: center;
+    background-size: cover;
+}
+.veggies {
+    background-image: url(/src/assets/veggies.jpg);
+    background-size: cover;
+}
+.desserts {
+    background-image: url(/src/assets/desserts.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.sides {
+    background-image: url(/src/assets/sides.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+.specials{
+    background-image: url(/src/assets/specials.jpg);
+    background-size: cover;
+    background-position: center;
 }

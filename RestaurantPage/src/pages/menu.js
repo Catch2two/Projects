@@ -26,10 +26,11 @@ const menu = function() {
         ['Veggies'],
         ['Sides'],
         ['Drinks'],
-        ['Deserts'],
-        ['Special Menu']]) {
+        ['Desserts'],
+        ['Specials']]) {
         const div = document.createElement('div');
         div.textContent = item;
+        div.classList.add(item[0].toLowerCase());
         menuList.appendChild(div);
     }
 };
