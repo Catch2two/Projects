@@ -1,5 +1,3 @@
-import UI from './UI';
-
 export default function() {
     const content = document.querySelector('#content');
 
