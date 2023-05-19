@@ -1,11 +1,16 @@
-import buttons from './modules/buttons'
-import todo1 from './modules/todo1'
-import todo1 from './modules/todo2'
-import todo1 from './modules/todo3'
-import render from './modules/render'
+import buttons from './modules/buttons';
+import todo1 from './modules/todo1';
 
-todo1()
-todo2()
-todo3()
-render()
-buttons();
+const index = function() {
+  const content = document.querySelector('#content');
+
+  buttons();
+
+  const button1 = document.querySelector('#important-tasks');
+  button1.addEventListener('click', function() {
+    todo1.render();
+    console.log('Button One Clicked');
+  });
+};
+
+index();
