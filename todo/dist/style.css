@@ -4,8 +4,8 @@ body {
 }
 
 #header {
+    text-align: center;
     height: 100px;
-    border: 1px solid black;
     background-color: rgb(74, 74, 74);
 }
 #content {
@@ -14,12 +14,64 @@ body {
     height: 800px;
     
 }
+/*Buttons*/
 button {
+    color: white;
+    font-size: 18px;
     width: 100%;
     height: 5%;
+    border: 1px solid;
+    cursor: pointer;
+    animation: blink 2s infinite;
+}
+@keyframes blink {
+    0% {
+      background-color: rgb(99, 185, 255);
+    }
+    25% {
+        background-color: rgb(0, 174, 255);
+      }
+    50% {
+      background-color: rgb(94, 169, 255);
+    }
+    75% {
+
+      background-color: rgb(33, 159, 255);
+    }
+    100% {
+        background-color: rgb(99, 185, 255);
+    }
+}
+button:hover {
+    color: rgb(0, 145, 255);
+    font-size: larger;
+    background-color: rgb(163, 212, 255);
+    animation: none;
+    border: transparent;
 }
 
+/* Footer */
+
+  @keyframes blinkBorder {
+    0% {
+      border-top-color: rgb(11,141,255)
+    }
+    25% {
+      border-top-color: rgb(11,141,255)
+    }
+    50% {
+      border-top-color: transparent;
+    }
+    75% {
+      border-top-color: rgb(168, 214, 255)
+    }
+    100% {
+        border-top-color: rgb(11,141,255)
+    }
+}
 #footer {
     height: 100px;
     background-color: rgb(74, 74, 74);
+    border-top: 3px solid;
+    animation: blinkBorder 5s infinite;
 }
