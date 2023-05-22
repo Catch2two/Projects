@@ -7,17 +7,8 @@
  * If you are looking for production-ready output files, see mode: "production" (https://webpack.js.org/configuration/mode/).
  */
 /******/ (() => { // webpackBootstrap
+/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
-
-/***/ "./src/css/todo1.css":
-/*!***************************!*\
-  !*** ./src/css/todo1.css ***!
-  \***************************/
-/***/ (() => {
-
-eval("\n\n//# sourceURL=webpack://todo/./src/css/todo1.css?");
-
-/***/ }),
 
 /***/ "./src/index.js":
 /*!**********************!*\
@@ -25,8 +16,7 @@ eval("\n\n//# sourceURL=webpack://todo/./src/css/todo1.css?");
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_buttons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/buttons */ \"./src/modules/buttons.js\");\n/* harmony import */ var _modules_todo1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/todo1 */ \"./src/modules/todo1.js\");\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n/* harmony import */ var _css_todo1_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./css/todo1.css */ \"./src/css/todo1.css\");\n/* harmony import */ var _css_todo1_css__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_css_todo1_css__WEBPACK_IMPORTED_MODULE_3__);\n\r\n\r\n\r\n// Styles\r\n\r\n// Calls\r\n(0,_modules_buttons__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_render__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\n//# sourceURL=webpack://todo/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_buttons__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/buttons */ \"./src/modules/buttons.js\");\n/* harmony import */ var _modules_todo1__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/todo1 */ \"./src/modules/todo1.js\");\n/* harmony import */ var _modules_render__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/render */ \"./src/modules/render.js\");\n\r\n\r\n\r\n// Styles\r\n\r\n// Calls\r\n(0,_modules_buttons__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n(0,_modules_todo1__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n//render();\n\n//# sourceURL=webpack://todo/./src/index.js?");
 
 /***/ }),
 
@@ -36,7 +26,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst buttons = function() {\r\n\r\n    const div = document.createElement('div');\r\n    div.classList.add('buttons');\r\n  \r\n    const button1 = document.createElement('button');\r\n    button1.textContent = 'Important Tasks';\r\n    button1.addEventListener('click', function() {\r\n      console.log('Button One Clicked');\r\n    });\r\n    div.appendChild(button1);\r\n  \r\n    const button2 = document.createElement('button');\r\n    button2.textContent = 'Weekly Tasks';\r\n    button2.addEventListener('click', function() {\r\n      console.log('Button Two Clicked')\r\n    });\r\n    div.appendChild(button2);\r\n  \r\n    const button3 = document.createElement('button');\r\n    button3.textContent = 'Daily Tasks';\r\n    button3.addEventListener('click', function() {\r\n      console.log('Button Three Clicked')\r\n    });\r\n    div.appendChild(button3);\r\n  \r\n    document.querySelector('#content').appendChild(div);\r\n  }\r\n  /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (buttons);\n\n//# sourceURL=webpack://todo/./src/modules/buttons.js?");
 
 /***/ }),
@@ -47,7 +36,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst render = function() {\r\n    const content = document.querySelector('#content');\r\n  \r\n    const importantTasks = document.createElement('div');\r\n    importantTasks.textContent = 'Important Tasks';\r\n    importantTasks.style.border = '1px solid black';\r\n    importantTasks.style.padding = '10px';\r\n    content.appendChild(importantTasks);\r\n  \r\n    const task1 = document.createElement('div');\r\n    task1.textContent = 'Task 1';\r\n    task1.style.border = '1px solid gray';\r\n    task1.style.padding = '5px';\r\n    importantTasks.appendChild(task1);\r\n  \r\n    const task2 = document.createElement('div');\r\n    task2.textContent = 'Task 2';\r\n    task2.style.border = '1px solid gray';\r\n    task2.style.padding = '5px';\r\n    importantTasks.appendChild(task2);\r\n  \r\n    const task3 = document.createElement('div');\r\n    task3.textContent = 'Task 3';\r\n    task3.style.border = '1px solid gray';\r\n    task3.style.padding = '5px';\r\n    importantTasks.appendChild(task3);\r\n  }\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (render);\n\n//# sourceURL=webpack://todo/./src/modules/render.js?");
 
 /***/ }),
@@ -58,8 +46,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst todo1 = function() {\r\n    const content = document.querySelector('#content');\r\n\r\n    const importantTasks = document.createElement('div');\r\n    importantTasks.textContent = 'Important Tasks';\r\n    content.appendChild(importantTasks);\r\n  \r\n    const task1 = document.createElement('div');\r\n    task1.textContent = 'Task 1';\r\n    importantTasks.appendChild(task1);\r\n  \r\n    const task2 = document.createElement('div');\r\n    task2.textContent = 'Task 2';\r\n    importantTasks.appendChild(task2);\r\n  \r\n    const task3 = document.createElement('div');\r\n    task3.textContent = 'Task 3';\r\n    importantTasks.appendChild(task3);\r\n}\r\n\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todo1);\n\n//# sourceURL=webpack://todo/./src/modules/todo1.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nconst todo1 = function() {\r\n    const content = document.querySelector('#content');\r\n\r\n    const importantTasks = document.createElement('div');\r\n    importantTasks.textContent = 'Important Tasks';\r\n    content.appendChild(importantTasks);\r\n\r\n    const tasks = [\r\n        {\r\n            id: 'task1',\r\n            text: 'Task 1',\r\n        },\r\n        {\r\n            id: 'task2',\r\n            text: 'Task 2',\r\n        },\r\n        {\r\n            id: 'task3',\r\n            text: 'Task 3',\r\n        },\r\n        {\r\n            id: 'task4',\r\n            text: 'Task 4',\r\n        },\r\n    ];\r\n\r\n    tasks.forEach((task) => {\r\n        const checkbox = document.createElement('input');\r\n        checkbox.type = 'checkbox';\r\n        checkbox.id = task.id;\r\n        checkbox.name = 'task';\r\n        checkbox.value = task.text;\r\n        checkbox.checked = false;\r\n\r\n        const taskDiv = document.createElement('div');\r\n        taskDiv.textContent = task.text;\r\n\r\n        importantTasks.appendChild(checkbox);\r\n        importantTasks.appendChild(taskDiv);\r\n    });\r\n    \r\n}\r\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (todo1);\n\n//# sourceURL=webpack://todo/./src/modules/todo1.js?");
 
 /***/ })
 
@@ -90,18 +77,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	}
 /******/ 	
 /************************************************************************/
-/******/ 	/* webpack/runtime/compat get default export */
-/******/ 	(() => {
-/******/ 		// getDefaultExport function for compatibility with non-harmony modules
-/******/ 		__webpack_require__.n = (module) => {
-/******/ 			var getter = module && module.__esModule ?
-/******/ 				() => (module['default']) :
-/******/ 				() => (module);
-/******/ 			__webpack_require__.d(getter, { a: getter });
-/******/ 			return getter;
-/******/ 		};
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
