@@ -9,23 +9,12 @@ body {
     background-color: rgb(74, 74, 74);
 }
 #content {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
     text-align: center;
     height: 800px;
     
 }
-/*Buttons*/
-.buttons {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-.buttons button{
-  height: 50px;
-  color: red;
-}
-button {
+/*New List Button */
+.input button {
     color: white;
     font-size: 18px;
     border: 1px solid transparent;
@@ -50,24 +39,45 @@ button {
         background-color: rgb(99, 185, 255);
     }
 }
-button:hover {
+.input button:hover {
     color: rgb(0, 145, 255);
     font-size: larger;
     background-color: rgb(163, 212, 255);
     animation: none;
-    border: transparent;
-}
-/* Content Containers */
-/* TO DO 1 */
-#tasks {
-  background-color: rgb(196, 196, 196);
-  border: 1px transparent;
+    border: 1px transparent;
 }
 
 input {
-  background-color: rgb(255, 255, 255);
   border: 1px transparent;
+  height: 20px;
 }
+/* List and Tasks*/
+task {
+  display: grid;
+  font-size: 25px;
+  background-color: white;
+}
+.description {
+  font-size: 18px;
+}
+li {
+  list-style: none;
+  border: 1px solid black;
+  padding: 10px;
+}
+.checkBox {
+  cursor: pointer;
+}
+.deleteBtn {
+  display: flex;
+  user-select: none;
+  background-color: rgb(218, 76, 76);
+  font-size: 12px;
+  justify-content: center;
+  align-items: center;
+  margin-left: auto;
+}
+
 
 /* Footer */
 
