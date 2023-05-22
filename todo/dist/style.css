@@ -9,7 +9,9 @@ body {
     background-color: rgb(74, 74, 74);
 }
 #content {
-    grid-row: 2;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     text-align: center;
     height: 800px;
     
@@ -18,6 +20,10 @@ body {
 .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+}
+.buttons button{
+  height: 50px;
+  color: red;
 }
 button {
     color: white;
@@ -54,12 +60,13 @@ button:hover {
 /* Content Containers */
 /* TO DO 1 */
 #tasks {
-  display: grid;
   background-color: rgb(196, 196, 196);
+  border: 1px transparent;
 }
 
 input {
   background-color: rgb(255, 255, 255);
+  border: 1px transparent;
 }
 
 /* Footer */

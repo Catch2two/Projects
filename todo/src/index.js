@@ -7,10 +7,3 @@ import todo3 from './modules/todo3';
 
 // Calls
 buttons();
-todo1()
-todo2()
-todo3()
-const button1 = document.querySelector('#toDo1');
-if (button1) {
-    button1.addEventListener('click', buttonsController.todo1);
-}
