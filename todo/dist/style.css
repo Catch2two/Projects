@@ -51,9 +51,16 @@ button:hover {
     animation: none;
     border: transparent;
 }
-/* Content Container */
+/* Content Containers */
+/* TO DO 1 */
+#tasks {
+  display: grid;
+  background-color: rgb(196, 196, 196);
+}
 
-
+input {
+  background-color: rgb(255, 255, 255);
+}
 
 /* Footer */
 

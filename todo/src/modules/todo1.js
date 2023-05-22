@@ -1,43 +1,51 @@
 const todo1 = function() {
     const content = document.querySelector('#content');
 
-    const importantTasks = document.createElement('div');
-    importantTasks.textContent = 'Important Tasks';
-    content.appendChild(importantTasks);
+    const tasks = document.createElement('div');
+    tasks.textContent = '';
+    tasks.id = 'tasks';
+    tasks.name = 'tasks';
+    content.appendChild(tasks);
 
-    const tasks = [
-        {
-            id: 'task1',
-            text: 'Task 1',
-        },
-        {
-            id: 'task2',
-            text: 'Task 2',
-        },
-        {
-            id: 'task3',
-            text: 'Task 3',
-        },
-        {
-            id: 'task4',
-            text: 'Task 4',
-        },
-    ];
+    const addTaskButton = document.createElement('button');
+    addTaskButton.textContent = 'Add Task';
+    addTaskButton.addEventListener('click', () => {
+        const newTaskInput = document.createElement('input');
+        newTaskInput.type = 'text';
+        newTaskInput.id = 'newTask';
 
-    tasks.forEach((task) => {
-        const checkbox = document.createElement('input');
-        checkbox.type = 'checkbox';
-        checkbox.id = task.id;
-        checkbox.name = 'task';
-        checkbox.value = task.text;
-        checkbox.checked = false;
+        tasks.appendChild(newTaskInput);
 
-        const taskDiv = document.createElement('div');
-        taskDiv.textContent = task.text;
+        // Add a new task when the user clicks the button.
+        addTaskButton.addEventListener('click', () => {
+            const newTask = newTaskInput.value;
+            if (newTask) {
+                const newTaskCheckbox = document.createElement('input');
+                newTaskCheckbox.type = 'checkbox';
+                newTaskCheckbox.id = newTask;
+                newTaskCheckbox.name = 'task';
+                newTaskCheckbox.value = newTask;
+                newTaskCheckbox.checked = false;
 
-        importantTasks.appendChild(checkbox);
-        importantTasks.appendChild(taskDiv);
+                const newTaskDiv = document.createElement('div');
+                newTaskDiv.textContent = newTask;
+
+                tasks.appendChild(newTaskCheckbox);
+                tasks.appendChild(newTaskDiv);
+
+                // Strike out the task when the checkbox is checked.
+                newTaskCheckbox.addEventListener('change', () => {
+                    if (newTaskCheckbox.checked) {
+                        newTaskDiv.style.textDecoration = 'line-through';
+                    } else {
+                        newTaskDiv.style.textDecoration = '';
+                    }
+                });
+            }
+        });
     });
-    
+
+    tasks.appendChild(addTaskButton);
+
 }
 export default todo1;
