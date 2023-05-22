@@ -1,4 +1,4 @@
-const todo1 = function(){
+const todo1 = function() {
     const content = document.querySelector('#content');
 
     const importantTasks = document.createElement('div');
