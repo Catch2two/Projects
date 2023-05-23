@@ -14,10 +14,10 @@ body {
     
 }
 /*New List Button */
-.input button {
+.addBtn {
     color: white;
     font-size: 18px;
-    border: 1px solid transparent;
+    border: 0px solid transparent;
     cursor: pointer;
     animation: blink 2s infinite;
 }
@@ -44,7 +44,7 @@ body {
     font-size: larger;
     background-color: rgb(163, 212, 255);
     animation: none;
-    border: 1px transparent;
+    border: 0px transparent;
 }
 
 input {

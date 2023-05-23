@@ -29,11 +29,12 @@ function todolist() {
 
 // Add New Task
   const addButton = document.createElement('button');
-  addButton.textContent = 'Add New List';
+  addButton.classList.add('addBtn');
+  addButton.textContent = 'Add New Task';
   addButton.addEventListener('click', addNewTask);
 
   input.appendChild(addButton);
-  
+
 // Append whole Input Form
   document.getElementById('content').appendChild(input);
 }
