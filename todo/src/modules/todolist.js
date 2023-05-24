@@ -13,7 +13,6 @@ function todolist() {
 
 // Time options for Dropdown
   const timeSelect = document.createElement('select');
-  timeSelect.placeholder = 'Due';
   timeSelect.options.add(new Option('Today'));
   timeSelect.options.add(new Option('Tomorrow'));
   timeSelect.options.add(new Option('Next Week'));
@@ -72,13 +71,7 @@ priority.forEach((priority) => {
   task.appendChild(prio);
 });
 
-// X button (Delete)
-  const deleteBtn = document.createElement('button');
-  deleteBtn.textContent = 'x';
-  deleteBtn.classList.add('deleteBtn');
-  task.appendChild(deleteBtn);
-
-// Append the Task to DOM as a li
+// Append the Task to DOM
   const cardDiv = document.getElementById('content');
   const cardInfo = document.createElement('div');
   cardDiv.appendChild(cardInfo);
@@ -89,6 +82,12 @@ priority.forEach((priority) => {
   description.textContent = descriptionInput.value;
   description.classList.add('description');
   task.appendChild(description);
+
+  // X button (Delete)
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'x';
+  deleteBtn.classList.add('deleteBtn');
+  task.appendChild(deleteBtn);
 
   deleteBtn.addEventListener('click', function() {
     cardInfo.remove();
