@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
   \*******************************/
 /***/ (() => {
 
-eval("function banner() {\r\n    const header = document.querySelector('header')\r\n    console.log('Banner Loaded')\r\n}\r\n\r\nbanner();\n\n//# sourceURL=webpack://todo/./src/modules/banner.js?");
+eval("function banner() {\r\n    const header = document.querySelector('#header')\r\n    const title = document.createElement('div');\r\n    title.textContent = 'To do Header';\r\n    header.appendChild(title);\r\n    console.log('Banner Loaded')\r\n}\r\n\r\nbanner();\n\n//# sourceURL=webpack://todo/./src/modules/banner.js?");
 
 /***/ }),
 

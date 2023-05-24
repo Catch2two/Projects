@@ -5,12 +5,13 @@ body {
 
 #header {
     text-align: center;
-    height: 100px;
+    padding: 25px;
     background-color: rgb(74, 74, 74);
 }
 #content {
     text-align: center;
     height: 800px;
+    padding: 5%;
     
 }
 /*New List Button */
@@ -44,7 +45,7 @@ body {
     font-size: larger;
     background-color: rgb(163, 212, 255);
     animation: none;
-    border: 0px transparent;
+    border: 0px;
 }
 
 input {
@@ -83,24 +84,18 @@ li {
 
   @keyframes blinkBorder {
     0% {
-      border-top-color: rgb(11,141,255)
-    }
-    25% {
-      border-top-color: rgb(11,141,255)
+      border-top-color: rgb(255, 255, 255)
     }
     50% {
-      border-top-color: transparent;
-    }
-    75% {
-      border-top-color: rgb(168, 214, 255)
+      border-top-color: rgb(156, 156, 156)
     }
     100% {
-        border-top-color: rgb(11,141,255)
+        border-top-color: rgb(255, 255, 255)
     }
 }
 #footer {
     height: 100px;
     background-color: rgb(74, 74, 74);
-    border-top: 3px solid;
-    animation: blinkBorder 5s infinite;
+    border-top: 1px solid;
+    animation: blinkBorder 1s infinite;
 }
