@@ -5,14 +5,15 @@ function todolist() {
   input.textContent = 'Tasks';
 
   const titleInput = document.createElement('input');
-  titleInput.placeholder = 'Title';
+  titleInput.placeholder = 'Task Name';
 
   const descriptionInput = document.createElement('input');
   descriptionInput.classList.add('description')
-  descriptionInput.placeholder = 'Description';
+  descriptionInput.placeholder = 'Task Description';
 
 // Time options for Dropdown
   const timeSelect = document.createElement('select');
+  timeSelect.placeholder = 'Due';
   timeSelect.options.add(new Option('Today'));
   timeSelect.options.add(new Option('Tomorrow'));
   timeSelect.options.add(new Option('Next Week'));
@@ -31,7 +32,7 @@ function todolist() {
   input.appendChild(descriptionInput);
   input.appendChild(timeSelect);
 
-// Add New Task
+// Add New Task Button
   const addButton = document.createElement('button');
   addButton.classList.add('addBtn');
   addButton.textContent = 'Add New Task';
@@ -42,50 +43,59 @@ function todolist() {
 // Append whole Input Form
   document.getElementById('content').appendChild(input);
 }
+
+
 // Add New Task
 function addNewTask() {
   const titleInput = document.querySelector('input');
   const descriptionInput = document.querySelector('input');
   const timeSelect = document.querySelector('input');
-  const task = document.createElement('task');
+
+  const task = document.createElement('div');
+  task.classList.add('task');
   task.textContent = titleInput.value;
-  task.description = descriptionInput.value;
   task.date = timeSelect.value;
 
 // Checkboxes
-  const checkbox1 = document.createElement('input');
-  checkbox1.classList.add('checkBox');
-  checkbox1.type = 'checkbox';
-  checkbox1.textContent = 'Important';
-  task.appendChild(checkbox1);
+const priority = ['Important', 'Urgent', 'Trivial'];
 
-  const prio1 = document.createElement('label');
-  prio1.htmlFor = checkbox1.id;
-  prio1.textContent = 'Important';
-  task.appendChild(prio1);
+priority.forEach((priority) => {
+  const checkbox = document.createElement('input');
+  checkbox.classList.add('checkBox');
+  checkbox.type = 'checkbox';
+  checkbox.textContent = priority;
+  checkbox.checked = priority === 'Important';
+  task.appendChild(checkbox);
+
+  const prio = document.createElement('label');
+  prio.htmlFor = checkbox.id;
+  prio.textContent = priority;
+  task.appendChild(prio);
+});
 
 // X button (Delete)
-  const deleteBtn =  document.createElement('button')
-  deleteBtn.textContent = 'x'
-  deleteBtn.classList.add('deleteBtn')
-  task.appendChild(deleteBtn)
+  const deleteBtn = document.createElement('button');
+  deleteBtn.textContent = 'x';
+  deleteBtn.classList.add('deleteBtn');
+  task.appendChild(deleteBtn);
 
 // Append the Task to DOM as a li
-  const div = document.getElementById('content');
-  const li = document.createElement('li');
-  div.appendChild(li);
-  li.appendChild(task);
+  const cardDiv = document.getElementById('content');
+  const cardInfo = document.createElement('div');
+  cardDiv.appendChild(cardInfo);
+  cardInfo.appendChild(task);
 
+  // Append the description input to the task card
   const description = document.createElement('p');
   description.textContent = descriptionInput.value;
   description.classList.add('description');
   task.appendChild(description);
 
   deleteBtn.addEventListener('click', function() {
-    li.remove();
+    cardInfo.remove();
   });
 
-  return li;
+  return cardInfo;
 }
 
 todolist();

@@ -9,8 +9,9 @@ body {
     background-color: rgb(74, 74, 74);
 }
 #content {
+    display: grid;
+    height: 100%;
     text-align: center;
-    height: 800px;
     padding: 5%;
     
 }
@@ -47,25 +48,31 @@ body {
     animation: none;
     border: 0px;
 }
-
-input {
-  border: 1px transparent;
+input, select {
+  border-radius: 5px;
+  border: 0px;
+}
+.input {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  border: 0px transparent;
   height: 20px;
 }
 /* List and Tasks*/
-task {
-  display: grid;
-  font-size: 25px;
-  background-color: white;
+.task {
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 15px;
+  margin-top: 5%;
+  gap: 25px;
+  border-top: 1px solid;
+  animation: blinkBorder 1s infinite;
 }
 .description {
-  font-size: 18px;
+
 }
-li {
-  list-style: none;
-  border: 1px solid black;
-  padding: 10px;
-}
+
 .checkBox {
   cursor: pointer;
 }
@@ -94,8 +101,8 @@ li {
     }
 }
 #footer {
-    height: 100px;
-    background-color: rgb(74, 74, 74);
     border-top: 1px solid;
+    background-color: rgb(74, 74, 74);
+    height: 50px;
     animation: blinkBorder 1s infinite;
 }
