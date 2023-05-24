@@ -36,7 +36,7 @@ input, select {
   border-radius: 5px;
   border: 0px;
 }
-.input {
+#input {
   display: grid;
   justify-content: center;
   gap: 10px;

@@ -1,19 +1,20 @@
 function todolist() {
 // Input Form
   const input = document.createElement('div');
-  input.classList.add('input')
+  input.id = "input";
   input.textContent = 'Tasks';
 
   const titleInput = document.createElement('input');
-  titleInput.classList.add('titleInput');
+  titleInput.id = "titleInput";
   titleInput.placeholder = 'Task Name';
 
   const descriptionInput = document.createElement('input');
-  descriptionInput.classList.add('descriptionInput');
+  descriptionInput.id = "descriptionInput";
   descriptionInput.placeholder = 'Task Description';
 
 // Time options for Dropdown
   const timeSelect = document.createElement('select');
+  timeSelect.id = "timeSelect";
   timeSelect.options.add(new Option('Today'));
   timeSelect.options.add(new Option('Tomorrow'));
   timeSelect.options.add(new Option('Next Week'));
@@ -45,10 +46,11 @@ function todolist() {
 }
 
 
-// Add New Task
+// Add New Task Cards
+
 function addNewTask() {
-  const titleInput = document.querySelector('input');
-  const descriptionInput = document.querySelector('input');
+  const titleInput = document.getElementById('titleInput');
+  const descriptionInput = document.getElementById('descriptionInput');
   const timeSelect = document.querySelector('input');
 
   const taskAdded = document.createElement('div');
@@ -71,6 +73,8 @@ priority.forEach((priority) => {
   prio.textContent = priority;
   taskAdded.appendChild(prio);
 });
+
+
 
 // Append the Task to DOM
   const cardDiv = document.getElementById('content');
