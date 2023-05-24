@@ -17,47 +17,27 @@ body {
 }
 /*New List Button */
 .addBtn {
-    color: white;
-    font-size: 18px;
-    border: 0px solid transparent;
+    color: rgb(0, 0, 0);
+    background-color: aqua;
+    font-size: 14px;
     cursor: pointer;
-    animation: blink 2s infinite;
-}
-@keyframes blink {
-    0% {
-      background-color: rgb(99, 185, 255);
-    }
-    25% {
-        background-color: rgb(0, 174, 255);
-      }
-    50% {
-      background-color: rgb(94, 169, 255);
-    }
-    75% {
-
-      background-color: rgb(33, 159, 255);
-    }
-    100% {
-        background-color: rgb(99, 185, 255);
-    }
+    animation: blinkButton 2s infinite;
 }
 .input button:hover {
     color: rgb(0, 145, 255);
-    font-size: larger;
     background-color: rgb(163, 212, 255);
     animation: none;
-    border: 0px;
 }
 input, select {
   border-radius: 5px;
   border: 0px;
 }
 .input {
-  display: flex;
+  display: grid;
+  justify-content: center;
   gap: 10px;
   padding: 10px;
   border: 0px transparent;
-  height: 20px;
 }
 /* List and Tasks*/
 .task {
@@ -69,8 +49,8 @@ input, select {
   border-top: 1px solid;
   animation: blinkBorder 1s infinite;
 }
-.description {
-
+#description {
+  background-color: red;
 }
 
 .checkBox {
@@ -78,17 +58,29 @@ input, select {
 }
 .deleteBtn {
   display: flex;
+  color: white;
   user-select: none;
   background-color: rgb(218, 76, 76);
   font-size: 12px;
   justify-content: center;
   align-items: center;
   margin-left: auto;
+  border: 1px solid rgb(136, 136, 136);
+  border-radius: 2px;
 }
 
-
-/* Footer */
-
+/* Animations */
+@keyframes blinkButton {
+  0% {
+    background-color: rgb(255, 255, 255)
+  }
+  50% {
+    background-color: rgb(156, 156, 156)
+  }
+  100% {
+    background-color: rgb(255, 255, 255)
+  }
+}
   @keyframes blinkBorder {
     0% {
       border-top-color: rgb(255, 255, 255)
@@ -100,6 +92,8 @@ input, select {
         border-top-color: rgb(255, 255, 255)
     }
 }
+
+/* Footer */
 #footer {
     border-top: 1px solid;
     background-color: rgb(74, 74, 74);

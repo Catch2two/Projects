@@ -35,7 +35,7 @@ function todolist() {
 // Add New Task Button
   const addButton = document.createElement('button');
   addButton.classList.add('addBtn');
-  addButton.textContent = 'Add New Task';
+  addButton.textContent = 'New Task';
   addButton.addEventListener('click', addNewTask);
 
   input.appendChild(addButton);
@@ -64,7 +64,6 @@ priority.forEach((priority) => {
   checkbox.classList.add('checkBox');
   checkbox.type = 'checkbox';
   checkbox.textContent = priority;
-  checkbox.checked = priority === 'Important';
   task.appendChild(checkbox);
 
   const prio = document.createElement('label');
