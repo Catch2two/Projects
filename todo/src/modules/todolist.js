@@ -5,10 +5,11 @@ function todolist() {
   input.textContent = 'Tasks';
 
   const titleInput = document.createElement('input');
+  titleInput.classList.add('titleInput');
   titleInput.placeholder = 'Task Name';
 
   const descriptionInput = document.createElement('input');
-  descriptionInput.classList.add('description')
+  descriptionInput.classList.add('descriptionInput');
   descriptionInput.placeholder = 'Task Description';
 
 // Time options for Dropdown
@@ -50,10 +51,10 @@ function addNewTask() {
   const descriptionInput = document.querySelector('input');
   const timeSelect = document.querySelector('input');
 
-  const task = document.createElement('div');
-  task.classList.add('task');
-  task.textContent = titleInput.value;
-  task.date = timeSelect.value;
+  const taskAdded = document.createElement('div');
+  taskAdded.classList.add('taskAdded');
+  taskAdded.textContent = titleInput.value;
+  taskAdded.date = timeSelect.value;
 
 // Checkboxes
 const priority = ['Important', 'Urgent', 'Trivial'];
@@ -63,31 +64,31 @@ priority.forEach((priority) => {
   checkbox.classList.add('checkBox');
   checkbox.type = 'checkbox';
   checkbox.textContent = priority;
-  task.appendChild(checkbox);
+  taskAdded.appendChild(checkbox);
 
   const prio = document.createElement('label');
   prio.htmlFor = checkbox.id;
   prio.textContent = priority;
-  task.appendChild(prio);
+  taskAdded.appendChild(prio);
 });
 
 // Append the Task to DOM
   const cardDiv = document.getElementById('content');
   const cardInfo = document.createElement('div');
   cardDiv.appendChild(cardInfo);
-  cardInfo.appendChild(task);
+  cardInfo.appendChild(taskAdded);
 
   // Append the description input to the task card
   const description = document.createElement('p');
   description.textContent = descriptionInput.value;
   description.classList.add('description');
-  task.appendChild(description);
+  taskAdded.appendChild(description);
 
   // X button (Delete)
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'x';
   deleteBtn.classList.add('deleteBtn');
-  task.appendChild(deleteBtn);
+  taskAdded.appendChild(deleteBtn);
 
   deleteBtn.addEventListener('click', function() {
     cardInfo.remove();

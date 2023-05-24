@@ -25,10 +25,11 @@ body {
     border: 1px solid rgba(74, 74, 74, 0.411);
     border-radius: 5px;
     animation: blinkButton 2s infinite;
+    user-select: none;
 }
 .input button:hover {
-    color: rgb(0, 145, 255);
-    background-color: rgb(163, 212, 255);
+    color: rgb(255, 255, 255);
+    background-color: rgb(63, 62, 62);
     animation: none;
 }
 input, select {
@@ -43,12 +44,13 @@ input, select {
   border: 0px transparent;
 }
 /* List and Tasks*/
-.task {
+.taskAdded {
   background-color: aliceblue;
   border-radius: 20px;
   padding: 15px;
   margin-top: 5%;
   gap: 25px;
+  user-select: none;
 }
 #description {
   background-color: red;
