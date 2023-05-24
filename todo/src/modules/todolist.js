@@ -8,8 +8,10 @@ function todolist() {
   titleInput.placeholder = 'Title';
 
   const descriptionInput = document.createElement('input');
+  descriptionInput.classList.add('description')
   descriptionInput.placeholder = 'Description';
 
+// Time options for Dropdown
   const timeSelect = document.createElement('select');
   timeSelect.options.add(new Option('Today'));
   timeSelect.options.add(new Option('Tomorrow'));
@@ -58,6 +60,7 @@ function addNewTask() {
   deleteBtn.classList.add('deleteBtn')
   task.appendChild(deleteBtn)
 
+// Append the Task to DOM as a li
   const div = document.getElementById('content');
   const li = document.createElement('li');
   div.appendChild(li);
