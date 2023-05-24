@@ -25,6 +25,8 @@ function todolist() {
   timeSelect.options.add(new Option('Friday'));
   timeSelect.options.add(new Option('Saturday'));
 
+  
+// Append Form Inputs
   input.appendChild(titleInput);
   input.appendChild(descriptionInput);
   input.appendChild(timeSelect);
@@ -50,11 +52,19 @@ function addNewTask() {
   task.description = descriptionInput.value;
   task.date = timeSelect.value;
 
-  const checkbox = document.createElement('input');
-  checkbox.classList.add('checkBox');
-  checkbox.type = 'checkbox';
-  task.appendChild(checkbox);
+// Checkboxes
+  const checkbox1 = document.createElement('input');
+  checkbox1.classList.add('checkBox');
+  checkbox1.type = 'checkbox';
+  checkbox1.textContent = 'Important';
+  task.appendChild(checkbox1);
 
+  const prio1 = document.createElement('label');
+  prio1.htmlFor = checkbox1.id;
+  prio1.textContent = 'Important';
+  task.appendChild(prio1);
+
+// X button (Delete)
   const deleteBtn =  document.createElement('button')
   deleteBtn.textContent = 'x'
   deleteBtn.classList.add('deleteBtn')
