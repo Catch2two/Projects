@@ -52,7 +52,7 @@ input, select {
   gap: 25px;
   user-select: none;
 }
-#description {
+.description {
   background-color: red;
 }
 
