@@ -1,3 +1,4 @@
+import calculateTimeLeft from "./timeLeft";
 function todolist() {
 // Input Form
   const input = document.createElement('div');
@@ -6,19 +7,20 @@ function todolist() {
 
   const titleInput = document.createElement('input');
   titleInput.id = "titleInput";
+  titleInput.required = true;
+  titleInput.maxlength = 30;
   titleInput.placeholder = 'Task Name';
 
   const descriptionInput = document.createElement('input');
   descriptionInput.id = "descriptionInput";
+  descriptionInput.required = true;
   descriptionInput.placeholder = 'Task Description';
 
 // Time options for Dropdown
   const timeSelect = document.createElement('select');
   timeSelect.id = "timeSelect";
+  timeSelect.required = true;
   timeSelect.options.add(new Option('Today'));
-  timeSelect.options.add(new Option('Tomorrow'));
-  timeSelect.options.add(new Option('Next Week'));
-  timeSelect.options.add(new Option('Next Month'));
   timeSelect.options.add(new Option('Sunday'));
   timeSelect.options.add(new Option('Monday'));
   timeSelect.options.add(new Option('Tuesday'));
@@ -51,7 +53,7 @@ function todolist() {
 function addNewTask() {
   const titleInput = document.getElementById('titleInput');
   const descriptionInput = document.getElementById('descriptionInput');
-  const timeSelect = document.querySelector('input');
+  const timeSelect = document.getElementById('timeSelect');
 
   const taskAdded = document.createElement('div');
   taskAdded.classList.add('taskAdded');
@@ -59,7 +61,7 @@ function addNewTask() {
   taskAdded.date = timeSelect.value;
 
 // Checkboxes
-const priority = ['Important', 'Urgent', 'Trivial'];
+const priority = ['Important', 'Urgent', 'Trivial', 'Completed'];
 
 priority.forEach((priority) => {
   const checkbox = document.createElement('input');
@@ -88,6 +90,12 @@ priority.forEach((priority) => {
   description.classList.add('description');
   taskAdded.appendChild(description);
 
+  // Append Due Date
+  const dueDate = document.createElement('div');
+  dueDate.textContent = timeSelect.value;
+  dueDate.classList.add('dueDate');
+  taskAdded.appendChild(dueDate);
+
   // X button (Delete)
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'x';
@@ -98,7 +106,9 @@ priority.forEach((priority) => {
     cardInfo.remove();
   });
 
-  return cardInfo;
-}
+  //Clear Inputs
+  titleInput.value = '';
+  descriptionInput.value = '';
 
+}
 todolist();
