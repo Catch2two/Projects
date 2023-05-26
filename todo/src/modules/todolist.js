@@ -1,4 +1,7 @@
-import calculateTimeLeft from "./timeLeft";
+// Date-FNS
+import * as dateFns from 'date-fns';
+const formattedDate = dateFns.format(new Date(), 'yyyy-mm-dd');
+
 function todolist() {
 // Input Form
   const input = document.createElement('div');
@@ -20,6 +23,7 @@ function todolist() {
   const timeSelect = document.createElement('select');
   timeSelect.id = "timeSelect";
   timeSelect.required = true;
+  timeSelect.options.add(new Option(Date()));
   timeSelect.options.add(new Option('Today'));
   timeSelect.options.add(new Option('Sunday'));
   timeSelect.options.add(new Option('Monday'));
@@ -82,7 +86,7 @@ function addNewTask() {
   // Checkboxes
   const priorityDiv = document.createElement('div');
   priorityDiv.id = "priority";
-  const priority = ['Important', 'Urgent', 'Trivial', 'Completed'];
+  const priority = ['Important', 'Minor', 'Completed'];
 
   priority.forEach((priority) => {
     const checkbox = document.createElement('input');
@@ -104,7 +108,10 @@ function addNewTask() {
   taskAdded.appendChild(deleteBtn);
 
   deleteBtn.addEventListener('click', function() {
+    const confirmDelete = confirm('Are you sure you want to delete this Task?');
+    if (confirmDelete) {
     cardInfo.remove();
+  }
     
   });
 
