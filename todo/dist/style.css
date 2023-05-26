@@ -45,7 +45,9 @@ input, select {
 #descriptionInput {
   height: 45px;
 }
-/* List and Tasks*/
+
+
+/* Task Cards */
 .taskAdded {
   background-color: aliceblue;
   border-radius: 20px;
@@ -57,10 +59,12 @@ input, select {
 .description {
   background-color: rgb(255, 255, 255);
   border-radius: 10px;
+  width: 100px;
 }
-
 .checkBox {
+  margin-top: 10px;
   cursor: pointer;
+  
 }
 .deleteBtn {
   display: flex;
@@ -113,8 +117,14 @@ input, select {
 
 /* Footer */
 #footer {
-    border-top: 1px solid;
-    background-color: rgb(74, 74, 74);
-    height: 50px;
-    animation: blinkBorder 1s infinite;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  font-size: smaller;
+  text-align: end;
+  border-top: 1px solid;
+  background-color: rgb(74, 74, 74);
+  height: 28px;
+  animation: blinkBorder 1s infinite;
 }

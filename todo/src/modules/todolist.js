@@ -11,7 +11,7 @@ function todolist() {
   titleInput.maxlength = 30;
   titleInput.placeholder = 'Task Name';
 
-  const descriptionInput = document.createElement('input');
+  const descriptionInput = document.createElement('textarea');
   descriptionInput.id = "descriptionInput";
   descriptionInput.required = true;
   descriptionInput.placeholder = 'Task Description';
@@ -48,7 +48,7 @@ function todolist() {
 }
 
 
-// Add New Task Cards
+// Add New Task Cards ---------
 
 function addNewTask() {
   const titleInput = document.getElementById('titleInput');
@@ -60,25 +60,8 @@ function addNewTask() {
   taskAdded.textContent = titleInput.value;
   taskAdded.date = timeSelect.value;
 
-// Checkboxes
-const priority = ['Important', 'Urgent', 'Trivial', 'Completed'];
 
-priority.forEach((priority) => {
-  const checkbox = document.createElement('input');
-  checkbox.classList.add('checkBox');
-  checkbox.type = 'checkbox';
-  checkbox.textContent = priority;
-  taskAdded.appendChild(checkbox);
-
-  const prio = document.createElement('label');
-  prio.htmlFor = checkbox.id;
-  prio.textContent = priority;
-  taskAdded.appendChild(prio);
-});
-
-
-
-// Append the Task to DOM
+// Append the Task Card to DOM
   const cardDiv = document.getElementById('content');
   const cardInfo = document.createElement('div');
   cardDiv.appendChild(cardInfo);
@@ -96,6 +79,24 @@ priority.forEach((priority) => {
   dueDate.classList.add('dueDate');
   taskAdded.appendChild(dueDate);
 
+  // Checkboxes
+  const priorityDiv = document.createElement('div');
+  priorityDiv.id = "priority";
+  const priority = ['Important', 'Urgent', 'Trivial', 'Completed'];
+
+  priority.forEach((priority) => {
+    const checkbox = document.createElement('input');
+    checkbox.classList.add('checkBox');
+    checkbox.type = 'checkbox';
+    checkbox.textContent = priority;
+    taskAdded.appendChild(checkbox);
+
+    const prio = document.createElement('label');
+    prio.htmlFor = checkbox.id;
+    prio.textContent = priority;
+    taskAdded.appendChild(prio);
+  });
+
   // X button (Delete)
   const deleteBtn = document.createElement('button');
   deleteBtn.textContent = 'x';
@@ -104,6 +105,7 @@ priority.forEach((priority) => {
 
   deleteBtn.addEventListener('click', function() {
     cardInfo.remove();
+    
   });
 
   //Clear Inputs
