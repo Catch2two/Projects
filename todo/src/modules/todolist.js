@@ -119,5 +119,8 @@ function addNewTask() {
   titleInput.value = '';
   descriptionInput.value = '';
 
+  // Store the task in LocalStorage
+  storeTask(titleInput.value, descriptionInput.value, timeSelect.value);
+
 }
 todolist();
