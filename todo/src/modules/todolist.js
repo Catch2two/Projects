@@ -53,7 +53,7 @@ function todolist() {
   inputContainer.appendChild(addButton);
 
 // Append whole Input Form
-  document.getElementById('content').appendChild(inputContainer);
+  document.getElementById('form').appendChild(inputContainer);
 }
 
 
@@ -63,7 +63,8 @@ function addNewTask() {
   const titleInput = document.getElementById('titleInput');
   const descriptionInput = document.getElementById('descriptionInput');
   const timeSelect = document.getElementById('timeSelect');
-  const cardDiv = document.getElementById('content');
+  const contentDiv = document.getElementById('content');
+  const form = document.getElementById('form');
 
   // Check if the input fields are empty
   if (titleInput.value === "" || descriptionInput.value === "") {
@@ -79,7 +80,7 @@ function addNewTask() {
 // Append the Task Card to DOM
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('info');
-  cardDiv.appendChild(cardInfo);
+  contentDiv.appendChild(cardInfo);
   cardInfo.appendChild(taskAdded);
 
   // Append the description input to the task card
@@ -97,10 +98,10 @@ function addNewTask() {
   // Checkboxes
   const priorityDiv = document.createElement('div');
   priorityDiv.id = "priority";
-  const priority = ['Red Alert', 'Important', 'Minor', 'Completed'];
+  const priority = ['Important', 'Minor', 'Completed'];
 
   priority.forEach((priority) => {
-    const checkbox = document.createElement('input');
+    let checkbox = document.createElement('input');
     checkbox.classList.add('checkBox');
     checkbox.type = 'checkbox';
     checkbox.textContent = priority;
@@ -110,6 +111,8 @@ function addNewTask() {
     prio.htmlFor = checkbox.id;
     prio.textContent = priority;
     taskAdded.appendChild(prio);
+
+    checkbox.style.color = `red`;
   });
 
   // X button (Delete)
