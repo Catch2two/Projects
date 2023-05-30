@@ -30,7 +30,7 @@ body {
     width: 80px;
     
 }
-.input button:hover {
+.inputContainer button:hover {
     color: rgb(255, 255, 255);
     background-color: rgb(63, 62, 62);
     animation: none;
@@ -40,7 +40,7 @@ input, select {
   border: 1px solid rgb(170, 170, 170);
   background-color: rgb(137, 138, 138);
 }
-#input {
+#inputContainer {
   display: grid;
   justify-content: center;
   gap: 10px;

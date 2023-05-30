@@ -1,12 +1,18 @@
+// Import Save/Load
+import { saveState, loadState } from "./localStorage";
+// Call the saveState function.
+saveState();
+// Call the loadState function.
+loadState();
+
 // Date-FNS
 import * as dateFns from 'date-fns';
 const formattedDate = dateFns.format(new Date(), 'yyyy-mm-dd');
 
 function todolist() {
 // Input Form
-  const input = document.createElement('div');
-  input.id = "input";
-  input.textContent = 'Tasks';
+  const inputContainer = document.createElement('div');
+  inputContainer.id = "inputContainer";
 
   const titleInput = document.createElement('input');
   titleInput.id = "titleInput";
@@ -35,9 +41,9 @@ function todolist() {
 
   
 // Append Form Inputs
-  input.appendChild(titleInput);
-  input.appendChild(descriptionInput);
-  input.appendChild(timeSelect);
+  inputContainer.appendChild(titleInput);
+  inputContainer.appendChild(descriptionInput);
+  inputContainer.appendChild(timeSelect);
 
 // Add New Task Button
   const addButton = document.createElement('button');
@@ -45,10 +51,10 @@ function todolist() {
   addButton.textContent = 'New Task';
   addButton.addEventListener('click', addNewTask);
 
-  input.appendChild(addButton);
+  inputContainer.appendChild(addButton);
 
 // Append whole Input Form
-  document.getElementById('content').appendChild(input);
+  document.getElementById('content').appendChild(inputContainer);
 }
 
 
@@ -68,6 +74,7 @@ function addNewTask() {
 // Append the Task Card to DOM
   const cardDiv = document.getElementById('content');
   const cardInfo = document.createElement('div');
+  cardInfo.classList.add('info');
   cardDiv.appendChild(cardInfo);
   cardInfo.appendChild(taskAdded);
 
@@ -118,9 +125,5 @@ function addNewTask() {
   //Clear Inputs
   titleInput.value = '';
   descriptionInput.value = '';
-
-  // Store the task in LocalStorage
-  storeTask(titleInput.value, descriptionInput.value, timeSelect.value);
-
 }
 todolist();
