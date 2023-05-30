@@ -29,7 +29,6 @@ function todolist() {
   const timeSelect = document.createElement('select');
   timeSelect.id = "timeSelect";
   timeSelect.required = true;
-  timeSelect.options.add(new Option(Date()));
   timeSelect.options.add(new Option('Today'));
   timeSelect.options.add(new Option('Sunday'));
   timeSelect.options.add(new Option('Monday'));
@@ -64,15 +63,20 @@ function addNewTask() {
   const titleInput = document.getElementById('titleInput');
   const descriptionInput = document.getElementById('descriptionInput');
   const timeSelect = document.getElementById('timeSelect');
+  const cardDiv = document.getElementById('content');
 
+  // Check if the input fields are empty
+  if (titleInput.value === "" || descriptionInput.value === "") {
+    alert("Please enter a title and description for your task.");
+    return;
+  }
+
+// Create the task card
   const taskAdded = document.createElement('div');
   taskAdded.classList.add('taskAdded');
   taskAdded.textContent = titleInput.value;
-  taskAdded.date = timeSelect.value;
-
 
 // Append the Task Card to DOM
-  const cardDiv = document.getElementById('content');
   const cardInfo = document.createElement('div');
   cardInfo.classList.add('info');
   cardDiv.appendChild(cardInfo);
@@ -93,7 +97,7 @@ function addNewTask() {
   // Checkboxes
   const priorityDiv = document.createElement('div');
   priorityDiv.id = "priority";
-  const priority = ['Important', 'Minor', 'Completed'];
+  const priority = ['Red Alert', 'Important', 'Minor', 'Completed'];
 
   priority.forEach((priority) => {
     const checkbox = document.createElement('input');
@@ -127,3 +131,4 @@ function addNewTask() {
   descriptionInput.value = '';
 }
 todolist();
+export default todolist

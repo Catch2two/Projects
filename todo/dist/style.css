@@ -9,26 +9,28 @@ body {
     padding: 25px;
     background-color: rgb(74, 74, 74);
 }
+#container {
+
+}
 #content {
     display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(5, 10fr);
     height: 100%;
     text-align: center;
     padding: 5%;
     
 }
-/*New List Button */
-.addBtn {
-  margin: 0 auto;
-    color: rgb(0, 0, 0);
-    background-color: aqua;
-    font-size: 14px;
-    cursor: pointer;
-    border: 1px solid rgba(74, 74, 74, 0.411);
-    border-radius: 5px;
-    animation: blinkButton 2s infinite;
-    user-select: none;
-    width: 80px;
-    
+/* INPUT FORMS CONTAINER */
+
+#inputContainer {
+  display: grid;
+  margin: auto;
+  width: 50%;
+  gap: 10px;
+  padding: 5%;
+  border: 1px solid rgb(170, 170, 170);
+  background-color: rgb(137, 138, 138);
 }
 .inputContainer button:hover {
     color: rgb(255, 255, 255);
@@ -40,23 +42,31 @@ input, select {
   border: 1px solid rgb(170, 170, 170);
   background-color: rgb(137, 138, 138);
 }
-#inputContainer {
-  display: grid;
-  justify-content: center;
-  gap: 10px;
-  padding: 2%;
-  border: 1px solid rgb(170, 170, 170);
-  background-color: rgb(137, 138, 138);
-}
 #descriptionInput {
   height: 125px;
   width: 100%;
   background-color: rgb(137, 138, 138);
   border: 1px solid rgb(170, 170, 170);
 }
-
-
-/* Task Cards */
+.addBtn {
+  margin: 0 auto;
+    color: rgb(0, 0, 0);
+    background-color: aqua;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid rgba(74, 74, 74, 0.411);
+    border-radius: 5px;
+    animation: blinkButton 2s infinite;
+    user-select: none;
+    width: 80px;
+}
+/* TASK CARDS APPENDED */
+.info {
+  display: grid;
+}
+.taskAdded text {
+  font-size: 24px;
+}
 .taskAdded {
   background-color: rgb(158, 158, 158);
   border-radius: 20px;
@@ -64,11 +74,16 @@ input, select {
   margin-top: 5%;
   gap: 25px;
   user-select: none;
+  overflow: hidden;
 }
 .description {
   background-color: rgb(185, 185, 185);
   border-radius: 10px;
+  max-width: 500px;
   padding: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
 }
 .checkBox {
   margin-top: 10px;  

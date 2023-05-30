@@ -1,7 +1,10 @@
 import todolist from './modules/todolist';
 import banner from './modules/banner';
 
-import { saveState } from './modules/localStorage';
+// Save the todolist.js file to localStorage
+localStorage.setItem("todolist", todolist);
 
-// Call the saveState function.
-saveState();
+// Load the todolist.js file from localStorage
+const todolistContent = localStorage.getItem("todolist");
+// Save the todolist.js file to localStorage
+localStorage.setItem("todolist", todolistContent);
