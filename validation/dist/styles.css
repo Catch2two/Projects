@@ -1,20 +1,27 @@
 body {
-    margin: 1;
+    margin: 10px;
 }
 
-#formContainer {
-    background-color: rgb(206, 206, 206);
+#inputForm {
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgb(192, 192, 192);
+    justify-items: center;
+}
+
+.input-group {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
     width: 450px;
     height: 100%;
 }
-
-#inputContainer {
-    display: grid;
-    gap: 20px;
-    padding: 50px;
+.input-group label {
+    margin-right: 100px;
 }
 
-#inputContainer input {
+#inputForm input {
     border: 2px solid black;
     border-radius: 4px;
     padding: 10px;

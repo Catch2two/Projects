@@ -7,15 +7,29 @@
     <link rel="stylesheet" href="styles.css" type="text/css">
 </head>
 <body>
-    <div id="formContainer">
-        <div id="inputContainer">
-            <input id="email" required placeholder="Email Address">
-            <input id="country" required placeholder="Country">
-            <input id="zipCode" required placeholder="ZIP">
-            <input id="password" required placeholder="Password">
-            <input id="passwordConfirm" required placeholder="Re-enter Password">
-            <button class="submitBtn" type="submit">Confirm</button>
+    <form id="inputForm">
+        <div class="input-group">
+          <label for="email">Email Address</label>
+          <input id="email" required placeholder="12345@abcd.com">
         </div>
+        <div class="input-group">
+          <label for="country">Country</label>
+          <input id="country" required placeholder="United States">
+        </div>
+        <div class="input-group">
+          <label for="zipCode">ZIP</label>
+          <input id="zipCode" required placeholder="XXXXX">
+        </div>
+        <div class="input-group">
+          <label for="password">Create Password</label>
+          <input id="password" required placeholder="Password">
+        </div>
+        <div class="input-group">
+          <label for="passwordConfirm">Confirm Password</label>
+          <input id="passwordConfirm" required placeholder="Re-enter Password">
+        </div>
+        <button class="submitBtn" type="submit">Confirm</button>
+      </form>
     </div>
 </body>
 <script src="./batch.js"></script>
