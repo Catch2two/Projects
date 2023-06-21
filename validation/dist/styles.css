@@ -1,0 +1,23 @@
+body {
+    margin: 1;
+}
+
+#formContainer {
+    background-color: rgb(206, 206, 206);
+    width: 450px;
+    height: 100%;
+}
+
+#inputContainer {
+    display: grid;
+    gap: 20px;
+    padding: 50px;
+}
+
+#inputContainer input {
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+}
+

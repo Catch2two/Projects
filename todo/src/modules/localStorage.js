@@ -1,12 +1,14 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-restricted-syntax */
 // Create a function to save the current state of the DOM to the localStorage object.
 function saveState() {
   // Get a reference to the localStorage object.
-  const localStorage = window.localStorage;
+  const { localStorage } = window;
 
   // Iterate over all the elements in the DOM.
-  for (const element of document.querySelectorAll("*")) {
+  for (const element of document.querySelectorAll('*')) {
     // Get the value of the element's `id` attribute.
-    const id = element.id;
+    const { id } = element;
 
     // If the element has an `id` attribute, store its value in the localStorage object.
     if (id) {
@@ -18,7 +20,7 @@ function saveState() {
 // Create a function to load the current state of the DOM from the localStorage object.
 function loadState() {
   // Get a reference to the localStorage object.
-  const localStorage = window.localStorage;
+  const { localStorage } = window;
 
   // Iterate over all the keys in the localStorage object.
   for (const key of Object.keys(localStorage)) {
