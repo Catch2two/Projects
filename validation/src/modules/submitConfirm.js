@@ -49,6 +49,14 @@ password.addEventListener("input", (event) => {
     }
 });
 
+passwordC.addEventListener("input", (event) => {
+    if (passwordC.validity.valid) {
+        errorPWC.textContent = "";
+    } else {
+        showErrorPWC();
+        event.preventDefault();
+    }
+});
 // ERROR MESSAGES
 function showErrorE() {
     if (email.validity.valueMissing) {
@@ -57,24 +65,25 @@ function showErrorE() {
         errorE.textContent = "Entered value needs to be an email address."
     } else if (email.validity.tooShort) {
         errorE.textContent = `Email should be atleast ${email.minLength} characters; you entered ${email.value.length}.`;
-    } else if (email.value.indexOf('@') > -1) {
+    } else if (!email.value.indexOf('@') > -1) {
         errorE.textContent = "Please enter an Email Address"
     } else if (email.value.indexOf('@') > -1) {
         errorE.textContent = ""
-    }
+    } 
 };
 
 function showErrorC() {
     if (country.validity.valueMissing) {
         errorC.textContent = "Please enter a country.";
-    } 
+    } else if (country.validity.tooShort) {
+        errorC.textContent = "Country must be atleast 3 characters."
+    }
 };
 function showErrorZ() {
     if (zipCode.value.length < 5) {
         errorZ.textContent = "Please enter a valid ZIP Code.";
-    } else {
-        errorZ.textContent = "";
     }
+
 };
 function showErrorPW() {
     if (password.validity.valueMissing) {
@@ -90,3 +99,4 @@ function showErrorPWC() {
         errorPWC.textContent = "Passwords do not match.";
     } 
 };
+

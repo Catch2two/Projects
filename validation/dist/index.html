@@ -10,22 +10,22 @@
     <form id="inputForm">
         <div class="input-group">
           <label for="email">Email Address</label>
-          <input id="email" type="email" required placeholder="12345@abcd.com">
+          <input id="email" type="email" required placeholder="12345@abcd.com" minlength="8">
           <span class="errorE"></span>
         </div>
         <div class="input-group">
           <label for="country">Country</label>
-          <input id="country" required placeholder="United States">
+          <input id="country" required placeholder="United States" minlength="3">
           <span class="errorC"></span>
         </div>
         <div class="input-group">
           <label for="zipCode">ZIP</label>
-          <input id="zipCode" required placeholder="XXXXX">
+          <input id="zipCode" required placeholder="XXXXX" minlength="5" pattern="[0-9]+">
           <span class="errorZ"></span>
         </div>
         <div class="input-group">
           <label for="password">Create Password</label>
-          <input id="password" type="password" required placeholder="Password">
+          <input id="password" type="password" required placeholder="Password" minlength="8">
           <span class="errorPW"></span>
         </div>
         <div class="input-group">
