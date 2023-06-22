@@ -57,6 +57,10 @@ passwordC.addEventListener("input", (event) => {
         event.preventDefault();
     }
 });
+
+passwordC.addEventListener("input", (event) => {
+    showErrorPWC();
+});
 // ERROR MESSAGES
 function showErrorE() {
     if (email.validity.valueMissing) {
@@ -90,13 +94,21 @@ function showErrorPW() {
         errorPW.textContent = "Please enter a new password.";
     } else if (password.validity.tooShort) {
         errorPW.textContent = `Invalid password. Password must be at least 8 characters long.`;
-    } else {
-        errorPW.textContent = "";
-    }
+    } 
+
 };
 function showErrorPWC() {
     if (passwordC.value !== password.value) {
         errorPWC.textContent = "Passwords do not match.";
-    } 
-};
+        submitButton.disabled = true;
+    } else {
+        submitButton.disabled = false;
+    }
+    
+    submitButton.addEventListener("click", (event) => {
+        if (submitButton.disabled) {
+            event.preventDefault();
+        }
+    });
+}
 
