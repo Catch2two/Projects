@@ -57,9 +57,3 @@ passwordConfirm.addEventListener("input", (event) => {
     showError(passwordConfirmError, "Passwords do not match.");
   }
 });
-
-submitButton.addEventListener("click", (event) => {
-  if (passwordConfirm.value !== password.value) {
-    event.preventDefault();
-  }
-});

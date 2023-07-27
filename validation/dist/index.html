@@ -20,7 +20,7 @@
         </div>
         <div class="input-group">
           <label for="zipCode">ZIP</label>
-          <input id="zipCode" required placeholder="XXXXX" minlength="5" pattern="[0-9]+">
+          <input id="zipCode" required placeholder="XXXXX" minlength="5" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
           <span class="errorZ"></span>
         </div>
         <div class="input-group">
