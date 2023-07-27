@@ -1,0 +1,6 @@
+Make an Iteration > create function fibs > 
+    take a number
+        return [numbers from Fibonacci Seq.]
+
+Ex: fib(8)
+    return [0, 1, 1, 2, 3, 5, 8, 13]
