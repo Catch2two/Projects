@@ -35,5 +35,9 @@ function merge(left, right) {
 
         return merged;
     }
-
-    console.log(sortedArray)
+    
+    // Sort a Const
+    console.log(sortedArray) // [1,  4,  8, 23, 32, 44, 46, 55, 56, 89, 100]
+    
+    // Manuel Input Sort
+    console.log(mergeSort([1, 3, 6, 2, 0, 99, 45])); // [0,  1,  2, 3, 6, 45, 99]
