@@ -31,6 +31,11 @@ addNodeToEnd(data) {
     this.size++;
 
     return this;
+};
+
+clear() {
+    this.head = null;
+    this.size = 0;
 }
 
 printList() {
@@ -42,12 +47,26 @@ printList() {
 }
 }
 
-// List
+// Lists
 let animals = ["dog", "cat", "bird", "horse", "monkey", "fish", "snake", "turtle", "rabbit", "hamster", "panda", "bear"];
+let numbers = ["100", "89", "9", "78"]
 
 let list = new LinkedList();
 for (let animal of animals) {
     list.addNodeToEnd(animal);
 }
 
-list.printList()
+// Use LinkedList() to create another list of Numbers
+let list2 = new LinkedList();
+for (let number of numbers) {
+    list2.addNodeToEnd(number);
+}
+
+// list2.printList() // 100 89 9 78
+
+
+console.log("The list before clearing:");
+list.printList();
+list.clear();
+console.log("The list after clearing:");
+list.printList();
