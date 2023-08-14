@@ -10,7 +10,7 @@ class LinkedList {
         this.head = head;
         this.size = 0;
     };
-// Add node with value to list
+// Add node with value to the end of the list
 append(value) {
     let newNode = new ListNode(value);
 
@@ -29,6 +29,15 @@ append(value) {
 
     return this;
 };
+// Add node with value to the begining of the list.
+prepend(value) {
+    let newNode = new ListNode(value);
+    newNode.next = this.head;
+    this.head = newNode;
+    this.size++;
+
+    return this;
+}
 // get first node of list
 getFirstNode() {
     if (this.head !== null) {
@@ -151,7 +160,7 @@ for (let number of numbers) {
 // list2.printList() // 100 89 9 78
 
 // This list
-console.log("The list before clearing:");
+console.log("The list:");
 list.printList();
 // The list size
 console.log("the size of the list is:", list.getSize()) // the size of the list is: 12
@@ -159,6 +168,12 @@ console.log("the size of the list is:", list.getSize()) // the size of the list 
 console.log("The first node is:", list.getFirstNode().data)
 // Select last node
 console.log("The last node is:", list.getLastNode().data)
+// Add a new node with a value to the end of the list.
+list.append("Pikachu");
+list.printList();
+// Add a new node with a value to the begining of the list.
+list.prepend("Meowth");
+list.printList();
 // get node from Index(Specific location on list)
 console.log(list.getNodeIndexAt(2).data, "is at node index 2")
 // find the value of a node
@@ -169,8 +184,6 @@ list.printList();
 
 // Clear list
 list.clear();
-console.log("The list after clearing and appending a new node:");
+console.log("The list after clearing and appending only Meowth:");
+list.append("Meowth");
 list.printList(); // The list after clearing:
-// Add a new node with a value.
-list.append("Pikachu");
-list.printList();
