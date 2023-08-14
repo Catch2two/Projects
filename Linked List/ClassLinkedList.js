@@ -169,13 +169,13 @@ console.log("The first node is:", list.getFirstNode().data)
 // Select last node
 console.log("The last node is:", list.getLastNode().data)
 // Add a new node with a value to the end of the list.
+console.log("Append Pikachu + Prepend Meowth:")
 list.append("Pikachu");
-list.printList();
 // Add a new node with a value to the begining of the list.
 list.prepend("Meowth");
 list.printList();
 // get node from Index(Specific location on list)
-console.log(list.getNodeIndexAt(2).data, "is at node index 2")
+console.log(list.getNodeIndexAt(2).data, "is at node index 2 (getNodeIndex(2))")
 // find the value of a node
 console.log("The value of 'fish' :", list.getNodeValueAt("fish"));
 // Remove last object in list
