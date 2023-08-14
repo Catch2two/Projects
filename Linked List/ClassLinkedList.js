@@ -141,7 +141,7 @@ console.log("The last node is:", list.getLastNode().data)
 // get node from Index(Specific location on list)
 console.log(list.getNodeIndexAt(2).data, "is at node index 2")
 // find the value of a node
-console.log("The value of the node at index 2 is:", list.getNodeValueAt(2));
+console.log("The value of 'fish' :", list.getNodeValueAt("fish"));
 // Remove last object in list
 list.removeNodeFromEnd();
 list.printList();
