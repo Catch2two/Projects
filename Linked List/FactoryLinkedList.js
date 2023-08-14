@@ -16,16 +16,13 @@ function LinkedList() {
     };
 
     this.tail = function(){
-        let currentNode = head;
-        while(currentNode.next){
-            currentNode = currentNode.next;
+        let nextNode = this.head;
+        if (nextNode) {
+            while (nextNode.next) {
+                nextNode = nextNode.next
+            }
         }
-
-        if(currentNode.next === null){
-            return null;
-        } else {
-            return currentNode.next;
-        }
+        return nextNode
     };
 
     this.index = function(index) {
@@ -77,6 +74,9 @@ function LinkedList() {
 
         length--;
     };
+    this.clear = function(element) {
+        this.head = null;
+    };
 
     this.pop = function(element){
         let currentNode = head;
@@ -110,4 +110,9 @@ linkedList.prepend("Frog")
 console.log(linkedList.head().value) // Frog
 
 linkedList.append("Llama")
+console.log(linkedList.size()) // 6
+
+console.log(linkedList.tail()) // Last in the list
+
+linkedList.clear(linkedList)
 console.log(linkedList.size())
