@@ -24,6 +24,37 @@ getLastNode() {
     }
     return currentNode
 }
+getNodeIndexAt(index) {
+    let currentNode = this.head;
+    let counter = 0;
+
+    while (currentNode && counter < index) {
+        currentNode = currentNode.next;
+        counter++;
+    }
+
+    if (counter === index) {
+        return currentNode;
+    } else {
+        return null;
+    }
+}
+getNodeValueAt(value) {
+    let currentNode = this.head;
+    let counter = 0;
+
+    while (currentNode && currentNode.data !== value) {
+        currentNode = currentNode.next;
+        counter++;
+    }
+
+    if (currentNode) {
+        return counter;
+    } else {
+        return null;
+    }
+
+}
 addNodeToEnd(data) {
     let newNode = new ListNode(data);
 
@@ -107,6 +138,10 @@ console.log("the size of the list is:", list.getSize()) // the size of the list 
 console.log("The first node is:", list.getFirstNode().data)
 // Select last node
 console.log("The last node is:", list.getLastNode().data)
+// get node from Index(Specific location on list)
+console.log(list.getNodeIndexAt(2).data, "is at node index 2")
+// find the value of a node
+console.log("The value of the node at index 2 is:", list.getNodeValueAt(2));
 // Remove last object in list
 list.removeNodeFromEnd();
 list.printList();
