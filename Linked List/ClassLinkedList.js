@@ -9,7 +9,27 @@ class LinkedList {
     constructor(head = null) {
         this.head = head;
         this.size = 0;
+    };
+// Add node with value to list
+append(value) {
+    let newNode = new ListNode(value);
+
+    if (this.head === null) {
+        this.head = newNode;
+    } else {
+        let currentNode = this.head;
+        while (currentNode.next) {
+            currentNode = currentNode.next;
+        }
+
+        currentNode.next = newNode;
     }
+
+    this.size++;
+
+    return this;
+};
+// get first node of list
 getFirstNode() {
     if (this.head !== null) {
         return this.head;
@@ -77,6 +97,7 @@ addNodeToEnd(data) {
     return this;
 };
 
+// pop
 removeNodeFromEnd() {
     let currentNode = this.head;
     let previousNode = null;
@@ -145,7 +166,11 @@ console.log("The value of 'fish' :", list.getNodeValueAt("fish"));
 // Remove last object in list
 list.removeNodeFromEnd();
 list.printList();
+
 // Clear list
 list.clear();
-console.log("The list after clearing:");
+console.log("The list after clearing and appending a new node:");
 list.printList(); // The list after clearing:
+// Add a new node with a value.
+list.append("Pikachu");
+list.printList();
