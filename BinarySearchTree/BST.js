@@ -1,8 +1,8 @@
 class Node {
-    constructor(data, left = null, right = null) {
+    constructor(data) {
         this.data = data
-        this.left = left
-        this.right = right
+        this.left = null;
+        this.right = null;
     }
 }
 
@@ -10,7 +10,11 @@ class BST {
     constructor() {
         this.root = null;
     }
-    add(data) {
+    // Get root
+    getRootNode() {
+        return this.root;
+    }
+    insert(data) {
         const node = this.root;
         if(node === null) {
             this.root = new Node(data);
@@ -117,16 +121,18 @@ class BST {
 
 const bst = new BST();
 
-bst.add(43323);
-bst.add(212);
-bst.add(621412);
-bst.add(145);
-bst.add(30);
-bst.add(314);
-bst.add(7);
+bst.insert(1);
+bst.insert(2);
+bst.insert(4);
+bst.insert(8);
+bst.insert(16);
+bst.insert(32);
+bst.insert(64);
+bst.insert(128);
 bst.remove(4)
 console.log(bst.findMin());
 console.log(bst.findMax());
-bst.remove(7)
-console.log(bst.findMax());
-console.log(bst.isPresent(4))
+bst.remove(8)
+console.log(bst.findMin());
+console.log(bst.isPresent(69))
+console.log(bst.getRootNode().data)
