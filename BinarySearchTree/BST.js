@@ -117,12 +117,12 @@ class BST {
 
 const bst = new BST();
 
-bst.add(4);
-bst.add(2);
-bst.add(6);
-bst.add(1);
-bst.add(3);
-bst.add(5);
+bst.add(43323);
+bst.add(212);
+bst.add(621412);
+bst.add(145);
+bst.add(30);
+bst.add(314);
 bst.add(7);
 bst.remove(4)
 console.log(bst.findMin());
