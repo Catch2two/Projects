@@ -117,6 +117,17 @@ class BST {
         }
         this.root = removeNode(this.root, data);
     }
+    buildTree(array) {
+        let sorted = this.cleanUp(array);
+        if (sorted.length === 0)
+            return null;
+        const mid = parseInt(sorted.length / 2);
+        const root = new Node(
+            sorted[mid],
+            this.buildTree(sorted.slice(0, mid)),
+            this.buildTree(sorted.slice(mid + 1))
+        )
+    }
 }
 
 const bst = new BST(); // bst is a shortcut for "new BST(23)"... bst.insert(23)

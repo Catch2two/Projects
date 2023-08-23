@@ -8,9 +8,17 @@ class Node {
 
 class BinarySearchTree {
     constructor() {
-        this.root = null; // Holds the root node, single most top of the tree node.
+        this.root = null; // Holds the root node, single most top of the tree node.    
     }
-
+    cleanUp(array) {
+        const uniqueArray = [];
+        for (const element of array) {
+            if (!uniqueArray.includes(element)) {
+                uniqueArray.push(element);
+            }
+        }
+        return uniqueArray;
+    }
     insert(data){
         let newNode = new Node(data);
 
@@ -37,6 +45,9 @@ class BinarySearchTree {
             }
         }
     }
+    // The static keyword in JavaScript means that the method belongs to the class itself, not to any instance of the class. 
+    // This means that the method can be called without creating an instance of the class.
+    // Call it like this: BinarySearchTree.prettyPrint(tree.root);
     static prettyPrint(node, prefix = "", isLeft = true) {
         if (node === null) {
           return;
@@ -142,21 +153,38 @@ class BinarySearchTree {
             }
         }
     }
+    buildTree(array) {
+        let sorted = this.cleanUp(array);
+        if (sorted.length === 0)
+            return null;
+        const mid = parseInt(sorted.length / 2);
+        const root = new Node(
+            sorted[mid],
+            this.buildTree(sorted.slice(0, mid)),
+            this.buildTree(sorted.slice(mid + 1))
+        );
+        return root;
+    }
 }
 
 const tree = new BinarySearchTree();
-
+const root = tree.buildTree([5, 15, 20, 25, 50]);
+tree.root = root;
+/*
 tree.insert(15);
 tree.insert(5);
 tree.insert(25);
 tree.insert(50);
 tree.insert(20);
-
+*/
 BinarySearchTree.prettyPrint(tree.root)
 console.log("lookup(2): " + tree.lookup(2))
 console.log("lookup(15): " + tree.lookup(15))
 console.log("tree.remove(15): ")
+tree.remove(50);
 tree.remove(15);
-
+tree.remove(20);
+tree.remove(5);
+tree.remove(25);
 
 BinarySearchTree.prettyPrint(tree.root)
