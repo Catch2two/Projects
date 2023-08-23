@@ -37,7 +37,18 @@ class BinarySearchTree {
             }
         }
     }
-
+    static prettyPrint(node, prefix = "", isLeft = true) {
+        if (node === null) {
+          return;
+        }
+        if (node.right !== null) {
+          BinarySearchTree.prettyPrint(node.right, `${prefix}${isLeft ? "│   " : "    "}`, false);
+        }
+        console.log(`${prefix}${isLeft ? "└── " : "┌── "}${node.data}`);
+        if (node.left !== null) {
+          BinarySearchTree.prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
+        }
+    }
     lookup(data) {
         if(!this.root){  // If there isn't a tree to search, return false.
             return false;
@@ -49,7 +60,7 @@ class BinarySearchTree {
             } else if(data > tree.data){ // Traverse right side...
                 tree = tree.right;
             } else if (tree.data === data) { // If match found, return.
-                return tree;
+                return true;
             }
         }
 
@@ -67,11 +78,67 @@ class BinarySearchTree {
             if(data < currentNode.data){ // If the data is less than current Node...
                 parentNode = currentNode; // currentNode becomes parentNode...
                 currentNode = currentNode.left; // new node moves to left node (Because it's less than the previous node).
-            } else if(data > currentNode.data){
+            } else if(data > currentNode.data){ // Same as above, except if the node is greater than the current Node, move to the right.
                 parentNode = currentNode;
                 currentNode = currentNode.right;
             } else if (currentNode.data === data) {
                 // Match found
+                // If there is No RIGHT Child
+                if (currentNode.right === null) {
+                    if (parentNode === null) {
+                        this.root = currentNode.left;
+                    } else {
+                        // If parentNode > currentNode, make current left child a child of parent...
+                        if(currentNode.data < parentNode.data) {
+                            parentNode.left = currentNode.left;
+
+                        // if parentNode < currentNode, mkae left child a right child of parent...    
+                        } else if(currentNode.data > parentNode.data) {
+                            parentNode.right = currentNode.left;
+                        }
+                    }
+                // if Right child doesnt have a LEFT Child...  
+                } else if (currentNode.right.left === null) {
+                    currentNode.right.left = currentNode.left;
+                    if(parentNode === null) {
+                        this.root = currentNode.right;
+                    } else {
+
+                        // if parent > current, make right child of the left parent
+                        if(currentNode.data < parentNode.data) {
+                            parentNode.left = currentNode.right;
+
+                        // if parent < current, make right child a right child of the parent...    
+                        } else if (currentNode.data > parentNode.data) {
+                            parentNode.right = currentNode.right;
+                        }
+
+                    }
+                // Right child that has a LEFT child...    
+                } else {
+                    // Find the Right child's LEFT MOST child...
+                    let leftMost = currentNode.right.left;
+                    let leftMostParent = currentNode.right;
+                    while (leftMost.left !== null) {
+                        leftMostParent = leftMost;
+                        leftMost = leftMost.left;
+                    }
+                    // Parent's left subtree is now leftMost's right subtree
+                    leftMostParent.left = leftMost.right;
+                    leftMost.left = currentNode.left;
+                    leftMost.right = currentNode.right;
+
+                    if(parentNode === null) {
+                        this.root = leftMost;
+                    } else {
+                        if(currentNode.data < parentNode.value) {
+                            parentNode.left = leftMost;
+                        } else if(currentNode.data > parentNode.data) {
+                            parentNode.right = leftMost;
+                        }
+                    }
+                }
+                return true;
             }
         }
     }
@@ -85,6 +152,11 @@ tree.insert(25);
 tree.insert(50);
 tree.insert(20);
 
-console.log(tree)
-console.log(tree.lookup(2))
-console.log(tree.lookup(15))
+BinarySearchTree.prettyPrint(tree.root)
+console.log("lookup(2): " + tree.lookup(2))
+console.log("lookup(15): " + tree.lookup(15))
+console.log("tree.remove(15): ")
+tree.remove(15);
+
+
+BinarySearchTree.prettyPrint(tree.root)
