@@ -119,9 +119,9 @@ class BST {
     }
 }
 
-const bst = new BST();
+const bst = new BST(); // bst is a shortcut for "new BST(23)"... bst.insert(23)
 
-bst.insert(1);
+bst.insert(11);
 bst.insert(2);
 bst.insert(4);
 bst.insert(8);
@@ -133,6 +133,6 @@ bst.remove(4)
 console.log(bst.findMin());
 console.log(bst.findMax());
 bst.remove(8)
-console.log(bst.findMin());
-console.log(bst.isPresent(69))
-console.log(bst.getRootNode().data)
+console.log("findMin:" + bst.findMin());
+console.log("isPresent: " + bst.isPresent(69))
+console.log("getRootNode:" + bst.getRootNode().data)
