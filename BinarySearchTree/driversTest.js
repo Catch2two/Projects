@@ -1,4 +1,4 @@
-import BinarySearchTree from './Build.js';
+import BinarySearchTree from './Tree.js';
 import mergeSort from './mergeSort.js';
 
 // Arrays1
