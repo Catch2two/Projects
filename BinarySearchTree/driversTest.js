@@ -21,9 +21,11 @@ BinarySearchTree.prettyPrint(tree.root)
 // 2nd Driver Test
 console.log("Test #2")
 const testArray2 = tree.buildTree(mergeSort(array2));
-tree.root = testArray2;
+tree.root = testArray2; // Swap Array****
 console.log("tree.insert(88): ")
 console.log("tree.remove(22): ")
+console.log("tree.insert(1002): ")
 tree.remove(22)
 tree.insert(88)
+tree.insert(1002)
 BinarySearchTree.prettyPrint(tree.root)
