@@ -11,15 +11,6 @@ class BinarySearchTree {
     constructor() {
         this.root = null; // Holds the root node, single most top of the tree node.    
     }
-    cleanUp(array) {
-        const uniqueArray = [];
-        for (const element of array) {
-            if (!uniqueArray.includes(element)) {
-                uniqueArray.push(element);
-            }
-        }
-        return uniqueArray;
-    }
     insert(data){
         
         let newNode = new Node(data);
@@ -158,7 +149,7 @@ class BinarySearchTree {
         if (array.length === 0) {
           return null;
         }
-        const middle = Math.floor(array.length / 2);
+        const middle = Math.floor(array.length / 2); // If array is > 1. Divide by 2
         const root = new Node(array[middle]);
         root.left = this.buildTree(array.slice(0, middle));
         root.right = this.buildTree(array.slice(middle + 1));
@@ -167,7 +158,8 @@ class BinarySearchTree {
       }
     }
 // Arrays
-const array = [60, 77, 89, 12, 23]
+const array = [60, 77, 89, 12, 23, 89]
+const array2 = [1, 22, 3, 8, 0, 12]
 // Driver Tests
 const tree = new BinarySearchTree();
 const root = tree.buildTree(mergeSort(array));
