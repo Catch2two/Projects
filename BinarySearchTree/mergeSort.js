@@ -4,7 +4,7 @@ function mergeSort(array) {
         return array;
     }
 
-    let mid = Math.floor(array.length / 2);
+    let mid = Math.floor(array.length / 2); // Middle Root
     let left = mergeSort(array.slice(0, mid));
     let right = mergeSort(array.slice(mid));
 

@@ -149,9 +149,11 @@ class BinarySearchTree {
           return null;
         }
         const middle = Math.floor(array.length / 2); // If array is > 1. Divide by 2
-        const root = new Node(array[middle]);
-        root.left = this.buildTree(array.slice(0, middle));
-        root.right = this.buildTree(array.slice(middle + 1));
+        const root = new Node(array[middle]); // Data from Middle
+
+        
+        root.left = this.buildTree(array.slice(0, middle)); // Position left (Less than Root)
+        root.right = this.buildTree(array.slice(middle + 1)); // Position right (More than)
     
         return root;
       }
