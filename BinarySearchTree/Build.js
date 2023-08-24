@@ -20,13 +20,13 @@ class BinarySearchTree {
         return uniqueArray;
     }
     insert(data){
+        
         let newNode = new Node(data);
 
         if(!this.root){ // Check if there isn't already a Root Node on the tree
             this.root = newNode; // Creates the root node.
             return this; // End process here.
         }
-
         let tree = this.root; // Find the right position for the new Node.
 
         while(true){
@@ -60,7 +60,7 @@ class BinarySearchTree {
           BinarySearchTree.prettyPrint(node.left, `${prefix}${isLeft ? "    " : "│   "}`, true);
         }
     }
-    lookup(data) {
+    find(data) {
         if(!this.root){  // If there isn't a tree to search, return false.
             return false;
         }
@@ -154,21 +154,23 @@ class BinarySearchTree {
         }
     }
     buildTree(array) {
-        let sorted = this.cleanUp(array);
-        if (sorted.length === 0)
-            return null;
-        const mid = parseInt(sorted.length / 2);
-        const root = new Node(
-            sorted[mid],
-            this.buildTree(sorted.slice(0, mid)),
-            this.buildTree(sorted.slice(mid + 1))
-        );
+        if (array.length === 0) {
+          return null;
+        }
+    
+        const middle = Math.floor(array.length / 2);
+        const root = new Node(array[middle]);
+        root.left = this.buildTree(array.slice(0, middle));
+        root.right = this.buildTree(array.slice(middle + 1));
+    
         return root;
+      }
     }
-}
-
+// Arrays
+const array = [60, 77, 89, 12, 23]
+// Driver Tests
 const tree = new BinarySearchTree();
-const root = tree.buildTree([5, 15, 20, 25, 50]);
+const root = tree.buildTree(array);
 tree.root = root;
 
 tree.insert(15);
@@ -176,15 +178,13 @@ tree.insert(5);
 tree.insert(25);
 tree.insert(50);
 tree.insert(20);
+tree.insert(60);
 
 BinarySearchTree.prettyPrint(tree.root)
-console.log("lookup(2): " + tree.lookup(2))
-console.log("lookup(15): " + tree.lookup(15))
+console.log("tree.find(0): " + tree.find(0))
+console.log("tree.find(15): " + tree.find(15))
 console.log("tree.remove(15): ")
-tree.remove(50);
 tree.remove(15);
-tree.remove(20);
-tree.remove(5);
-tree.remove(25);
-
+console.log("tree.insert(69): ")
+tree.insert(69);
 BinarySearchTree.prettyPrint(tree.root)
