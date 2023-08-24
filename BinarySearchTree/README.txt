@@ -1,0 +1,1 @@
+Attempt at using Classes to build this BST.

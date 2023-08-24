@@ -1,7 +1,7 @@
-import {BinarySearchTree} from '../Build.js'
-const mergeSort = require('./mergeSort');
+import BinarySearchTree from './Build.js';
+import mergeSort from './mergeSort.js';
 
-// Arrays
+// Arrays1
 const array = [60, 77, 89, 12, 23, 89]
 const array2 = [1, 22, 3, 8, 0, 12]
 // Driver Tests

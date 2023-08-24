@@ -31,5 +31,5 @@ function merge(left, right) {
 
         return merged;
     }
-
-module.exports = mergeSort
+    
+export default mergeSort
