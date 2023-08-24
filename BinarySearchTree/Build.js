@@ -170,13 +170,13 @@ class BinarySearchTree {
 const tree = new BinarySearchTree();
 const root = tree.buildTree([5, 15, 20, 25, 50]);
 tree.root = root;
-/*
+
 tree.insert(15);
 tree.insert(5);
 tree.insert(25);
 tree.insert(50);
 tree.insert(20);
-*/
+
 BinarySearchTree.prettyPrint(tree.root)
 console.log("lookup(2): " + tree.lookup(2))
 console.log("lookup(15): " + tree.lookup(15))
