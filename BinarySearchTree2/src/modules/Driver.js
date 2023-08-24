@@ -194,9 +194,9 @@ arrays.forEach((array) => {
     console.log(BinarySearchTree.prettyPrint(root))
 })
 
-
+tree
 // tests
-/*
+
 tree.insert(15);
 tree.insert(5);
 tree.insert(25);
@@ -204,7 +204,7 @@ tree.insert(50);
 tree.insert(20);
 
 BinarySearchTree.prettyPrint(tree.root)
-*/
+
 console.log("lookup(11): " + binarySearchTree.lookup(11))
 console.log("lookup(67): " + binarySearchTree.lookup(67))
 
