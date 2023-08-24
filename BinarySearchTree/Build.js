@@ -1,3 +1,4 @@
+const mergeSort = require('./mergeSort');
 class Node {
     constructor(data) {
         this.data = data;
@@ -157,7 +158,6 @@ class BinarySearchTree {
         if (array.length === 0) {
           return null;
         }
-    
         const middle = Math.floor(array.length / 2);
         const root = new Node(array[middle]);
         root.left = this.buildTree(array.slice(0, middle));
@@ -170,21 +170,6 @@ class BinarySearchTree {
 const array = [60, 77, 89, 12, 23]
 // Driver Tests
 const tree = new BinarySearchTree();
-const root = tree.buildTree(array);
+const root = tree.buildTree(mergeSort(array));
 tree.root = root;
-
-tree.insert(15);
-tree.insert(5);
-tree.insert(25);
-tree.insert(50);
-tree.insert(20);
-tree.insert(60);
-
-BinarySearchTree.prettyPrint(tree.root)
-console.log("tree.find(0): " + tree.find(0))
-console.log("tree.find(15): " + tree.find(15))
-console.log("tree.remove(15): ")
-tree.remove(15);
-console.log("tree.insert(69): ")
-tree.insert(69);
 BinarySearchTree.prettyPrint(tree.root)
