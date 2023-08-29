@@ -1,4 +1,3 @@
-import mergeSort from './mergeSort.js';
 class Node {
     constructor(data) {
         this.data = data;
@@ -6,6 +5,7 @@ class Node {
         this.right = null;
     }
 }
+
 
 class BinarySearchTree {
     constructor() {
@@ -146,11 +146,33 @@ class BinarySearchTree {
         }
     }
 
-    levelOrder() {
+    levelOrder(tree) {
+        if (!this.root)
+            return []
+        let level = [this.root] // Remove the first item from the queue.
+        let result = []
 
+        while(level.length){
+            let node = level.shift() // Removes the first node from the queue and returns it.
+            result.push(node.data) // Add to result array.
+            if(node.left){ // If node has left child...
+                level.push(node.left) // add left child node to queue.
+            }
+            if(node.right){ // If node has right child...
+                level.push(node.right) // add right child node to queue.
+            }
+            if (typeof tree === 'function') {
+                result.forEach(tree)
+            }
+        }
+        return result
     }
-    inorder(data, visit) {
-
+    inorder() {
+        if(!this.root)
+            return [];
+        if (node === null)
+            return;
+        this.inorder(node)
     }
     preorder() {
 
