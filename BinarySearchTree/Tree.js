@@ -233,6 +233,12 @@ class BinarySearchTree {
     isBalanced() {
         return (this.findMinHeight() >= this.findMaxHeight() - 1)
     }
+    reBalance() {
+        if (this.root == null) {
+            return null;
+        }
+    }
+    // Depth
     findMinHeight(node = this.root) { // Pass in a Node, if you dont pass in a node, its going to set the root node
         if (node == null) {
             return -1; // Eventually be -1 because either the Left or Right node becomes Null (Doesn't  have a number leaf)
@@ -245,6 +251,7 @@ class BinarySearchTree {
             return right + 1;
         };
     }
+    // Height
     findMaxHeight(node = this.root) {
         if (node == null) {
             return -1;
@@ -256,9 +263,6 @@ class BinarySearchTree {
         } else {
             return right + 1
         }
-    }
-    reBalance() {
-
     }
     buildTree(array) {
         if (array.length <= 0) {
