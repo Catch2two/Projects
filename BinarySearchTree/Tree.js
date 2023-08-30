@@ -230,9 +230,6 @@ class BinarySearchTree {
             return result;
         }
     }
-    height() {
-
-    }
     isBalanced() {
         return (this.findMinHeight() >= this.findMaxHeight() - 1)
     }

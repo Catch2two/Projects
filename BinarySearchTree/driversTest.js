@@ -54,6 +54,8 @@ BinarySearchTree.prettyPrint(tree.root)
 
 console.log('levelOrder =>  ' + tree.levelOrder())
 console.log("\n")
+console.log('reBalance =>  ' + tree.reBalance())
+console.log("\n")
 console.log('inOrder =>  ' + tree.inorder())
 console.log("\n")
 console.log('preOrder =>  ' + tree.preorder())
