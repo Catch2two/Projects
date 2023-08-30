@@ -145,7 +145,27 @@ class BinarySearchTree {
             }
         }
     }
-
+    levelOrder() {
+        let result = [];
+        let X = []; // temp array
+        if (this.root != null) {
+            X.push(this.root); // push onto the temp array(X)
+            while(X.length > 0) { // Loop until all elements are added from the Tree.
+                let node = X.shift(); // take off first element of array and returns it
+                result.push(node.data); // Add element removed from array onto the tree.
+                if (node.left != null) { // Check Left Node
+                    X.push(node.left); // Insert Left Node
+                };
+                if  (node.right != null) {
+                    X.push(node.right);
+                };
+            };
+            return result;
+        } else {
+            return null;
+        }
+    }
+/* // Alternative (Just another way it worked...)
     levelOrder(tree) {
         if (!this.root)
             return []
@@ -167,6 +187,7 @@ class BinarySearchTree {
         }
         return result
     }
+    */
     inorder() {
         if (this.root == null) {
             return null;
