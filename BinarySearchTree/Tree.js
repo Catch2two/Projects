@@ -173,9 +173,9 @@ class BinarySearchTree {
         } else {
             const result = new Array();
             function traverseInOrder(node) {
-                node.left && traverseInOrder(node.left);  // These three lines are the only thing that change in pre/post/inOrder syntax
-                result.push(node.data);
-                node.right && traverseInOrder(node.right);
+                node.left && traverseInOrder(node.left);  // If node.left EXISTS, Then run traverseInOrder(node.left) : which calls traverseInOrder(node.left)
+                result.push(node.data); // Push the value in that node onto the Result Array.
+                node.right && traverseInOrder(node.right); // check if node.right exists, call traverseInOrder(node.right)
             }
             traverseInOrder(this.root);
             return result;
@@ -196,7 +196,18 @@ class BinarySearchTree {
         }
     }
     postorder() {
-
+        if (this.root == null) {
+            return null;
+        } else {
+            let result = new Array();
+            function traversePostOrder(node) {
+                node.left && traversePostOrder(node.left);
+                node.right && traversePostOrder(node.right);
+                result.push(node.data);
+            }
+            traversePostOrder(this.root);
+            return result;
+        }
     }
     height() {
 
