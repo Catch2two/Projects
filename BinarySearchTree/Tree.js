@@ -168,14 +168,32 @@ class BinarySearchTree {
         return result
     }
     inorder() {
-        if(!this.root)
-            return [];
-        if (node === null)
-            return;
-        this.inorder(node)
+        if (this.root == null) {
+            return null;
+        } else {
+            const result = new Array();
+            function traverseInOrder(node) {
+                node.left && traverseInOrder(node.left);  // These three lines are the only thing that change in pre/post/inOrder syntax
+                result.push(node.data);
+                node.right && traverseInOrder(node.right);
+            }
+            traverseInOrder(this.root);
+            return result;
+        }
     }
     preorder() {
-
+        if (this.root == null) {
+            return null;
+        } else {
+            let result = new Array();
+            function traversePreOrder(node) {
+                result.push(node.data);
+                node.left && traversePreOrder(node.left);
+                node.right && traversePreOrder(node.right);
+            }
+            traversePreOrder(this.root);
+            return result;
+        }
     }
     postorder() {
 
@@ -184,7 +202,31 @@ class BinarySearchTree {
 
     }
     isBalanced() {
-
+        return (this.findMinHeight() >= this.findMaxHeight() - 1)
+    }
+    findMinHeight(node = this.root) { // Pass in a Node, if you dont pass in a node, its going to set the root node
+        if (node == null) {
+            return -1; // Eventually be -1 because either the Left or Right node becomes Null (Doesn't  have a number leaf)
+        };
+        let left = this.findMinHeight(node.left); // Recursive, calling function within it'self
+        let right = this.findMinHeight(node.right);
+        if (left < right) {
+            return left + 1;
+        } else {
+            return right + 1;
+        };
+    }
+    findMaxHeight(node = this.root) {
+        if (node == null) {
+            return -1;
+        };
+        let left = this.findMaxHeight(node.left);
+        let right = this.findMaxHeight(node.right);
+        if (left > right) {
+            return left + 1;
+        } else {
+            return right + 1
+        }
     }
     reBalance() {
 
