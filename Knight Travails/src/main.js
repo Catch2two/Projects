@@ -9,3 +9,18 @@ function createGameboard() {
     }
     return gameboard;
 }
+
+function createKnight() {
+    let knight = {
+        position: {
+            x: 0,
+            y: 0
+        },
+        color: "White",
+        moves: [
+            [2, 1], [2, -1], [-2, 1], [-2, -1],
+            [1, 2], [-1, 2], [1, -2], [-1, -2]
+        ]
+    };
+    return  knight;
+}
