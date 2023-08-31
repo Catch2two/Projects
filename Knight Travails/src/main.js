@@ -24,3 +24,16 @@ function createKnight() {
     };
     return  knight;
 }
+// Set knight position to (2, 3)
+let gameboard = createGameboard();
+let knight = createKnight();
+
+knight.position.x = 2;
+knight.position.y = 3;
+
+// Mark the Location on the board(a string just for visual testing):
+gameboard[knight.position.x][knight.position.y] = "KNIGHT"; // or use 1 for actual code...
+
+console.log(gameboard);
+
+console.log(knight.moves);
