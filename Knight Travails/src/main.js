@@ -1,7 +1,7 @@
 function createGameboard() {
     // Create a 8x8 gameboard.
-    let gameboard = new Array(8);
-    for (let i = 0; i < 8; i++) {
+    let gameboard = new Array(6);
+    for (let i = 0; i < 6; i++) {
         gameboard[i] = new Array(8);
         for (let j = 0; j < 8; j++) {
             gameboard[i][j] = 0  // Start each cell with 0
@@ -13,8 +13,8 @@ function createGameboard() {
 function createKnight() {
     let knight = {
         position: {
-            x: 0,
-            y: 0
+            x: 2,
+            y: 1
         },
         color: "White",
         moves: [
@@ -22,18 +22,72 @@ function createKnight() {
             [1, 2], [-1, 2], [1, -2], [-1, -2]
         ]
     };
+    // Set White knight position to (0, 1)
+    knight.position.x = 0;
+    knight.position.y = 2;
     return  knight;
 }
-// Set knight position to (2, 3)
-let gameboard = createGameboard();
+
+function movePiece(currentPostion, targetPosition) {
+    // Check if within Gameboard limits.
+    if (targetPosition.x < 0 || targetPosition.x >= gameboard.length) {
+      return;
+    }
+    if (targetPosition.y < 0 || targetPosition.x >= gameboard[0].length) {
+      return;
+    }
+    // Check if valid move.
+    for (let move of knight.moves) {
+      if (move[0] === targetPosition.x && move[1] === targetPosition.y) {
+        currentPostion.x = targetPosition.x;
+        currentPostion.y = targetPosition.y;
+        // Update Gameboard
+        let lastPosition = gameboard[currentPostion.x][currentPostion.y];
+        gameboard[currentPostion.x][currentPostion.y] = 0;
+        gameboard[targetPosition.x][targetPosition.y] = lastPosition
+        return;
+      }
+    }
+  }
+
 let knight = createKnight();
+let gameboard = createGameboard();
+console.log('\n')
+console.log('Knight Moves: ')
+console.log(knight.moves)
 
-knight.position.x = 2;
-knight.position.y = 3;
+console.log('Knight position on Board:')
+console.log('\n')
+gameboard[knight.position.x][knight.position.y] = 'Knight';
+console.log(gameboard)
 
-// Mark the Location on the board(a string just for visual testing):
-gameboard[knight.position.x][knight.position.y] = "KNIGHT"; // or use 1 for actual code...
+// Change the target position to [2, 1]
+console.log('\n')
+movePiece(knight.position, [2, 1])
+console.log(gameboard)
+/*
+let whiteKnight = createKnightWhite();
+let blackKnight = createKnightBlack();
+
+// Knight Moves
+console.log('\n')
+console.log('Possible Knight Moves:')
+console.log(whiteKnight.moves);
+
+
+// Print the positions of the knights on the board.
+console.log('\n')
+console.log('Knight Positions on Board:')
+
+// Mark the location of the white knight on the board.
+gameboard[whiteKnight.position.x][whiteKnight.position.y] = "K(W)";
+
+// Mark the location of the black knight on the board.
+gameboard[blackKnight.position.x][blackKnight.position.y] = "K(B)";
 
 console.log(gameboard);
 
-console.log(knight.moves);
+
+movePiece(whiteKnight.position, [2, -1])
+console.log(gameboard);
+*/
