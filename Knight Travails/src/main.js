@@ -63,31 +63,5 @@ console.log(gameboard)
 
 // Change the target position to [2, 1]
 console.log('\n')
-movePiece(knight.position, [2, 1])
+movePiece(knight.position, [2, 2])
 console.log(gameboard)
-/*
-let whiteKnight = createKnightWhite();
-let blackKnight = createKnightBlack();
-
-// Knight Moves
-console.log('\n')
-console.log('Possible Knight Moves:')
-console.log(whiteKnight.moves);
-
-
-// Print the positions of the knights on the board.
-console.log('\n')
-console.log('Knight Positions on Board:')
-
-// Mark the location of the white knight on the board.
-gameboard[whiteKnight.position.x][whiteKnight.position.y] = "K(W)";
-
-// Mark the location of the black knight on the board.
-gameboard[blackKnight.position.x][blackKnight.position.y] = "K(B)";
-
-console.log(gameboard);
-
-
-movePiece(whiteKnight.position, [2, -1])
-console.log(gameboard);
-*/
