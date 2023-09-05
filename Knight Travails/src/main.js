@@ -22,9 +22,6 @@ function createKnight() {
             [1, 2], [-1, 2], [1, -2], [-1, -2]
         ]
     };
-    // Set White knight position to (0, 1)
-    knight.position.x = 0;
-    knight.position.y = 2;
     return  knight;
 }
 
