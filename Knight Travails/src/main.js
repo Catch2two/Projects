@@ -24,11 +24,9 @@ function createKnight() {
     return  knight;
 }
 
-const minKnightMoves = function(x, y) {
-  let moves = [
-      [2, 1], [2, -1], [-2, 1], [-2, -1],
-      [1, 2], [-1, 2], [1, -2], [-1, -2]
-  ];
+function minKnightMoves(x, y) {
+  let knight = createKnight();
+  let moves = knight.moves;
 
   let seen = new Set();
   let queue = [[0,0]];
@@ -41,8 +39,10 @@ const minKnightMoves = function(x, y) {
           let currentX = current[0];
           let currentY = current[1];
 
-          if (currentX === x && currentY === y) 
+          if (currentX === x && currentY === y) {
+              console.log(queue)
                return steps
+          }
 
           for (let i of moves){
               let nextX = currentX + i[0];
@@ -70,5 +70,5 @@ console.log('\n')
 gameboard[knight.position.x][knight.position.y] = 'Knight';
 console.log(gameboard)
 
-const steps = minKnightMoves(7, 7)
+const steps = minKnightMoves(7, 1)
 console.log(steps)
