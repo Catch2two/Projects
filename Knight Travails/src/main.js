@@ -13,10 +13,9 @@ function createGameboard() {
 function createKnight() {
     let knight = {
         position: {
-            x: 2,
-            y: 1
+            x: 0,
+            y: 0
         },
-        color: "White",
         moves: [
             [2, 1], [2, -1], [-2, 1], [-2, -1],
             [1, 2], [-1, 2], [1, -2], [-1, -2]
@@ -25,27 +24,40 @@ function createKnight() {
     return  knight;
 }
 
-function movePiece(currentPostion, targetPosition) {
-    // Check if within Gameboard limits.
-    if (targetPosition.x < 0 || targetPosition.x >= gameboard.length) {
-      return;
-    }
-    if (targetPosition.y < 0 || targetPosition.x >= gameboard[0].length) {
-      return;
-    }
-    // Check if valid move.
-    for (let move of knight.moves) {
-      if (move[0] === targetPosition.x && move[1] === targetPosition.y) {
-        currentPostion.x = targetPosition.x;
-        currentPostion.y = targetPosition.y;
-        // Update Gameboard
-        let lastPosition = gameboard[currentPostion.x][currentPostion.y];
-        gameboard[currentPostion.x][currentPostion.y] = 0;
-        gameboard[targetPosition.x][targetPosition.y] = lastPosition
-        return;
+const minKnightMoves = function(x, y) {
+  let moves = [
+      [2, 1], [2, -1], [-2, 1], [-2, -1],
+      [1, 2], [-1, 2], [1, -2], [-1, -2]
+  ];
+
+  let seen = new Set();
+  let queue = [[0,0]];
+  let steps = 0;
+
+  while(queue.length){
+      let next = [];
+      while(queue.length){
+          let current = queue.shift();
+          let currentX = current[0];
+          let currentY = current[1];
+
+          if (currentX === x && currentY === y) 
+               return steps
+
+          for (let i of moves){
+              let nextX = currentX + i[0];
+              let nextY = currentY + i[1];
+
+              if (!seen.has(nextX + "," + nextY)){
+                  seen.add(nextX + "," + nextY);
+                  next.push([nextX, nextY])
+              }
+          }
       }
-    }
+      steps++;
+      queue = next;
   }
+}
 
 let knight = createKnight();
 let gameboard = createGameboard();
@@ -58,7 +70,5 @@ console.log('\n')
 gameboard[knight.position.x][knight.position.y] = 'Knight';
 console.log(gameboard)
 
-// Change the target position to [2, 1]
-console.log('\n')
-movePiece(knight.position, [2, 2])
-console.log(gameboard)
+const steps = minKnightMoves(7, 7)
+console.log(steps)
