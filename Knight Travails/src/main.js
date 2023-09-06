@@ -13,8 +13,8 @@ function createGameboard() {
 function createKnight() {
     let knight = {
         position: {
-            x: 0,
-            y: 0
+            x: 4,
+            y: 4
         },
         moves: [
             [2, 1], [2, -1], [-2, 1], [-2, -1],
@@ -23,7 +23,13 @@ function createKnight() {
     };
     return  knight;
 }
-
+function moveKnight(knight, x, y) {
+    knight.position.x = x;
+    knight.position.y = y;
+}
+function printKnightLocation(knight) {
+    console.log(`The knight is at position (${knight.position.x}, ${knight.position.y})`);
+}
 function minKnightMoves(x, y) {
   let knight = createKnight();
   let moves = knight.moves;
@@ -40,7 +46,6 @@ function minKnightMoves(x, y) {
           let currentY = current[1];
 
           if (currentX === x && currentY === y) {
-              console.log(queue)
                return steps
           }
 
@@ -61,14 +66,11 @@ function minKnightMoves(x, y) {
 
 let knight = createKnight();
 let gameboard = createGameboard();
-console.log('\n')
-console.log('Knight Moves: ')
-console.log(knight.moves)
 
-console.log('Knight position on Board:')
-console.log('\n')
-gameboard[knight.position.x][knight.position.y] = 'Knight';
-console.log(gameboard)
 
-const steps = minKnightMoves(7, 1)
+const steps = minKnightMoves(7, 7)
+moveKnight(knight, 0, 0);
+printKnightLocation(knight)
+console.log("Shortest number of steps to reach (7, 7)")
 console.log(steps)
+console.log(gameboard)
