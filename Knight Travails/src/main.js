@@ -74,3 +74,5 @@ printKnightLocation(knight)
 console.log("Shortest number of steps to reach (7, 7)")
 console.log(steps)
 console.log(gameboard)
+
+console.log('TEST')
