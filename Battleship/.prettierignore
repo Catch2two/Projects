@@ -1,0 +1,4 @@
+#node modules is ignored by default
+#add files for prettier to not touch
+
+# example: /public/**  (this would be everything in a public folder and beyond

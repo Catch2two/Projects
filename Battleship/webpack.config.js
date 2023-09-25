@@ -1,3 +1,4 @@
+/* eslint-disable eol-last */
 const path = require('path');
 
 module.exports = {
