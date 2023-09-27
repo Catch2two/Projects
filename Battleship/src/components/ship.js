@@ -4,6 +4,8 @@ class ship {
     this.size = size;
     this.location = [];
     this.hit = false;
+    this.hits = 0;
+    this.isSunk = false;
   }
 
   shipLocation(location) {
@@ -12,12 +14,12 @@ class ship {
 
   shipHit() {
     this.hit = true;
+    this.hits++;
   }
 
   shipSunk() {
     return this.hit && this.location.length === 0;
   }
 }
-const battleship = new ship('battleship', 5);
-console.log(battleship);
+
 module.exports = ship;

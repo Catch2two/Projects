@@ -6,6 +6,8 @@ test('Ship Test', () => {
     size: 5,
     location: [],
     hit: false,
+    hits: 0,
+    isSunk: false,
   };
 
   const actualShip = new ship('battleship', 5);
