@@ -1,3 +1,4 @@
+const Ship = require('../components/ship');
 class Gameboard {
   constructor() {
     this.boardArray = Array.from({ length: 10 }, () =>

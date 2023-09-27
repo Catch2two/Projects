@@ -1,4 +1,4 @@
-const ship = require('../components/ship');
+const Ship = require('../components/ship');
 
 test('Ship Test', () => {
   const expectedShip = {
@@ -9,13 +9,13 @@ test('Ship Test', () => {
     isSunk: false,
   };
 
-  const actualShip = new ship('battleship', 5);
+  const actualShip = new Ship('battleship', 5);
 
   expect(actualShip).toEqual(expectedShip);
 });
 
 test('isSunk test', () => {
-  const testShip = new ship('battleship', 5);
+  const testShip = new Ship('battleship', 5);
 
   testShip.shipHit();
   testShip.shipHit();

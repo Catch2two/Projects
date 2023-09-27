@@ -1,4 +1,4 @@
 const Gameboard = require('../components/gameboard');
-const ship = require('../components/ship');
+const Ship = require('../components/ship');
 
 test('gameboard initiation', () => {});
