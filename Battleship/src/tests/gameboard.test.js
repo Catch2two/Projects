@@ -1,4 +1,5 @@
 const gameboard = require('../components/gameboard');
+const ship = require('../components/ship');
 
 test('Create the Game Grid', () => {
   const gameGrid = new gameboard(10, 10);
