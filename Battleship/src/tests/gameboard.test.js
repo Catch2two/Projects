@@ -1,7 +1,7 @@
 const Gameboard = require('../components/gameboard');
 const Ship = require('../components/ship');
 
-test('Specific location test', () => {
+test('Placement test', () => {
   const gameboard = new Gameboard(10, 10);
   gameboard.placeShip(new Ship('Battleship', 4), 0, 0, 'horizontal');
   expect(gameboard.board[1][2]).toEqual({
@@ -12,7 +12,22 @@ test('Specific location test', () => {
     isSunk: false,
   });
 });
-
+test('horizontal boat test', () => {
+  const gameboard = new Gameboard(10, 10);
+  gameboard.placeShip(
+    new Ship('Battleship', 4, 'horizontal'),
+    0,
+    0,
+    'horizontal'
+  );
+  expect(gameboard.board[2][0]).toEqual({
+    name: 'Battleship',
+    size: 4,
+    hit: false,
+    hits: 0,
+    isSunk: false,
+  });
+});
 test('Place in middle', () => {
   const gameboard = new Gameboard(10, 10);
   gameboard.placeShip(
