@@ -12,3 +12,20 @@ test('Specific location test', () => {
     isSunk: false,
   });
 });
+
+test('Place in middle', () => {
+  const gameboard = new Gameboard(10, 10);
+  gameboard.placeShip(
+    new Ship('Battleship', 4),
+    gameboard.width / 2,
+    gameboard.height / 2,
+    'vertical'
+  );
+  expect(gameboard.board[5][5]).toEqual({
+    name: 'Battleship',
+    size: 4,
+    hit: false,
+    hits: 0,
+    isSunk: false,
+  });
+});

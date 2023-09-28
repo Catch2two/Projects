@@ -5,6 +5,7 @@ class Ship {
     this.hit = false;
     this.hits = 0;
     this.isSunk = false;
+    this.direction = direction;
   }
 
   shipHit() {
