@@ -14,12 +14,18 @@ test('Placement test', () => {
 });
 test('horizontal boat test', () => {
   const gameboard = new Gameboard(10, 10);
-  gameboard.placeShip(
-    new Ship('Battleship', 4, 'horizontal'),
-    0,
-    0,
-    'horizontal'
-  );
+  gameboard.placeShip(new Ship('Battleship', 4), 0, 0, 'horizontal');
+  expect(gameboard.board[2][0]).toEqual({
+    name: 'Battleship',
+    size: 4,
+    hit: false,
+    hits: 0,
+    isSunk: false,
+  });
+});
+test('vertical boat test', () => {
+  const gameboard = new Gameboard(10, 10);
+  gameboard.placeShip(new Ship('Battleship', 4), 0, 0, 'horizontal');
   expect(gameboard.board[2][0]).toEqual({
     name: 'Battleship',
     size: 4,
