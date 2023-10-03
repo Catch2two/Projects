@@ -8,6 +8,9 @@ class Gameboard {
   }
 
   placeShip(ship, x, y, direction) {
+    if (x < 0 || x >= this.width || y < 0 || y >= this.hight) {
+      return false;
+    }
     if (direction === 'horizontal') {
       for (let i = 0; i < ship.size; i++) {
         if (x + i >= this.width || this.board[y][x + i] !== null) {
@@ -34,21 +37,5 @@ class Gameboard {
     return true;
   }
 }
-
-const gameboard = new Gameboard(10, 10);
-
-// Create a new ship object of size 4
-const ship = new Ship('Battleship', 4);
-
-// Place the ship at coordinates (0, 0) in a horizontal orientation
-gameboard.placeShip(
-  ship,
-  gameboard.width / 2,
-  gameboard.height / 2,
-  'horizontal'
-);
-
-// Check the value of the gameboard at coordinates (0, 0)
-console.log(gameboard.board[5][5]); // Outputs: Ship { name: 'Battleship', size: 4 }
 
 module.exports = Gameboard;
