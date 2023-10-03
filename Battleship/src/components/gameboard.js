@@ -1,41 +1,42 @@
-const Ship = require('../components/ship');
-
-class Gameboard {
+class BattleshipGameboard {
   constructor(width, height) {
     this.width = width;
     this.height = height;
-    this.board = new Array(this.height).fill(new Array(this.width).fill(null));
+
+    // Create a 2D array to represent the gameboard
+    this.board = [];
+    for (let i = 0; i < this.width; i++) {
+      this.board[i] = [];
+      for (let j = 0; j < this.height; j++) {
+        this.board[i][j] = 0; // 0 represents an empty space, 1 represents a ship
+      }
+    }
   }
 
-  placeShip(ship, x, y, direction) {
-    if (x < 0 || x >= this.width || y < 0 || y >= this.hight) {
-      return false;
+  // Place a ship on the gameboard at the given coordinates
+  placeShip(x, y, length, orientation) {
+    // Validate the coordinates and orientation
+    if (x < 0 || x >= this.width || y < 0 || y >= this.height) {
+      throw new Error('Invalid coordinates');
     }
-    if (direction === 'horizontal') {
-      for (let i = 0; i < ship.size; i++) {
-        if (x + i >= this.width || this.board[y][x + i] !== null) {
-          return false;
-        }
-      }
-
-      for (let i = 0; i < ship.size; i++) {
-        this.board[y][x + i] = ship;
-      }
-    } else if (direction === 'vertical') {
-      for (let i = 0; i < ship.size; i++) {
-        if (y + i >= this.height || this.board[y + i][x] !== null) {
-          return false;
-        }
-      }
-
-      for (let i = 0; i < ship.size; i++) {
-        this.board[y + i][x] = ship;
-      }
-    } else {
-      throw new Error('Invalid direction: Must be Vertical or Horizontal');
+    if (orientation !== 'horizontal' && orientation !== 'vertical') {
+      throw new Error('Invalid orientation');
     }
-    return true;
+
+    // Place the ship on the gameboard
+    for (let i = 0; i < length; i++) {
+      if (orientation === 'horizontal') {
+        this.board[x + i][y] = 1;
+      } else {
+        this.board[x][y + i] = 1;
+      }
+    }
+  }
+
+  // Check if a ship is located at the given coordinates
+  hasShipAt(x, y) {
+    return this.board[x][y] === 1;
   }
 }
 
-module.exports = Gameboard;
+module.exports = BattleshipGameboard;
