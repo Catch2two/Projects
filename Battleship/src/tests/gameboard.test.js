@@ -24,3 +24,18 @@ test('Place in middle', () => {
   gameboard.placeShip(gameboard.width / 2, gameboard.height / 2, 4, 'vertical');
   expect(gameboard.board[5][5]).toEqual(1);
 });
+
+// test receiveHit
+test('ReceiveAttack() should hit the ship', () => {
+  // Create a new BattleshipGameboard instance.
+  const gameboard = new BattleshipGameboard(10, 10);
+
+  // Place a ship on the gameboard at the coordinates (0, 0).
+  gameboard.placeShip(0, 0, 5, 'horizontal');
+
+  // Call the receiveAttack() method on the gameboard, passing in the coordinates of the ship.
+  gameboard.receiveAttack(0, 0);
+  console.log(gameboard.getShip(0, 0));
+  // Check the ship's isSunk property.
+  expect(gameboard.getShip(0, 0).isSunk).toBe(false);
+});

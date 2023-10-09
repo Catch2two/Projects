@@ -39,18 +39,29 @@ class BattleshipGameboard {
     return this.board[x][y] === 1;
   }
 
+  // Get Ship Coords
+  getShip(x, y) {
+    if (this.hasShipAt(x, y)) {
+      // Return the ship at the given coordinates
+      return new Ship(this.board[x][y].name, this.board[x][y].size);
+    } else {
+      // Return null if there is no ship at the given coordinates
+      return null;
+    }
+  }
   // Attack Detection
   receiveAttack(x, y) {
     if (this.hasShipAt(x, y)) {
       // Attack hit the Ship
-      const ship = this.getShipAt(x, y);
+      const ship = this.getShip(x, y);
 
-      // Mark Ship Hit
-      ship.shipHit();
+      // Mark the Ship Hit
+      ship.hit = true;
+      ship.hits++;
 
       // If sunken ship, remove from board
-      if (ship.isSunk()) {
-        this.removeShip(ship);
+      if (ship.shipSunk()) {
+        ship.isSunk = true;
       }
       return true;
     } else {
