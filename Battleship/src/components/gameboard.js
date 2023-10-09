@@ -1,3 +1,4 @@
+const Ship = require('../components/ship');
 class BattleshipGameboard {
   constructor(width, height) {
     this.width = width;
@@ -36,6 +37,26 @@ class BattleshipGameboard {
   // Check if a ship is located at the given coordinates
   hasShipAt(x, y) {
     return this.board[x][y] === 1;
+  }
+
+  // Attack Detection
+  receiveAttack(x, y) {
+    if (this.hasShipAt(x, y)) {
+      // Attack hit the Ship
+      const ship = this.getShipAt(x, y);
+
+      // Mark Ship Hit
+      ship.shipHit();
+
+      // If sunken ship, remove from board
+      if (ship.isSunk()) {
+        this.removeShip(ship);
+      }
+      return true;
+    } else {
+      // Attack Missed
+      return false;
+    }
   }
 }
 
