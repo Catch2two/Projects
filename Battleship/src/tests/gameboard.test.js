@@ -1,4 +1,5 @@
 const BattleshipGameboard = require('../components/gameboard');
+const Ship = require('../components/ship');
 
 test('Horizontal boat test', () => {
   const gameboard = new BattleshipGameboard(10, 10);
@@ -35,7 +36,11 @@ test('ReceiveAttack() should hit the ship', () => {
 
   // Call the receiveAttack() method on the gameboard, passing in the coordinates of the ship.
   gameboard.receiveAttack(0, 0);
-  console.log(gameboard.getShip(0, 0));
-  // Check the ship's isSunk property.
-  expect(gameboard.getShip(0, 0).isSunk).toBe(false);
+  gameboard.receiveAttack(1, 0);
+  gameboard.receiveAttack(2, 0);
+  gameboard.receiveAttack(3, 0);
+  gameboard.receiveAttack(4, 0);
+
+  expect(gameboard.getShip(0, 0).hit).toBe(true);
+  expect(gameboard.getShip(0, 0).hits).toBe(5);
 });

@@ -12,6 +12,15 @@ class BattleshipGameboard {
         this.board[i][j] = 0; // 0 represents an empty space, 1 represents a ship
       }
     }
+
+    // Create a 2D array to store the ship objects
+    this.ships = [];
+    for (let i = 0; i < this.width; i++) {
+      this.ships[i] = [];
+      for (let j = 0; j < this.height; j++) {
+        this.ships[i][j] = null;
+      }
+    }
   }
 
   // Place a ship on the gameboard at the given coordinates
@@ -24,12 +33,17 @@ class BattleshipGameboard {
       throw new Error('Invalid orientation');
     }
 
+    // Create a new ship object
+    const ship = new Ship(length, orientation);
+
     // Place the ship on the gameboard
     for (let i = 0; i < length; i++) {
       if (orientation === 'horizontal') {
         this.board[x + i][y] = 1;
+        this.ships[x + i][y] = ship;
       } else {
         this.board[x][y + i] = 1;
+        this.ships[x][y + i] = ship;
       }
     }
   }
@@ -41,33 +55,45 @@ class BattleshipGameboard {
 
   // Get Ship Coords
   getShip(x, y) {
-    if (this.hasShipAt(x, y)) {
-      // Return the ship at the given coordinates
-      return new Ship(this.board[x][y].name, this.board[x][y].size);
-    } else {
-      // Return null if there is no ship at the given coordinates
-      return null;
-    }
+    return this.ships[x][y];
   }
+
   // Attack Detection
   receiveAttack(x, y) {
-    if (this.hasShipAt(x, y)) {
-      // Attack hit the Ship
-      const ship = this.getShip(x, y);
+    const ship = this.getShip(x, y);
 
-      // Mark the Ship Hit
-      ship.hit = true;
-      ship.hits++;
-
-      // If sunken ship, remove from board
-      if (ship.shipSunk()) {
-        ship.isSunk = true;
-      }
-      return true;
-    } else {
-      // Attack Missed
+    // If the ship is already sunk, then return false
+    if (ship && ship.isSunk) {
       return false;
     }
+
+    // If the ship is not there, then return false
+    if (!ship) {
+      return false;
+    }
+
+    // Attack hit the Ship
+    ship.shipHit();
+
+    // If sunken ship, remove from board
+    if (ship.shipSunk()) {
+      ship.isSunk = true;
+    }
+
+    return true;
+  }
+
+  // Check if all ships have been sunk
+  allShipsSunk() {
+    for (let i = 0; i < this.width; i++) {
+      for (let j = 0; j < this.height; j++) {
+        const ship = this.getShip(i, j);
+        if (ship && !ship.isSunk) {
+          return false;
+        }
+      }
+    }
+    return true;
   }
 }
 
