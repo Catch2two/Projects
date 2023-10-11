@@ -21,6 +21,9 @@ class BattleshipGameboard {
         this.ships[i][j] = null;
       }
     }
+
+    // Keep track of Missed attacks
+    this.missedAttacks = [];
   }
 
   // Place a ship on the gameboard at the given coordinates
@@ -69,6 +72,7 @@ class BattleshipGameboard {
 
     // If the ship is not there, then return false
     if (!ship) {
+      this.missedAttacks.push({ x, y });
       return false;
     }
 
@@ -81,6 +85,11 @@ class BattleshipGameboard {
     }
 
     return true;
+  }
+
+  // Missed attacks collection
+  getMissedAttacks() {
+    return this.missedAttacks;
   }
 
   // Check if all ships have been sunk

@@ -1,5 +1,4 @@
 const BattleshipGameboard = require('../components/gameboard');
-const Ship = require('../components/ship');
 
 test('Horizontal boat test', () => {
   const gameboard = new BattleshipGameboard(10, 10);
@@ -26,7 +25,7 @@ test('Place in middle', () => {
   expect(gameboard.board[5][5]).toEqual(1);
 });
 
-// test receiveHit
+// test receiveAttack()
 test('ReceiveAttack() should hit the ship', () => {
   // Create a new BattleshipGameboard instance.
   const gameboard = new BattleshipGameboard(10, 10);
@@ -43,4 +42,16 @@ test('ReceiveAttack() should hit the ship', () => {
 
   expect(gameboard.getShip(0, 0).hit).toBe(true);
   expect(gameboard.getShip(0, 0).hits).toBe(5);
+});
+
+// test missedAttacks()
+test('getMissedAttacks() should return the correct number of missed attacks', () => {
+  const gameboard = new BattleshipGameboard(10, 10);
+
+  // Attack empty spot
+  gameboard.receiveAttack(0, 0);
+  gameboard.receiveAttack(1, 0);
+
+  // Check number of Misses
+  expect(gameboard.missedAttacks.length).toBe(2);
 });
