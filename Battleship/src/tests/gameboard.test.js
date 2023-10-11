@@ -39,6 +39,7 @@ test('ReceiveAttack() should hit the ship', () => {
   gameboard.receiveAttack(2, 0);
   gameboard.receiveAttack(3, 0);
   gameboard.receiveAttack(4, 0);
+  gameboard.receiveAttack(0, 6);
 
   expect(gameboard.getShip(0, 0).hit).toBe(true);
   expect(gameboard.getShip(0, 0).hits).toBe(5);
@@ -54,4 +55,18 @@ test('getMissedAttacks() should return the correct number of missed attacks', ()
 
   // Check number of Misses
   expect(gameboard.missedAttacks.length).toBe(2);
+});
+
+// Check if all ships are sunk
+test('allShipsSunk() should return true when all ships have been sunk', () => {
+  const gameboard = new BattleshipGameboard(10, 10);
+  gameboard.placeShip(0, 0, 1, 'vertical');
+  gameboard.placeShip(0, 4, 1, 'horizontal');
+
+  // Attack the ship
+  gameboard.receiveAttack(0, 0);
+  gameboard.receiveAttack(0, 4);
+
+  // Check if all ships are Sunk
+  expect(gameboard.allShipsSunk()).toBe(true);
 });
