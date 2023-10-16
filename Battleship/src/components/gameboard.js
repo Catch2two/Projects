@@ -80,9 +80,13 @@ class BattleshipGameboard {
     ship.shipHit();
 
     // If sunken ship, remove from board
-    if (ship.shipSunk()) {
+    if (ship.isSunk) {
       ship.isSunk = true;
+      this.ships[x][y] = null;
     }
+
+    // Log the number of hits on the ship to the console.
+    console.log(`The ship has been hit ${ship.hits} times.`);
 
     return true;
   }
@@ -105,11 +109,16 @@ class BattleshipGameboard {
     }
 
     // Log the number of ships that are left to the console.
-    console.log(`There are ${shipsLeft} ships left.`);
+    // console.log(`There are ${shipsLeft} ships left.`);
 
     // Check if all of the ships have been sunk.
     return shipsLeft === 0;
   }
 }
+const ship = new Ship('Carrier', 2);
 
+ship.shipHit();
+ship.shipHit();
+
+console.log(ship.isSunk);
 module.exports = BattleshipGameboard;

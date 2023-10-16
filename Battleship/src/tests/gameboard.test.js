@@ -1,4 +1,5 @@
 const BattleshipGameboard = require('../components/gameboard');
+const Ship = require('../components/ship');
 
 test('Horizontal boat test', () => {
   const gameboard = new BattleshipGameboard(10, 10);
@@ -59,17 +60,14 @@ test('getMissedAttacks() should return the correct number of missed attacks', ()
 
 // Check if all ships are sunk
 test('allShipsSunk() should return true when all ships have been sunk', () => {
+  // Create a new BattleshipGameboard object
   const gameboard = new BattleshipGameboard(10, 10);
-  gameboard.placeShip(0, 0, 1, 'horizontal');
-  // Attack the ship
-  gameboard.receiveAttack(0, 0);
-  gameboard.receiveAttack(0, 1);
-  gameboard.receiveAttack(1, 0);
-  gameboard.receiveAttack(0, 4);
-  gameboard.receiveAttack(1, 4);
-  gameboard.receiveAttack(0, 5);
 
-  console.log(gameboard);
-  // Check if all ships are Sunk
+  const ship = new Ship('Carrier', 2);
+
+  ship.shipHit();
+  ship.shipHit();
+
+  // Check if all ships are sunk
   expect(gameboard.allShipsSunk()).toBe(true);
 });

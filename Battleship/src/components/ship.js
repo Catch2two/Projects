@@ -11,13 +11,13 @@ class Ship {
     this.hit = true;
     this.hits++;
 
-    if (this.shipSunk()) {
-      this.isSunk = true;
-    }
+    this.updateSunkStatus();
   }
 
-  shipSunk() {
-    return this.hit && this.hits === this.size;
+  updateSunkStatus() {
+    if (this.hits === this.size) {
+      this.isSunk = true;
+    }
   }
 
   // getters
@@ -37,7 +37,7 @@ class Ship {
     return this.hits;
   }
 
-  getSunk() {
+  isSunk() {
     return this.isSunk;
   }
 }

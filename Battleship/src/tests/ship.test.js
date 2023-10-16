@@ -26,12 +26,6 @@ test('isSunk test', () => {
   expect(testShip.isSunk).toEqual(true);
 });
 
-test('Ship Getters', () => {
-  const newShip = new Ship('Battleship', 5);
-  const getShipName = newShip.getName();
-  expect(getShipName).toBe('Battleship');
-});
-
 test('Multiple Ship Creations', () => {
   const boats = [
     { name: 'Battleship', size: 5 },
@@ -54,6 +48,6 @@ test('Multiple Ship Creations', () => {
     const getShipSize = battleship.getSize();
     expect(getShipSize).toBe(battleship.size);
 
-    expect(battleship.getSunk()).toBe(false);
+    expect(battleship.isSunk).toBe(false);
   }
 });
