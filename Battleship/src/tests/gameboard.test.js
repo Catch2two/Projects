@@ -69,6 +69,7 @@ test('allShipsSunk() should return true when all ships have been sunk', () => {
   gameboard.receiveAttack(1, 4);
   gameboard.receiveAttack(0, 5);
 
+  console.log(gameboard);
   // Check if all ships are Sunk
   expect(gameboard.allShipsSunk()).toBe(true);
 });

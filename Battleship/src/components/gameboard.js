@@ -92,29 +92,23 @@ class BattleshipGameboard {
     return this.missedAttacks;
   }
 
-  // Check if all ships have been sunk
   allShipsSunk() {
-    // Check if there are any ships on the board
-    for (let i = 0; i < this.width; i++) {
-      for (let j = 0; j < this.height; j++) {
-        if (this.ships[i][j]) {
-          return false;
-        }
-      }
-    }
-
-    // Check if all of the ships have been sunk
+    // Count the number of ships that are left.
+    let shipsLeft = 0;
     for (let i = 0; i < this.width; i++) {
       for (let j = 0; j < this.height; j++) {
         const ship = this.ships[i][j];
         if (ship && !ship.isSunk) {
-          return false;
+          shipsLeft++;
         }
       }
     }
 
-    // All of the ships have been sunk
-    return true;
+    // Log the number of ships that are left to the console.
+    console.log(`There are ${shipsLeft} ships left.`);
+
+    // Check if all of the ships have been sunk.
+    return shipsLeft === 0;
   }
 }
 

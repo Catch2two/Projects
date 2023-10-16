@@ -1,4 +1,6 @@
-import factories from './factories';
+const Player = require('.src/componenets/Player');
+const Bot = require('.src/componenets/Bot');
+const ship = require('.src/componenets/ship');
+const gameboard = require('.src/componenets/gameboard');
 
-factories();
-console.log('Start Here');
+console.log('Start Here!!');
