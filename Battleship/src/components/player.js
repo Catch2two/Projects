@@ -1,9 +1,7 @@
-const BattleshipGameboard = require('../components/gameboard');
-
 class Player {
   constructor(name, gameboard) {
     this.name = name;
-    this.gameboard = new BattleshipGameboard();
+    this.gameboard = gameboard;
   }
 
   attack(x, y) {

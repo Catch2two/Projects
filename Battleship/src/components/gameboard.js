@@ -58,7 +58,11 @@ class BattleshipGameboard {
 
   // Get Ship Coords
   getShip(x, y) {
-    return this.ships[x][y];
+    const ship = this.ships[x][y];
+    if (ship === undefined) {
+      return null;
+    }
+    return ship;
   }
 
   // Attack Detection
