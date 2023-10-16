@@ -60,12 +60,14 @@ test('getMissedAttacks() should return the correct number of missed attacks', ()
 // Check if all ships are sunk
 test('allShipsSunk() should return true when all ships have been sunk', () => {
   const gameboard = new BattleshipGameboard(10, 10);
-  gameboard.placeShip(0, 0, 1, 'vertical');
-  gameboard.placeShip(0, 4, 1, 'horizontal');
-
+  gameboard.placeShip(0, 0, 1, 'horizontal');
   // Attack the ship
   gameboard.receiveAttack(0, 0);
+  gameboard.receiveAttack(0, 1);
+  gameboard.receiveAttack(1, 0);
   gameboard.receiveAttack(0, 4);
+  gameboard.receiveAttack(1, 4);
+  gameboard.receiveAttack(0, 5);
 
   // Check if all ships are Sunk
   expect(gameboard.allShipsSunk()).toBe(true);
