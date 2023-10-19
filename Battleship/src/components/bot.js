@@ -2,14 +2,27 @@ const BattleshipGameboard = require('../components/gameboard');
 class Bot {
   constructor(gameboard) {
     this.gameboard = new BattleshipGameboard();
+    this.attackedPositions = [];
   }
 
   botAttackNode() {
     // RNG Attacks
-    const x = Math.floor(Math.random() * this.gameboard.width);
-    const y = Math.floor(Math.random() * this.gameboard.height);
+    const node = {
+      x: Math.floor(Math.random() * this.gameboard.width),
+      y: Math.floor(Math.random() * this.gameboard.height),
+    };
 
-    return { x, y };
+    // Check if Node has been attacked yet
+    if (!this.attackedPositions.includes(node)) {
+      // Add node to attackedPositions Array[]
+      this.attackedPositions.push(node);
+
+      // Return the node
+      return node;
+    } else {
+      // Node has been attacked, attack again
+      return this.botAttackeNode();
+    }
   }
 
   attack() {
