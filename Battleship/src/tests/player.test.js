@@ -1,7 +1,7 @@
 const Player = require('../components/player');
 const BattleshipGameboard = require('../components/gameboard');
 
-test('Player Attack Test', () => {
+describe('Player Attack Test', () => {
   // Create a new gameboard object.
   const gameboard = new BattleshipGameboard();
 
