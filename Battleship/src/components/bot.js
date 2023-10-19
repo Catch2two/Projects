@@ -42,7 +42,6 @@ class Bot {
         ship.hit = true;
       }
     }
-
     return hit;
   }
 
