@@ -18,3 +18,5 @@ while (!player.hasWon() && !bot.hasWon()) {
     break;
   }
 }
+
+module.exports = gameplay;

@@ -119,10 +119,4 @@ class BattleshipGameboard {
     return shipsLeft === 0;
   }
 }
-const ship = new Ship('Carrier', 2);
-
-ship.shipHit();
-ship.shipHit();
-
-console.log(ship.isSunk);
 module.exports = BattleshipGameboard;
