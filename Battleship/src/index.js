@@ -1,6 +1,6 @@
-const Player = require('.src/componenets/Player');
-const Bot = require('.src/componenets/Bot');
-const ship = require('.src/componenets/ship');
-const gameboard = require('.src/componenets/gameboard');
+const Player = require('player');
+const Bot = require('bot');
+const ship = require('ship');
+const gameboard = require('gameboard');
 
 console.log('Start Here!!');
