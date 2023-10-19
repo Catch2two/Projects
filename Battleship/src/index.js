@@ -1,7 +1,7 @@
-const Player = require('player');
-const Bot = require('bot');
-const ship = require('ship');
-const gameboard = require('gameboard');
-const gameplay = require('gameplay');
+const Player = require('./components/player');
+const Bot = require('./components/bot');
+const ship = require('./components/ship');
+const gameboard = require('./components/gameboard');
+const gameplay = require('./components/gameplay');
 
-console.log('Start Here!!');
+console.log('Start Here!!!');
