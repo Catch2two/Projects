@@ -1,0 +1,32 @@
+html {
+  background-color: rgb(48, 120, 184);
+}
+
+.aboutMe {
+  display: flex;
+  padding: 5vh;
+  background-color: white;
+  height: 25%;
+}
+
+.aboutMe img {
+  margin: 0 auto;
+  align-self: center;
+  padding: 0%;
+  width: 30vh;
+  box-shadow: 1px 1px 15px rgba(0, 0, 0, 0.599);
+}
+
+.aboutMe p,
+h1 {
+  padding: 2vh;
+}
+.myWork {
+  height: 50vh;
+  background-color: red;
+}
+
+.contactMe {
+  background-color: aliceblue;
+  height: 25vh;
+}
