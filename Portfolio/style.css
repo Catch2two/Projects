@@ -1,50 +1,43 @@
-body {
-}
-
 .aboutMe {
   font-family: "Playfair Display", serif;
   font-weight: 600;
   padding: 50px;
-  background-color: white;
+  background-color: rgb(91, 148, 199);
   text-align: center;
 }
-.aboutMeContainer {
-  display: flex;
-  padding: 5%;
-  box-shadow: 1px 1px 15px rgba(80, 80, 80, 0.234);
+.aboutMe h1 {
+  width: 100%;
 }
 .aboutMeText {
+  padding: 10%;
+  background-color: white;
   text-align: left;
-  padding-left: 3vh;
-  max-width: 50vh;
-  margin: 0 auto;
+  min-width: 900px;
+  box-shadow: 1px 1px 15px rgba(80, 80, 80, 0.234);
 }
 
-.aboutMe img {
-  align-self: center;
-  background-color: red;
-  padding: 0%;
-  width: 30vh;
-  box-shadow: 5px 5px 5px rgba(140, 140, 140, 0.655);
+.profileImg {
+  float: left;
+  margin-right: 2vw;
+  margin-bottom: 2vw;
+  object-fit: contain;
+  border-radius: 2%;
+  background-color: rgb(241, 241, 241);
+  box-shadow: 5px 5px 5px rgba(19, 19, 19, 0.226);
 }
 /* My Work Box */
 .myWork {
+  margin-top: 10vh;
 }
 /* Project Cards */
 .cardContainer {
   display: grid;
-  justify-content: center;
-  margin: 0 auto;
-  width: 960px;
+  justify-items: center;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  row-gap: 50px;
+  gap: 2vh;
 }
 
 .project-card {
-  width: 26vw;
-  min-width: 500px;
-  margin: auto 1;
   background-color: rgb(210, 210, 210);
   box-shadow: 1px 1px 15px rgb(12, 12, 12);
 }
@@ -62,16 +55,21 @@ body {
 }
 
 .project-info p {
-  font-size: 26px;
+  font-size: 24px;
 }
 
 .project-info button {
   margin-top: 10px;
   padding: 1;
 }
-@media (max-width: 960px) {
+/* Contact Div */
+.contactContainer {
+  margin-top: 10vh;
+  height: 50vh;
+  background-color: rgb(91, 148, 199);
+}
+@media (max-width: 992px) {
   .cardContainer {
-    width: 768px;
     grid-template-columns: repeat(2, 1fr);
   }
 }
