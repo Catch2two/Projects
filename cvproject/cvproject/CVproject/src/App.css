@@ -1,0 +1,20 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.cv-info {
+  color: rgb(211, 211, 211);
+}
+
+.cv-info li {
+  list-style: none;
+}
+
+.school {
+  color: rgb(255, 251, 251);
+  border: 2px solid black;
+  background-color: rgba(255, 255, 255, 0.034);
+}
