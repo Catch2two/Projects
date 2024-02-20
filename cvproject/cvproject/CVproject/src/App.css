@@ -4,9 +4,17 @@
   padding: 2rem;
   text-align: center;
 }
-
+.icon {
+  width: 100px;
+  height: 100px;
+  margin-right: 50px;
+}
+.nameAndLogo {
+  display: flex;
+  min-width: 500px;
+}
 .cv-info {
-  color: rgb(211, 211, 211);
+  color: rgb(255, 255, 255);
 }
 
 .cv-info li {

@@ -1,5 +1,5 @@
 import "./App.css";
-
+import icon from "./assets/user.png";
 function CvInfo() {
   const name = "Joshua Menko";
   const title = "Professional Artist / Novice Programmer";
@@ -9,7 +9,10 @@ function CvInfo() {
 
   return (
     <div className="cv-info">
-      <h1>{name}</h1>
+      <div className="nameAndLogo">
+        <img src={icon} className="icon"></img>
+        <h1>{name}</h1>
+      </div>
       <h2>{title}</h2>
       <ul>
         <li>
