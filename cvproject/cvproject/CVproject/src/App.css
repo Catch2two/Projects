@@ -30,6 +30,11 @@
   border: 2px solid black;
   background-color: rgba(255, 255, 255, 0.034);
 }
+.school2,
+.school3 {
+  display: flex;
+  flex-direction: row;
+}
 .summary {
   height: 250px;
   text-align: center;
