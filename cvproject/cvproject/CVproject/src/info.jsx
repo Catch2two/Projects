@@ -5,7 +5,8 @@ function CvInfo() {
   const title = "Professional Artist / Novice Programmer";
   const email = "Definitejosh@gmail.com";
   const website = "https://joshmenko.com";
-  const summary = "Write a brief summary of yourself and your skills.";
+  const summary =
+    "As a kid i've always been obsessed with computers. Wondering how they work hardware and software side, constantly I would explore as much as I could... (Finish rest on Word for Formatting) ";
 
   return (
     <div className="cv-info">
@@ -22,7 +23,7 @@ function CvInfo() {
           Website: <a href={website}>{website}</a>
         </li>
       </ul>
-      <p>{summary}</p>
+      <p className="summary">{summary}</p>
     </div>
   );
 }
