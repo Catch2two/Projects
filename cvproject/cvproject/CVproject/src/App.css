@@ -22,27 +22,46 @@
 .cv-info li {
   list-style: none;
 }
-
-.school {
-  margin-left: 150px;
-  margin-right: 150px;
+.school-container {
+  display: flex;
+  justify-content: center;
   color: rgb(255, 251, 251);
-  border: 2px solid black;
   background-color: rgba(255, 255, 255, 0.034);
 }
+.school,
 .school2,
 .school3 {
-  display: flex;
-  flex-direction: row;
+  padding: 25px;
 }
 .summary {
-  height: 250px;
   text-align: center;
-  margin-left: 150px;
-  margin-right: 150px;
-  border: 2px solid black;
   background-color: rgba(255, 255, 255, 0.034);
   padding: 2%;
 }
-.experiences {
+.experiences-container {
+  display: flex;
+  margin-top: 2rem;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.034);
+  padding: 2rem;
+}
+.skills-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: rgb(42, 68, 91);
+}
+.skills-container ul {
+  text-align: start;
+}
+.experiences-container h3,
+.jobs-container h3 {
+  font-size: larger;
+  margin-bottom: 5rem;
+}
+.jobs-container {
+  display: flex;
+  flex-direction: column;
+  padding: 3rem;
+  background-color: rgb(42, 68, 91);
 }

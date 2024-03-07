@@ -2,15 +2,15 @@ import "./App.css";
 
 function School() {
   const schoolName = "University of Hartford";
-  const titleOfStudy = "Bachelors of Fine Arts / Illustration Major";
+  const titleOfStudy = "Bachelors of Fine Arts: Illustration Major";
   const dateOfStudy = "2013-2015";
 
   const schoolName2 = "Manchester Community College";
-  const titleOfStudy2 = "Computer Science/Graphic Design";
+  const titleOfStudy2 = "Graphic Design";
   const dateOfStudy2 = "2008-2010";
 
   const schoolName3 = "Northwestern Connecticut Community College";
-  const titleOfStudy3 = "Graphic Design/Fine Arts";
+  const titleOfStudy3 = "Graphic Design & Fine Arts";
   const dateOfStudy3 = "2010-2012";
 
   return (
