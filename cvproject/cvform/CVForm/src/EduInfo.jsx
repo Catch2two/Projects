@@ -6,7 +6,7 @@ function EduInfo() {
     { school: "", areaOfStudy: "", years: "" }, // Initial empty education object
   ]);
 
-  const [maxSchools, setMaxSchools] = useState(4); // Set max schools to click
+  const [maxSchools] = useState(4); // Set max schools to click
 
   const handleChange = (event, index) => {
     const { name, value } = event.target;

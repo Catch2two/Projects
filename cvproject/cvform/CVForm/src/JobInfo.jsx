@@ -5,7 +5,7 @@ function JobInfo() {
   const [jobs, setJobs] = useState([
     { employer: "", jobTitle: "", timeAtJob: "" }, // Initial empty job object
   ]);
-  const [maxJobs, setMaxJobs] = useState(4); // Maximum allowed jobs
+  const [maxJobs] = useState(4); // Maximum allowed jobs
 
   const handleChange = (event, index) => {
     const { name, value } = event.target;
